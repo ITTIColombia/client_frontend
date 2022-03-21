@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
-import back from "../../../assets/Icons/backarrow.svg";
+import back from "../../Assets/Icons/backarrow.svg";
 import "./Backarrow.css";
 
 function Backarrow(props) {

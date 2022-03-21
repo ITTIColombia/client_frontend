@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
-import bread from "../../../assets/Icons/chevronRight.svg";
+import bread from "../../Assets/Icons/chevronRight.svg";
 import "./Breadcrumbs.css";
 
 function Breadcrumbs(props) {

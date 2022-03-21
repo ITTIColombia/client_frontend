@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Navbar.css"; 
 import { NavLink, useNavigate } from 'react-router-dom';
-import logo from "../../../assets/Logos/logoNav.svg";
+import logo from "../../Assets/Logos/logoNav.svg";
 
 
 function Navbar() {

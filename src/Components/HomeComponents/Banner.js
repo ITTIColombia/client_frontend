@@ -1,6 +1,6 @@
 import React from 'react'
-import photo from "../../../assets/Photos/photoBanner.jpg";
-import itti from "../../../assets/Logos/miniItti.svg";
+import photo from "../../Assets/Photos/photoBanner.jpg";
+import itti from "../../Assets/Logos/miniItti.svg";
 import "./Banner.css"; 
 
 function Banner() {
