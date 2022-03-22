@@ -1,9 +1,8 @@
 import './App.css';
 import {useState} from "react";
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import React from "react";
 import Home from "./Pages/Home/Home";
-import NavbarITTI from "./Components/Navbar/NavbarITTI";
 
 const AppContext = React.createContext({})
 
@@ -23,14 +22,14 @@ function App() {
 
   return (
       <div className="App">
+       
         <AppContext.Provider value={{user, login, logout}}>
           <BrowserRouter>
-            <NavbarITTI/>
-            <Switch>
-              <Route path='/' exact component={Home}/>
-            </Switch>
+          <Routes>
+            <Route path="/" exact element={<Home/>}/>
+          </Routes>
           </BrowserRouter>
-        </AppContext.Provider>
+  </AppContext.Provider>
       </div>
   );
 }

@@ -1,0 +1,76 @@
+.Banner{
+    width: 100vw;
+    margin-top: 2.5vh;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+}
+
+.banner-left{
+    position: absolute;
+    width: 57vw;
+    background: rgba(255, 255, 255, 0.6);
+    padding-right: 5rem;
+    float: left;
+    z-index: 2;
+}
+
+.banner-right{
+    float: right;
+    z-index: 1;
+    margin-left: 50vw;
+}
+
+.banner-img{
+    width: 50vw;
+    height: 27rem;
+}
+
+.banner-left-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    padding-left: 5rem;
+    padding-right: 4rem;
+}
+
+.banner-left-text span{
+    font-family: "Playfair Display";
+    font-style: italic;
+}
+
+.banner-left-subtitle{
+    font-family: "Playfair Display";
+    color: var(--black);
+    font-weight: 700;
+    font-size: 2rem;
+    margin-top: 0.5rem;
+    padding-left: 3vw;
+    padding-right: 3vw;
+}
+
+.banner-left-description{
+    font-family: "Montserrat";
+    color: var(--black);
+    margin-top: 1.5rem;
+    padding-right: 5vw;
+    padding-left: 5vw;
+}
+
+.banner-left-firstRow{
+    display: flex;
+    font-family: "Montserrat";
+    color: var(--orange);
+    font-size: 1.2rem;
+    font-weight: 500;
+
+}
+
+.banner-left-firstRow p{
+    margin: 0;
+}
