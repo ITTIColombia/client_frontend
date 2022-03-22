@@ -1,0 +1,52 @@
+/*CSS for filters*/
+
+.Filters{
+    width: 100%;
+    margin-bottom: 3rem;
+    padding-left: 11vw;
+    padding-right: 11vw;
+}
+
+.filters-content{
+    display: flex;
+    align-items: center;
+}
+
+.filters-content p{
+    margin-bottom: 0;
+}
+
+.filters-content select{
+    border: 0;
+    background-color: transparent;
+    font-family: "Montserrat";
+    border-bottom: 1px solid var(--black) !important;
+    border-radius: 0;
+    width: 12vw;
+    margin-right: 3vw;
+}
+
+.filters-tit{
+    font-family: "Montserrat";
+    color: var(--orange);
+    font-weight: 500;
+    margin-top: 3vh;
+    margin-bottom: 1vh;
+}
+
+.Filters a{
+    font-family: "Montserrat";
+    color: var(--orange);
+}
+.Filters a:hover{
+    text-decoration: none;
+    color: var(--black);
+}
+
+.Filters button{
+    font-family: "Montserrat";
+    color: var(--black);
+}
+.Filters button:hover{
+    color: var(--orange);
+}
