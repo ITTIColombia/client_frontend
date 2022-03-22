@@ -1,13 +1,12 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
-import back from "../../Assets/Icons/backarrow.svg";
 import "./Backarrow.css";
 
 function Backarrow(props) {
     return (
         <div className="Backarrow">
             <Link to={props.path}>
-                <img className="backarrow-img" src={back} alt="Flecha"/>
+                <img className="backarrow-img" src="/Assets/Icons/backarrow.svg" alt="Flecha"/>
                 <p>{"VOLVER A "+props.name}</p>
             </Link>
         </div>

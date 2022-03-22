@@ -1,6 +1,4 @@
 import React from 'react'
-import logo from "../../Assets/Logos/logoFooter.svg";
-import copy from "../../Assets/Icons/copyright.svg";
 import "./Footer.css"; 
 
 function Footer() {
@@ -8,9 +6,9 @@ function Footer() {
         <div className="Footer">
             <div className="footer-content">
             <div className="footer-logo">
-                <img className="img" src={logo} alt="ITTI" />
+                <img className="img" src="/Assets/Logos/logoFooter.svg" alt="ITTI" />
                 <div className="footer-copy">
-                    <img className="copy" src={copy} alt="copyright"/>
+                    <img className="copy" src="/Assets/Icons/copyright.svg" alt="copyright"/>
                     <p>2021 ITTI. All Rights Reserved.</p>
                 </div>
             </div>

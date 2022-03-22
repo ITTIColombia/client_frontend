@@ -1,8 +1,6 @@
 import React from 'react'
 import "./ProductCard.css"
 import {Link} from 'react-router-dom';
-import like from "../../Assets/Icons/like.svg";
-import add from "../../Assets/Icons/add.svg";
 
 function ProductCard(props) {
     return (
@@ -13,8 +11,8 @@ function ProductCard(props) {
             <div className="productCard-over">
                 <p className="productCard-over-text">{props.name}</p>
                 <div className="productCard-icons">
-                    <Link  to="/marcas"><img className="productCard-svg" src={like} alt="Like" /></Link>
-                    <Link to="/marcas"><img className="productCard-svg" src={add} alt="Agrgear" /></Link>
+                    <Link  to="/marcas"><img className="productCard-svg" src="/Assets/Icons/like.svg" alt="Like" /></Link>
+                    <Link to="/marcas"><img className="productCard-svg" src="/Assets/Icons/add.svg" alt="Agrgear" /></Link>
                 </div>
             </div>
         </div>
