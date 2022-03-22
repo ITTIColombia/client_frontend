@@ -1,0 +1,34 @@
+.intro-artisans{
+    padding: 1em 5em;
+}
+
+#title-artisans{
+    font-family: "Playfair Display";
+    font-weight: bold;
+    color: var(--black);
+}
+
+.normal-text{
+    font-family: "Montserrat";
+}
+
+.description-artisans{
+    padding-top: 4em;
+}
+
+.filter-artisans{
+    padding-top: 2em;
+
+}
+
+.artisans-section img{
+    padding: 4em;
+
+}
+
+.orange{
+    color: var(--orange);
+}
+
+
+
