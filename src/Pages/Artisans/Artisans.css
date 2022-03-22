@@ -6,14 +6,17 @@
     font-family: "Playfair Display";
     font-weight: bold;
     color: var(--black);
+    font-size: 4em;
+    margin-bottom: .8em;
 }
 
-.normal-text{
+.text-artisans{
     font-family: "Montserrat";
+    font-size: 1.5em;
 }
 
 .description-artisans{
-    padding-top: 4em;
+    padding-top: 7em;
 }
 
 .filter-artisans{
@@ -30,5 +33,8 @@
     color: var(--orange);
 }
 
+#colombia_map{
+    max-height: 40em;
+}
 
 
