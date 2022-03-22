@@ -33,7 +33,7 @@ function App() {
             <Route path="/productos" exact element={<ProductsPage/>}/>
           </Routes>
           </BrowserRouter>
-  </AppContext.Provider>
+        </AppContext.Provider>
       </div>
   );
 }

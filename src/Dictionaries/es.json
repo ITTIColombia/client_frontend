@@ -1,5 +1,22 @@
 {
+  "AreYouAnArtisan": "¿Eres artesano?",
+  "SignIn": "Ingresa",
+  "Home": "Inicio",
+  "Products": "Productos",
+  "AboutUs": "Nosotros",
+  "Cart": "Bolsa de compra",
   "Artisans": "Artesanos",
+  "At": "En",
+  "BannerSlogan": "Creemos en el talento de los artesanos colombianos",
+  "BannerDescription": "Descubre un mundo lleno de tesoros e historias de cada rincón de Colombia mientras apoyas un comercio local, justo, sostenible y a baja escala.",
   "ArtisansDescription": "Los artesanos son narradores de historias. Con sus manos representan los valores y las tradiciones de sus comunidades. Comprando artesanías colombianas fomentarás el comercio local, la producción a baja escala y ayudarás a reducir la brecha entre el mundo artesanal y el mundo digital.",
-  "Filters": "Filtros"
+  "Filters": "Filtros",
+  "MeetUs": "Conócenos",
+  "ContactUs": "Contáctanos",
+  "FollowUs": "Síguenos",
+  "FAQ": "Preguntas Frecuentes",
+  "AboutUsFooter": "Sobre Nosotros",
+  "FavoritesSlogan1": "Explora nuestra ",
+  "FavoritesSloganSpan": "selección",
+  "FavoritesSlogan2": " de la semana"
 }
