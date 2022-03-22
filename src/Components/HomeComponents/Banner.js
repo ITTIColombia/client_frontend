@@ -1,6 +1,5 @@
 import React from 'react'
-import photo from "../../Assets/Photos/photoBanner.jpg";
-import itti from "../../Assets/Logos/miniItti.svg";
+import photo from "../../Assets/Photos/HomePage/photoBanner.jpg";
 import "./Banner.css"; 
 
 function Banner() {
@@ -8,9 +7,9 @@ function Banner() {
         <div className="Banner">
             <div className="banner-left">
                 <div className="banner-left-text">
-                    <img className="banner-left-img" src={itti} alt="En ITTI"/>
-                    <h3>Creemos en el talento de los artesanos colombianos</h3>
-                    <p>Descubre un mundo lleno de tesoros e historias de cada rincón de Colombia mientras apoyas un comercio local, justo, sostenible y a baja escala.</p>
+                    <div className="banner-left-firstRow"><p>En IT</p><p className='letter-rotation'>T</p><p>I</p></div>
+                    <h3 className="banner-left-subtitle">Creemos en el talento de los artesanos colombianos</h3>
+                    <p className="banner-left-description">Descubre un mundo lleno de tesoros e historias de cada rincón de Colombia mientras apoyas un comercio local, justo, sostenible y a baja escala.</p>
                 </div>
             </div>
             <div className="banner-right">

@@ -12,9 +12,11 @@ let userLang = navigator.language || navigator.userLanguage;
 const messages = userLang.startsWith('en')? en: userLang.startsWith('es')? es: en
 
 ReactDOM.render(
-    <IntlProvider locale={userLang} messages={messages}>
-        <App/>
-    </IntlProvider>,
+    <React.StrictMode>
+        <IntlProvider locale={userLang} messages={messages}>
+            <App/>
+        </IntlProvider>
+    </React.StrictMode>,
     document.getElementById('root')
 );
 
