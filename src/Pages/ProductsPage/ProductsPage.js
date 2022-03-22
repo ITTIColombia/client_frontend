@@ -4,6 +4,7 @@ import Footer from '../../Components/Footer/Footer'
 import Navbar from '../../Components/Navbar/Navbar'
 import Topbar from '../../Components/Topbar/Topbar'
 import ProductCard from '../../Components/ProductCard/ProductCard'
+import Filters from '../../Components/Filters/Filters'
 
 
 function ProductsPage() {
@@ -76,7 +77,8 @@ function ProductsPage() {
                 <h3>Productos</h3>
                 <p>Antójate de las mejores artesanías diseñadas y fabricadas en Colombia.</p>
             </div>
-            <div className="products-filters">
+            <Filters/>
+            {/*<div className="products-filters">
                 <p className="products-filters-tit">FILTROS</p>
                 <div className="products-filters-content" >
                     <select id="inputState" className="form-control" name="tipo" defaultValue={'DEFAULT'}>
@@ -104,7 +106,7 @@ function ProductsPage() {
                     </select>
                     <button type="submit" className="btn">Filtrar</button>
                 </div>
-            </div>
+            </div>*/}
             <div className='products-container'>
                 {productos.map((producto, index) =>
                     <div className='products-container-row' key={index}><ProductCard index={index+1} name={producto.name} price={producto.price} key={index} /></div>
