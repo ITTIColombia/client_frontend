@@ -1,6 +1,5 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
-import bread from "../../Assets/Icons/chevronRight.svg";
 import "./Breadcrumbs.css";
 
 function Breadcrumbs(props) {
@@ -9,7 +8,7 @@ function Breadcrumbs(props) {
             <Link to={props.path}>
                 <p>{props.pathName}</p>
             </Link>
-            <img className="bread-icon" src={bread} alt="Chevron"/>
+            <img className="bread-icon" src="/Assets/Icons/chevronRight.svg" alt="Chevron"/>
             <p>{props.name}</p>
         </div>
     )

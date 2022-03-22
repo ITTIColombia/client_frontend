@@ -4,7 +4,6 @@ import Navbar from "../../Components/Navbar/Navbar";
 import {useEffect, useState} from "react";
 import ArtisansMockup from "../../Mockup/Artisan/Artisans";
 import {FormattedMessage} from "react-intl";
-import completeMap from '../../Assets/Map/CompleteMap.svg';
 
 
 
@@ -32,7 +31,7 @@ function Artisans(){
                 </div>
                 <div className="col-6">
                     <div className="float-end">
-                        <img id="colombia_map" src={completeMap} alt="colombia-map"/>
+                        <img id="colombia_map" src='/Assets/Map/CompleteMap.svg' alt="colombia-map"/>
                     </div>
                 </div>
             </div>
