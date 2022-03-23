@@ -29,7 +29,7 @@ function App() {
           <BrowserRouter>
           <Routes>
             <Route path="/" exact element={<Home/>}/>
-            <Route path="/artesanos" exact element={<Artisans/>}/>
+            <Route tpath="/artesanos" exact element={<Artisans/>}/>
             <Route path="/productos" exact element={<ProductsPage/>}/>
           </Routes>
           </BrowserRouter>
