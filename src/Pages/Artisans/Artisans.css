@@ -1,18 +1,20 @@
 .intro-artisans{
-    padding: 1em 5em;
+    padding-top: 2.5rem;
+    padding-left: 11vw;
+    padding-right: 11vw;
 }
 
 #title-artisans{
     font-family: "Playfair Display";
     font-weight: bold;
     color: var(--black);
-    font-size: 4em;
+    font-size: 2.5rem;
     margin-bottom: .8em;
 }
 
 .text-artisans{
     font-family: "Montserrat";
-    font-size: 1.5em;
+    font-size: 1rem;
 }
 
 .description-artisans{
@@ -25,8 +27,12 @@
 }
 
 .artisans-section img{
-    padding: 4em;
+    padding: 2.5em;
+}
 
+.artisans-section{
+    padding-left: 10vw;
+    padding-right: 10vw;
 }
 
 .orange{
@@ -34,7 +40,7 @@
 }
 
 #colombia_map{
-    max-height: 40em;
+    max-height: 37em;
 }
 
 
