@@ -1,7 +1,6 @@
 import React from 'react'
 import "./Navbar.css"; 
 import { NavLink, useNavigate } from 'react-router-dom';
-import logo from "../../Assets/Logos/logoNav.svg";
 
 
 function Navbar() {
@@ -30,7 +29,7 @@ function Navbar() {
                     </div>
                     <div className="navbar-logo">
                         <NavLink to="/">
-                            <img className="navbar-logo-img" src={logo} alt="Logo ITTI" />
+                            <img className="navbar-logo-img" src="/Assets/Logos/logoNav.svg" alt="Logo ITTI" />
                         </NavLink>
                     </div>
                     <div className="navbar-items left">

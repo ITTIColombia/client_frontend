@@ -6,7 +6,6 @@ import ButtonOrange from '../../Components/Buttons/ButtonOrange';
 import Footer from '../../Components/Footer/Footer';
 import Navbar from '../../Components/Navbar/Navbar';
 import Topbar from '../../Components/Topbar/Topbar';
-import right from "../../Assets/Icons/rightarrow.svg";
 
 function ProductDetail() {
 
@@ -90,7 +89,7 @@ function ProductDetail() {
             <Bread pathName="PRODUCTOS" path="/productos" name={productos[index-1].name}/>
             <div className='productDetail-container'>
                 <div className='productDetail-container-first'>
-                    <img className="productDetail-img-princ" src={require('../../Assets/Photos/Artisans/Artisan'+index+'/Product1/Foto1.png')} alt="Foto Producto" /> 
+                    <img className="productDetail-img-princ" src={'/Assets/Photos/Artisans/Artisan'+index+'/Product1/Foto1.png'} alt="Foto Producto" />
                     <div className='productDetail-container-first-right'>
                         <p className='productDetail-brandName'>{productos[index-1].brand}</p>
                         <h3 className='productDetail-productName'>{productos[index-1].name}</h3>
@@ -106,17 +105,17 @@ function ProductDetail() {
                     </div>
                 </div>
                 <div className='productDetail-container-second'>
-                    <img className="productDetail-img" src={require('../../Assets/Photos/Artisans/Artisan'+index+'/Product1/Foto1.png')} alt="Foto Producto" /> 
-                    <img className="productDetail-img" src={require('../../Assets/Photos/Artisans/Artisan'+index+'/Product1/Foto2.png')} alt="Foto Producto" /> 
-                    <img className="productDetail-img" src={require('../../Assets/Photos/Artisans/Artisan'+index+'/Product1/Foto3.png')} alt="Foto Producto" /> 
+                    <img className="productDetail-img" src={'/Assets/Photos/Artisans/Artisan'+index+'/Product1/Foto1.png'} alt="Foto Producto" />
+                    <img className="productDetail-img" src={'/Assets/Photos/Artisans/Artisan'+index+'/Product1/Foto2.png'} alt="Foto Producto" />
+                    <img className="productDetail-img" src={'/Assets/Photos/Artisans/Artisan'+index+'/Product1/Foto3.png'} alt="Foto Producto" />
                 </div>
                 <div className='productDetail-container-third'>
-                    <img className="product-img" src={require('../../../assets/Map/Color/'+productos[index-1].departament+'.svg')} alt="Mapa Colombia" /> 
+                    <img className="product-img" src={'/Assets/Map/Color/'+productos[index-1].departament+'.svg'} alt="Mapa Colombia" />
                     <div className='productDetail-container-third-right'>
                         <p className='productDetail-productNameBrand'>El mundo de los <span>artesanos...</span></p>
                         <p className='productDetail-artisans-description'>{productos[index-1].brandDescription}</p>
                         <Link to="/">
-                            <p className='productDetail-artisans-description'>Conoce más sobre {productos[index-1].brand} aquí <img className="productDetail-arrow" src={right} alt="Flecha" /> </p>
+                            <p className='productDetail-artisans-description'>Conoce más sobre {productos[index-1].brand} aquí <img className="productDetail-arrow" src="/Assets/Icons/rightarrow.svg" alt="Flecha" /> </p>
                         </Link>
                         <div className='productDetail-artisans'>
                             <img className="productDetail-artisans-img" id="right" src={require('../../Assets/Photos/Artisans/Artisan'+index+'/Artisans1.png')} alt="Foto Artesano" /> 

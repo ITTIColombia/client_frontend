@@ -3,6 +3,7 @@ import {useState} from "react";
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import React from "react";
 import Home from "./Pages/Home/Home";
+import Artisans from "./Pages/Artisans/Artisans";
 import ProductsPage from './Pages/ProductsPage/ProductsPage';
 
 const AppContext = React.createContext({})
@@ -28,6 +29,7 @@ function App() {
           <BrowserRouter>
           <Routes>
             <Route path="/" exact element={<Home/>}/>
+            <Route path="/artesanos" exact element={<Artisans/>}/>
             <Route path="/productos" exact element={<ProductsPage/>}/>
           </Routes>
           </BrowserRouter>

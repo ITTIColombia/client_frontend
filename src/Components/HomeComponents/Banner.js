@@ -1,5 +1,4 @@
 import React from 'react'
-import photo from "../../Assets/Photos/HomePage/photoBanner.jpg";
 import "./Banner.css"; 
 
 function Banner() {
@@ -13,7 +12,7 @@ function Banner() {
                 </div>
             </div>
             <div className="banner-right">
-                <img className="banner-img" src={photo} alt="Foto Banner ITTI" />
+                <img className="banner-img" src="/Assets/Photos/HomePage/photoBanner.jpg" alt="Foto Banner ITTI" />
             </div>
         </div>
     )

@@ -51,7 +51,7 @@
 .user-cart{
     background-color: white;
     border: 0;
-    background-image: url(../../Assets/Icons/Cart.svg);
+    /*background-image: url('/Assets/Icons/Cart.svg');*/
     height: 1.8rem;
     width: 1.4rem;
     margin-right: 4rem;
