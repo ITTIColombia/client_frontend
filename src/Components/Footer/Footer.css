@@ -55,6 +55,7 @@
 .footer-info-tit{
     font-size: 0.9rem !important;
     margin-bottom: 1px !important;
+    text-transform: uppercase;
 }
 
 .footer-info-item a{
