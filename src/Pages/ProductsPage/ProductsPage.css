@@ -12,6 +12,12 @@
     padding-right: 11vw;
 }
 
+.filter-container{
+    width: 100%;
+    padding-left: 11vw;
+    padding-right: 11vw;
+}
+
 .products-header h3{
     font-family: "Playfair Display";
     color: var(--black);

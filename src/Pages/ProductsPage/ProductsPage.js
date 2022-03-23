@@ -77,7 +77,9 @@ function ProductsPage() {
                 <h3>Productos</h3>
                 <p>Antójate de las mejores artesanías diseñadas y fabricadas en Colombia.</p>
             </div>
-            <Filters/>
+            <div className="filter-container">
+                <Filters/>
+            </div>
             {/*<div className="products-filters">
                 <p className="products-filters-tit">FILTROS</p>
                 <div className="products-filters-content" >
