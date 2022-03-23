@@ -18,5 +18,38 @@
   "AboutUsFooter": "Sobre Nosotros",
   "FavoritesSlogan1": "Explora nuestra ",
   "FavoritesSloganSpan": "selección",
-  "FavoritesSlogan2": " de la semana"
+  "FavoritesSlogan2": " de la semana",
+
+  "Job": "Oficio",
+  "Type": "Tipo",
+  "Category": "Categoria",
+  "Region": "Region",
+
+  "Pacific": "Pacifica",
+  "Caribbean": "Caribe",
+  "Andean": "Andina",
+  "Orinoquia": "Orinoquia",
+  "Amazonian": "Amazonia",
+
+  "Indigenous": "Indigena",
+  "PopularTraditional": "Tradicional",
+  "Contemporary": "Contemporanea",
+
+  "Necklace": "Collar",
+  "Earrings": "Aretes",
+  "Bracelets": "Brazaletes",
+  "Scarfs":"Bufanda",
+  "Bag": "Mochila",
+  "Hat": "Sombrero",
+  "HomeDecor": "Decoracion del Hogar",
+
+  "JewelerySilversmith": "Joyeria",
+  "PotteryCeramicGlass":  "Ceramica/Vidrio",
+  "KnittingEmbroidery": "Bordado",
+  "BasketryHats": "Cesteria/Sombreros" ,
+  "WoodWork":  "Madera",
+  "Leather": "Cuero"
+
+
+
 }

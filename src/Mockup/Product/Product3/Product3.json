@@ -1,0 +1,24 @@
+{
+    "_id": "1",
+    "name": "Ruana Agua",
+    "artisan": "621d2b717df84d0e55daddd3",
+    "price": "95",
+    "description": "Ruana cerrada y corta tejida a mano en lana de oveja con hilos en tonos azules.",
+    "quantity": "1",
+    "productType": "Artesanía Tradicional",
+    "productLabour": "Tejeduría",
+    "fabricationDays": "4 días",
+    "technique": "Guanga y telar horizontal",
+    "material": "Lana e hilo",
+    "productCategory": "Textiles",
+    "cares": "No lavar en lavadora. No usar colorante. No lavar en seco.",
+    "visible": true,
+    "media": [{
+        "Photo1": "/Images/Mockup/Product/Product3/Foto1.png",
+        "Photo2": "/Images/Mockup/Product/Product3/Foto2.png",
+        "Photo3": "/Images/Mockup/Product/Product3/Foto3.png"
+    }],
+    "updatedAt": "2022-02-28T20:07:13.198Z",
+    "createdAt": "2022-02-28T20:07:13.198Z",
+    "__v": 0
+  }

@@ -18,6 +18,36 @@
   "AboutUsFooter": "About Us",
   "FavoritesSlogan1": "Explore our ",
   "FavoritesSloganSpan": "selection",
-  "FavoritesSlogan2": " of the week"
+  "FavoritesSlogan2": " of the week",
 
+  "Job": "Job",
+  "Type": "Type",
+  "Category": "Category",
+  "Region": "Region",
+
+
+  "Pacific": "Pacific",
+  "Caribbean": "Caribbean",
+  "Andean": "Andean",
+  "Orinoquia": "Orinoquia",
+  "Amazonian": "Amazonian",
+
+  "Indigenous": "Indigenous",
+  "PopularTraditional": "Popular/Traditional",
+  "Contemporary": "Contemporary",
+
+  "Necklace": "Necklace",
+  "Earrings": "Earrings",
+  "Bracelets": "Bracelets",
+  "Scarfs":"Scarfs",
+  "Bag": "Bag",
+  "Hat": "Hat",
+  "HomeDecor": "Home Decor",
+
+  "JewelerySilversmith": "Jewelery/Silversmith",
+  "PotteryCeramicGlass":  "Pottery/Ceramic/Glass",
+  "KnittingEmbroidery": "Knitting Embroidery",
+  "BasketryHats": "Basketry Hats" ,
+  "WoodWork":  "Wood Work",
+  "Leather": "Leather"
 }

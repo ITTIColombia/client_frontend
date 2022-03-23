@@ -1,0 +1,24 @@
+{
+    "_id": "2",
+    "name": "Ruana Nube",
+    "artisan": "621d2b717df84d0e55daddd3",
+    "price": "80",
+    "description": "Ruana abierta tejida a mano en lana de oveja con hilos en vinotintos.",
+    "quantity": "1",
+    "productType": "Artesanía Tradicional",
+    "productLabour": "Tejeduría",
+    "fabricationDays": "3 días",
+    "technique": "Guanga y telar horizontal",
+    "material": "Lana e hilo",
+    "productCategory": "Textiles",
+    "cares": "No lavar en lavadora. No usar colorante. No lavar en seco.",
+    "visible": true,
+    "media": [{
+        "Photo1": "/Images/Mockup/Product/Product2/Foto1.png",
+        "Photo2": "/Images/Mockup/Product/Product2/Foto2.png",
+        "Photo3": "/Images/Mockup/Product/Product2/Foto3.png"
+    }],
+    "updatedAt": "2022-02-28T20:07:13.198Z",
+    "createdAt": "2022-02-28T20:07:13.198Z",
+    "__v": 0
+  }

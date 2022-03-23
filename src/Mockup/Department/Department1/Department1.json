@@ -1,0 +1,12 @@
+{
+    "_id": "1",
+    "name": "Nariño",
+    "capital": "Pasto",
+    "region": "Pacifica",
+    "descriptionES": "El departamento de Nariño se encuentra en el rincón sudoeste de Colombia entre montañas, selvas y mar. Pasto es la capital de este departamento rico en culturas que colinda con Ecuador. Desde la época precolombina, Nariño está habitado por numerosas tribus indígenas, entre ellas los pastos, quillacingas, awá, iscuandés, telembíes, tumas, tabiles, abadaes, chinches, chapanchicas y pichilimbíes.​ ",
+    "descriptionEN": "The department of Nariño is located in the southwest corner of Colombia between mountains, jungles and sea. Pasto is the capital of this culturally rich department that borders Ecuador. Since pre-Columbian times, Nariño has been inhabited by numerous indigenous tribes, including the Pastos, Quillacingas, Awá, Iscuandés, Telembíes, Tumas, Tabiles, Abadaes, Chinchillas, Chapanchicas and Pichilimbíes",
+    "mapColorRegion": "/Assets/Map/Color/Nariño.svg",
+    "createdAt": "2022-03-01T14:35:14.281Z",
+    "updatedAt": "2022-03-01T14:35:14.281Z",
+    "__v": 0
+  }

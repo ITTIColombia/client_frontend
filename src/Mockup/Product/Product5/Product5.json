@@ -1,0 +1,25 @@
+{
+    "_id": "1",
+    "name": "Mochila Pitalito",
+    "artisan": "62262508fc5180ed7745f67f",
+    "price": "80",
+    "descriptionES": "Mochila beige larga hecha con fibra de plátano a mano por artesanos de Huila",
+    "descriptionEN": "Long beige Mochila made from  fibra de plátano a mano por artesanos de Huila",
+    "quantity": "1",
+    "productType": "Artesanía Tradicional",
+    "productLabour": "Tejeduría",
+    "fabricationDays": "6 días",
+    "technique": "Aguja y crochet",
+    "material": "Lana e hilo",
+    "productCategory": "Handbags",
+    "cares": "No lavar en lavadora. No usar colorante. No lavar en seco.",
+    "visible": true,
+    "media": [{
+        "Photo1": "/Images/Mockup/Product/Product1/Foto1.png",
+        "Photo2": "/Images/Mockup/Product/Product1/Foto2.png",
+        "Photo3": "/Images/Mockup/Product/Product1/Foto3.png"
+    }],
+    "updatedAt": "2022-02-28T20:07:13.198Z",
+    "createdAt": "2022-02-28T20:07:13.198Z",
+    "__v": 0
+  }

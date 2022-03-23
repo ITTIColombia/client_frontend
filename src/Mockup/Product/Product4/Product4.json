@@ -1,0 +1,24 @@
+{
+    "_id": "1",
+    "name": "Clutch Etnico",
+    "artisan": "621d2b717df84d0e55daddd3",
+    "price": "70",
+    "description": "Clutch negro tejido a mano en lana de oveja con hilos en tonos rojos y blancos.",
+    "quantity": "1",
+    "productType": "Artesanía Tradicional",
+    "productLabour": "Tejeduría",
+    "fabricationDays": "2 días",
+    "technique": "Guanga y telar horizontal",
+    "material": "Lana e hilo",
+    "productCategory": "Handbags",
+    "cares": "No lavar en lavadora. No usar colorante. No lavar en seco.",
+    "visible": true,
+    "media": [{
+        "Photo1": "/Images/Mockup/Product/Product1/Foto1.png",
+        "Photo2": "/Images/Mockup/Product/Product1/Foto2.png",
+        "Photo3": "/Images/Mockup/Product/Product1/Foto3.png"
+    }],
+    "updatedAt": "2022-02-28T20:07:13.198Z",
+    "createdAt": "2022-02-28T20:07:13.198Z",
+    "__v": 0
+  }
