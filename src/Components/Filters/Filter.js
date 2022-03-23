@@ -3,7 +3,7 @@ import React, {useEffect, useState} from "react";
 import {FormattedMessage, useIntl} from "react-intl";
 
 // 3 parameters should be passed, form state, setForm, options object
-function ReusableFilter(props){
+function Filter(props){
 
     const intl = useIntl();
 
@@ -46,4 +46,4 @@ function ReusableFilter(props){
     )
 }
 
-export default ReusableFilter;
+export default Filter;

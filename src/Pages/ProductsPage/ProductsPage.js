@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import "./ProductsPage.css"
 import Footer from '../../Components/Footer/Footer'
 import Navbar from '../../Components/Navbar/Navbar'
 import Topbar from '../../Components/Topbar/Topbar'
 import ProductCard from '../../Components/ProductCard/ProductCard'
-import Filters from '../../Components/Filters/Filters'
+import Filter from "../../Components/Filters/Filter";
 
 
 function ProductsPage() {
@@ -67,7 +67,14 @@ function ProductsPage() {
         {name: "Mochila wayuu",
          price: 180000}
     ]
-        
+
+    const optionsSearchForm = {"Region": ["Pacific", "Caribbean", "Andean", "Orinoquia", "Amazonian"],
+        "Type": ["Indigenous", "PopularTraditional", "Contemporary"],
+        "Job": ["JewelerySilversmith", "PotteryCeramicGlass", "KnittingEmbroidery", "BasketryHats", "WoodWork", "Leather"]}
+
+    const [searchForm, setSearchForm] = useState(
+        {"Region":"DEFAULT", "Type": "DEFAULT", "Job": "DEFAULT"})
+
 
     return (
         <div className='Products'>
@@ -78,8 +85,10 @@ function ProductsPage() {
                 <p>Antójate de las mejores artesanías diseñadas y fabricadas en Colombia.</p>
             </div>
             <div className="filter-container">
-                <Filters/>
+                <Filter options={optionsSearchForm} state={searchForm} setState={setSearchForm}/>
+                <button type="submit" className="btn">Filtrar</button>
             </div>
+
             {/*<div className="products-filters">
                 <p className="products-filters-tit">FILTROS</p>
                 <div className="products-filters-content" >
