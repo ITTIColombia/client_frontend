@@ -1,5 +1,36 @@
 {
   "Artisans": "Artisans",
   "ArtisansDescription":  "Artisans are storytellers. With their hands they represent the values and traditions of their communities. Buying Colombian handmade products will encourage local trade, small-scale production and help reduce the gap between the artisan world and the digital world.",
-  "Filters": "Filters"
+  "Filters": "Filters",
+  "Job": "Job",
+  "Type": "Type",
+  "Category": "Category",
+  "Region": "Region",
+  "Products": "Products",
+
+
+  "Pacific": "Pacific",
+  "Caribbean": "Caribbean",
+  "Andean": "Andean",
+  "Orinoquia": "Orinoquia",
+  "Amazonian": "Amazonian",
+
+  "Indigenous": "Indigenous",
+  "PopularTraditional": "Popular/Traditional",
+  "Contemporary": "Contemporary",
+
+  "Necklace": "Necklace",
+  "Earrings": "Earrings",
+  "Bracelets": "Bracelets",
+  "Scarfs":"Scarfs",
+  "Bag": "Bag",
+  "Hat": "Hat",
+  "HomeDecor": "Home Decor",
+
+  "JewelerySilversmith": "Jewelery/Silversmith",
+  "PotteryCeramicGlass":  "Pottery/Ceramic/Glass",
+  "KnittingEmbroidery": "Knitting Embroidery",
+  "BasketryHats": "Basketry Hats" ,
+  "WoodWork":  "Wood Work",
+  "Leather": "Leather"
 }
