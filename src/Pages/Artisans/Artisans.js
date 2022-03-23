@@ -4,7 +4,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import {useEffect, useState} from "react";
 import ArtisansMockup from "../../Mockup/Artisan/Artisans";
 import {FormattedMessage} from "react-intl";
-import ReusableFilter from "../../Components/Filters/ReusableFilter";
+import Filter from "../../Components/Filters/Filter";
 
 
 function Artisans(){
@@ -32,7 +32,7 @@ function Artisans(){
                     <h1 id="title-artisans"><FormattedMessage id="Artisans"/></h1>
                     <p className="text-artisans"><FormattedMessage id="ArtisansDescription"/></p>
                     <div className="filter-artisans">
-                        <ReusableFilter options={optionsSearchForm} state={searchForm} setState={setSearchForm}/>
+                        <Filter options={optionsSearchForm} state={searchForm} setState={setSearchForm}/>
                     </div>
                 </div>
                 <div className="col-6">

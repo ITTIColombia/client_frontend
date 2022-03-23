@@ -16,6 +16,8 @@
     width: 100%;
     padding-left: 11vw;
     padding-right: 11vw;
+    display: flex;
+    align-items: center;
 }
 
 .products-header h3{
@@ -45,6 +47,16 @@
   column-fill: balance;
   -moz-column-fill: balance;
 
+}
+
+.filter-container button{
+    font-family: "Montserrat";
+    color: var(--black);
+}
+
+
+.filter-container button:hover{
+    color: var(--orange);
 }
 
 /*.products-container-row{
