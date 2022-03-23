@@ -1,6 +1,7 @@
 import React from 'react'
 import WeeklyFavorite from './WeeklyFavorite'
 import "./Favorites.css"
+import { FormattedMessage } from 'react-intl'
 
 const favorites = [
     {title: "Bereke",
@@ -17,7 +18,7 @@ function Favorites() {
   return (
     <div className="Favorites">
          <div className="favorites-title">
-            <h3>Explora nuestra <span>selección</span> de la semana</h3>
+            <h3><FormattedMessage id="FavoritesSlogan1"/> <span><FormattedMessage id="FavoritesSloganSpan"/></span><FormattedMessage id="FavoritesSlogan2"/></h3>
         </div>
         <div className="favorites-content">
             {favorites.map((favorite, index) =>

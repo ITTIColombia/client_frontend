@@ -1,0 +1,28 @@
+{
+    "_id": "7",
+    "name": "Morral Entrelazado",
+    "artisan": "62262508fc5180ed7745f67f",
+    "price": "85",
+    "descriptionES": "Morral beige tejido a mano versátil con dos correas y mecanismo de cerrado",
+    "descriptionEN": "Versatile handwoven beige backpack with two straps and closing mechanism",
+    "quantity": "1",
+    "productType": "PopularTraditional",
+    "productLabour": "KnittingEmbroidery",
+    "fabricationDays": "6",
+    "techniqueES": "Aguja y telar",
+    "techniqueEN": "Needle and loom",
+    "materialES": "Fibra de plátano",
+    "materialEN": "Banana Stem",
+    "productCategory": "Bags",
+    "caresES": "No lavar en lavadora. No usar colorante. No lavar en seco.",
+    "caresEN": "Do not wash in washing machine. Do not use dye. Do not dry clean.",
+    "visible": true,
+    "media": [{
+        "Photo1": "/Images/Mockup/Product/Product7/Foto1.png",
+        "Photo2": "/Images/Mockup/Product/Product7/Foto2.png",
+        "Photo3": "/Images/Mockup/Product/Product7/Foto3.png"
+    }],
+    "updatedAt": "2022-02-28T20:07:13.198Z",
+    "createdAt": "2022-02-28T20:07:13.198Z",
+    "__v": 0
+  }

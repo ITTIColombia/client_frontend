@@ -1,0 +1,28 @@
+{
+    "_id": "3",
+    "name": "Ruana Agua",
+    "artisan": "621d2b717df84d0e55daddd3",
+    "price": "95",
+    "descriptionES": "Ruana cerrada y corta tejida a mano en lana de oveja con hilos en tonos azules.",
+    "descriptionEN": "Closed and short Ruana woven by hand in sheep's wool with threads in shades of blue.",
+    "quantity": "1",
+    "productType": "Indigenous",
+    "productLabour": "KnittingEmbroidery",
+    "fabricationDays": "4",
+    "techniqueES": "Guanga y telar horizontal",
+    "techniqueEN": "Guanga and horizontal loom",
+    "materialES": "Lana e hilo",
+    "materialEN": "Wool and thread",
+    "productCategory": "Textiles",
+    "caresES": "No lavar en lavadora. No usar colorante. No lavar en seco.",
+    "caresEN": "Do not wash in washing machine. Do not use dye. Do not dry clean.",
+    "visible": true,
+    "media": [{
+        "Photo1": "/Images/Mockup/Product/Product3/Foto1.png",
+        "Photo2": "/Images/Mockup/Product/Product3/Foto2.png",
+        "Photo3": "/Images/Mockup/Product/Product3/Foto3.png"
+    }],
+    "updatedAt": "2022-02-28T20:07:13.198Z",
+    "createdAt": "2022-02-28T20:07:13.198Z",
+    "__v": 0
+  }

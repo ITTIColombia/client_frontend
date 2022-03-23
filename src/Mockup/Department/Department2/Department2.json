@@ -1,0 +1,12 @@
+{
+    "_id": "2",
+    "name": "Huila",
+    "capital": "Neiva",
+    "region": "Andean",
+    "descriptionES": "El departamento del Huila se encuentra en el lado sudoeste de Colombia, su nombre significa “montaña luminosa”.  El departamento debe su nombre a una de las más altas cumbres andinas, el Nevado del Huila, que desde el occidente domina majestuosamente todo el territorio. El departamento cuenta con una amplia variedad de climas en razón a la diversidad de pisos térmicos que van desde desiertos hasta altos nevados.",
+    "descriptionEN": "The department of Huila is located in the southwestern side of Colombia, its name means “luminous mountain”. The department owes its name to one of the highest Andean peaks, the Nevado del Huila, which majestically dominates the entire territory from the west. The department has a wide variety of climates due to the diversity of thermal floors that range from deserts to high snow-capped mountains.",
+    "mapColorRegion": "/Assets/Map/Color/Huila.svg",
+    "createdAt": "2022-03-01T14:35:14.281Z",
+    "updatedAt": "2022-03-01T14:35:14.281Z",
+    "__v": 0
+  }
