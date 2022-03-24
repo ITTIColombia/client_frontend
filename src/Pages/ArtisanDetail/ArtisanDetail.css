@@ -1,6 +1,8 @@
 .artisan-row{
     padding-left: 11vw;
     padding-right: 11vw;
+    align-items: center;
+    margin-bottom: 4vh;
 }
 
 .artisan-navigation{
@@ -13,7 +15,8 @@
 
 .normal-text-artisan{
     font-family: "Montserrat";
-    font-size: 1rem;
+    font-size: 0.8rem;
+    margin-right: 2rem;
 }
 
 .prueba{
@@ -46,7 +49,6 @@ h1, h2{
 
 video{
     width: 100%;
-    margin-bottom: 4rem;
 }
 
 .reduced-container{
