@@ -5,6 +5,8 @@ import {useEffect, useState} from "react";
 import ArtisansMockup from "../../Mockup/Artisan/Artisans";
 import {FormattedMessage} from "react-intl";
 import Filter from "../../Components/Filters/Filter";
+import Footer from "../../Components/Footer/Footer";
+import {Link} from "react-router-dom";
 
 
 function Artisans(){
@@ -43,9 +45,13 @@ function Artisans(){
             </div>
             <div className="artisans-section row float-left">
                 {artisans.map((artisan,i) =>{
-                    return <img className="col-4" src={artisan.profilePhoto} alt={"artisan"+i} key={"artisan"+i}/>
+                    return (
+                        <Link to={"/artesanos/"+artisan._id} key={"artisan"+i}  className="col-4">
+                            <img src={artisan.profilePhoto} alt={"artisan"+i}/>
+                        </Link>)
                 })}
             </div>
+            <Footer/>
         </div>
     )
 }

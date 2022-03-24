@@ -16,7 +16,12 @@
   "url": "adonis.net",
   "logo": "assunta.biz",
   "profilePhoto": "/Images/Mockup/Artisan/Artisan2.png",
-  "media": [],
+  "media": ["/Images/Mockup/Artisan2/Video.mp4",
+    "/Images/Mockup/Artisan2/Technique1.png",
+    "/Images/Mockup/Artisan2/Technique2.png",
+    "/Images/Mockup/Artisan2/Technique3.png",
+    "/Images/Mockup/Artisan2/Technique4.png"
+  ],
   "createdAt": "2022-03-07T15:30:16.363Z",
   "updatedAt": "2022-03-07T15:30:16.363Z",
   "__v": 0
