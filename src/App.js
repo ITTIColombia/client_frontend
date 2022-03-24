@@ -32,7 +32,7 @@ function App() {
             <Route path="/" exact element={<Home/>}/>
             <Route path="/artesanos" exact element={<Artisans/>}/>
             <Route path="/productos" exact element={<ProductsPage/>}/>
-            <Route path="/artesanoDetalle" exact element={<ArtisanDetail/>}/>
+            <Route path="/artesanos/:_id" exact element={<ArtisanDetail/>}/>
           </Routes>
           </BrowserRouter>
         </AppContext.Provider>

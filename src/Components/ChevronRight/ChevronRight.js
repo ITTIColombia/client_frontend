@@ -4,11 +4,11 @@ import "./ChevronRight.css";
 
 function ChevronRight(props){
     return (
-        <div className="ChevronRight">
+        <span className="ChevronRight">
             <Link to={props.path}>
                 <img className="chevron-img" src="/Assets/Icons/chevronRight.svg" alt="Flecha"/>
             </Link>
-        </div>
+        </span>
     )
 }
 
