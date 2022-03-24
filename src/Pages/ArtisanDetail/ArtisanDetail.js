@@ -111,17 +111,14 @@ function ArtisanDetail(props){
                 </div>
                 <div className='row artisan-products artisan-row'>
                     <h2 className="black title-text-artisan text-center"><FormattedMessage id="Products"/></h2>
-                    <p className="black normal-text-artisan text-center"> Explore all the handicrafts of {artisan.name || Artisan1.name} and discover more about their culture.</p>
-                    <div className="col-3">
+                    <p className="black normal-text-artisan text-center"> Explore all the handicrafts of <span className="normal-text-artisan-span">{artisan.name || Artisan1.name}</span> and discover more about their culture.</p>
+                    <div className="artisan-row-photos">
                         <img className="product-figure" src={products[0].media[0]["Photo1"]} alt="product-1"/>
-                    </div>
-                    <div className="col-3">
+                    
                         <img className="product-figure" src={products[1].media[0]["Photo1"]} alt="product-2"/>
-                    </div>
-                    <div className="col-3">
+                    
                         <img className="product-figure" src={products[2].media[0]["Photo1"]} alt="product-3"/>
-                    </div>
-                    <div className="col-3">
+                    
                         <img className="product-figure" src={products[3].media[0]["Photo1"]} alt="product-4"/>
                     </div>
                 </div>

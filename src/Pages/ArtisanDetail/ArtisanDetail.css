@@ -1,8 +1,14 @@
+
 .artisan-row{
     padding-left: 11vw;
     padding-right: 11vw;
     align-items: center;
     margin-bottom: 4vh;
+}
+
+.artisan-row-photos{
+    display: flex;
+    justify-content: space-between;
 }
 
 .artisan-navigation{
@@ -67,7 +73,10 @@ video{
 }
 
 .product-figure{
-    width: 100%;
+    height: 40vh;
     padding: 1rem
 }
 
+.normal-text-artisan-span{
+    font-weight: 600;
+}
