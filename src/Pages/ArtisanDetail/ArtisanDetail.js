@@ -23,18 +23,26 @@ function ArtisanDetail(){
                         <p className="inline"><FormattedMessage id="Artisans"/><ChevronRight path=""/> Tejidos Machines </p>
                     </div>
                 </div>
-                <div className='row artisan-intro artisan-row'>
-                    <div className="col-6 artisan-intro artisan-left">
+                <div className='row artisan-intro artisan-row align-items-center'>
+                    <div className="col-5 artisan-intro artisan-left">
                         <h1 className="title-text-artisan orange">Tejidos Machines</h1>
                         <p className="normal-text-artisan">Fabrics Machines is a community of 35 artisans from the municipality of Cumbal, Pasto in Nariño who have the purpose of starting to market their work. They currently have more than 50 ancestral designs that they weave into rugs, chumbes, blankets, bags, backpacks, fabrics, and ruanas.</p>
                         <p className="normal-text-artisan"><FormattedMessage id="SeeProducts"/></p>
-                        <img id="map-artisan" src='/Assets/Map/MapRegions.png' alt="map artisan"/>
                     </div>
 
-                    <div className="col-6 artisan-intro- artisan-right">
+                    <div className="col-7 artisan-intro- artisan-right">
                         <video autoPlay controls name="media">
                             <source src= "/Images/Mockup/Artisan1/Video.mp4" type="video/mp4" />
                         </video>
+                    </div>
+                </div>
+                <div className='row artisan-region artisan-row'>
+                    <div className="col-5 artisan-intro artisan-left">
+                        <img id="map-artisan" src='/Assets/Map/Color/Nariño.svg' alt="map artisan"/>
+                    </div>
+
+                    <div className="col-7 artisan-intro- artisan-right">
+
                         <div className="reduced-container">
                             <h2 className="black title-text-artisan">The corner of Colombia</h2>
                             <p className="normal-text-artisan">
@@ -48,7 +56,6 @@ function ArtisanDetail(){
                                 This artisan group is located in the southwest corner of Colombia, the department of Nariño, between mountains, jungles and sea. Pasto is the capital of this culturally rich department that borders Ecuador. Since pre-Columbian times, Nariño has been inhabited by numerous indigenous tribes, including the Pastos, Quillacingas, Awá, Iscuandés, Telembíes, Tumas, Tabiles, Abadaes, Chinchillas, Chapanchicas, and Pichilimbíes.
                             </p>
                         </div>
-
                     </div>
                 </div>
                 <div className='row artisan-technique artisan-row'>
