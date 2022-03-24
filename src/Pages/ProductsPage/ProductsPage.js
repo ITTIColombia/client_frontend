@@ -118,11 +118,11 @@ function ProductsPage() {
                     <button type="submit" className="btn">Filtrar</button>
                 </div>
             </div>*/}
-            <div className='products-container'>
+           {/* <div className='products-container'>
                 {productos.map((producto, index) =>
                     <div className='products-container-row' key={index}><ProductCard index={index+1} name={producto.name} price={producto.price} key={index} /></div>
                 )}
-            </div>
+            </div>*/}
             <Footer/>
         </div>
     )

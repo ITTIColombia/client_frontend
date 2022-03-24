@@ -1,4 +1,5 @@
 import React from 'react'
+import { FormattedMessage } from 'react-intl';
 import "./Footer.css"; 
 
 function Footer() {
@@ -14,17 +15,17 @@ function Footer() {
             </div>
             <div className="footer-info">
                 <div className="footer-info-item">
-                    <p className="footer-info-tit">CONÓCENOS</p>
-                    <p>Sobre nosotros</p>
-                    <p>Preguntas frecuentes</p>
+                    <p className="footer-info-tit"><FormattedMessage id="MeetUs"/></p>
+                    <p><FormattedMessage id="AboutUsFooter"/></p>
+                    <p><FormattedMessage id="FAQ"/></p>
                 </div>
                 <div className="footer-info-item">
-                    <p className="footer-info-tit">CONTÁCTANOS</p>
+                    <p className="footer-info-tit"><FormattedMessage id="ContactUs"/></p>
                     <a href="mailto:somositti@gmail.com">somositti@gmail.com</a>
                     <a href="tel:+573144840591">+57 314 4840591</a>
                 </div>
                 <div className="footer-info-item">
-                    <p className="footer-info-tit">SÍGUENOS</p>
+                    <p className="footer-info-tit"><FormattedMessage id="FollowUs"/></p>
                     <a href="https://www.instagram.com/somositti/" target="_blank" rel="noreferrer">Instagram</a>
                     <a href="https://www.youtube.com/channel/UC67QLsZD9ftLuXyVH4e-fkA" target="_blank" rel="noreferrer">Youtube</a>
                 </div>

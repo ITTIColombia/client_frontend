@@ -1,4 +1,5 @@
 import React from 'react'
+import { FormattedMessage } from 'react-intl';
 import "./Banner.css"; 
 
 function Banner() {
@@ -6,9 +7,9 @@ function Banner() {
         <div className="Banner">
             <div className="banner-left">
                 <div className="banner-left-text">
-                    <div className="banner-left-firstRow"><p>En IT</p><p className='letter-rotation'>T</p><p>I</p></div>
-                    <h3 className="banner-left-subtitle">Creemos en el talento de los artesanos colombianos</h3>
-                    <p className="banner-left-description">Descubre un mundo lleno de tesoros e historias de cada rincón de Colombia mientras apoyas un comercio local, justo, sostenible y a baja escala.</p>
+                    <div className="banner-left-firstRow"><p><FormattedMessage id="At"/> IT</p><p className='letter-rotation'>T</p><p>I</p></div>
+                    <h3 className="banner-left-subtitle"><FormattedMessage id="BannerSlogan"/></h3>
+                    <p className="banner-left-description"><FormattedMessage id="BannerDescription"/></p>
                 </div>
             </div>
             <div className="banner-right">
