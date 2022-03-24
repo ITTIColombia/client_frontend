@@ -5,6 +5,7 @@ import {useEffect, useState} from "react";
 import ArtisansMockup from "../../Mockup/Artisan/Artisans";
 import {FormattedMessage} from "react-intl";
 import Filter from "../../Components/Filters/Filter";
+import Footer from "../../Components/Footer/Footer";
 
 
 function Artisans(){
@@ -46,6 +47,7 @@ function Artisans(){
                     return <img className="col-4" src={artisan.profilePhoto} alt={"artisan"+i} key={"artisan"+i}/>
                 })}
             </div>
+            <Footer/>
         </div>
     )
 }

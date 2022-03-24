@@ -1,0 +1,67 @@
+.artisan-row{
+    padding-left: 11vw;
+    padding-right: 11vw;
+    padding-top: 3vw
+}
+
+.artisan-navigation{
+    display: inline;
+}
+
+.inline{
+    display: flex;
+}
+
+.normal-text-artisan{
+    font-family: "Montserrat";
+    font-size: 1rem;
+}
+
+.artisan-navigation{
+    font-family: "Montserrat";
+    font-size: .8rem;
+}
+
+.title-text-artisan{
+    font-family: "Playfair Display";
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+h1{
+    padding-bottom: 1rem;
+}
+
+.orange{
+    color: var(--orange);
+}
+
+.black{
+    color: var(--black);
+}
+
+video{
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+.reduced-container{
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+#map-artisan{
+    max-height: 30em;
+    margin-top: 3em;
+}
+
+.technique-figure{
+    width: 100%;
+    padding: 1rem
+}
+
+.product-figure{
+    width: 100%;
+    padding: 1rem
+}
+
