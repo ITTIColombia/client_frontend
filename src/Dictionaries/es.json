@@ -51,8 +51,12 @@
   "KnittingEmbroidery": "Tejeduría",
   "BasketryHats": "Cestería y Sombreros" ,
   "WoodWork":  "Madera",
-  "Leather": "Cuero"
+  "Leather": "Cuero",
 
-
+  "PopularArtisansTitle1": "Conoce algunos de ",
+  "PopularArtisansTitleSpan": "nuestros artesanos",
+  "EditorialTitle1": "Marzo es el mes \n del ",
+  "EditorialTitleSpan": "Artesano",
+  "SeeAll": "Ver todos"
 
 }

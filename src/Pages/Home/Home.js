@@ -4,6 +4,8 @@ import Banner from '../../Components/HomeComponents/Banner'
 import Footer from '../../Components/Footer/Footer'
 import './Home.css'
 import Favorites from '../../Components/HomeComponents/Favorites'
+import Editorial from '../../Components/HomeComponents/Editorial'
+import PopularArtisans from '../../Components/HomeComponents/PopularArtisans'
 
 function Home(){
     return (
@@ -12,6 +14,8 @@ function Home(){
             <Navbar/>
             <Banner/>
             <Favorites/>
+            <PopularArtisans/>
+            <Editorial/>
             <Footer/>
 
 

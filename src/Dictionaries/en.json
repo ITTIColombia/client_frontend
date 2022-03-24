@@ -52,5 +52,11 @@
   "KnittingEmbroidery": "Weaving and Knitting",
   "BasketryHats": "Basketry and Hats" ,
   "WoodWork":  "Wood Work",
-  "Leather": "Leather"
+  "Leather": "Leather",
+
+  "PopularArtisansTitle1": "Meet some of ",
+  "PopularArtisansTitleSpan": "our artisans",
+  "EditorialTitle1": "March is the month \n of ",
+  "EditorialTitleSpan": "Artisans",
+  "SeeAll": "See All"
 }
