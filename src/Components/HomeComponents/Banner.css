@@ -44,7 +44,7 @@
     font-style: italic;
 }
 
-.banner-left-text h3{
+.banner-left-subtitle{
     font-family: "Playfair Display";
     color: var(--black);
     font-weight: 700;
@@ -54,10 +54,23 @@
     padding-right: 3vw;
 }
 
-.banner-left-text p{
+.banner-left-description{
     font-family: "Montserrat";
     color: var(--black);
     margin-top: 1.5rem;
     padding-right: 5vw;
     padding-left: 5vw;
+}
+
+.banner-left-firstRow{
+    display: flex;
+    font-family: "Montserrat";
+    color: var(--orange);
+    font-size: 1.2rem;
+    font-weight: 500;
+
+}
+
+.banner-left-firstRow p{
+    margin: 0;
 }

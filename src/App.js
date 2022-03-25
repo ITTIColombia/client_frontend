@@ -1,17 +1,20 @@
 import './App.css';
 import {useState} from "react";
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import React from "react";
 import Home from "./Pages/Home/Home";
-import Navbar from "./Components/Navbar/Navbar";
+import Artisans from "./Pages/Artisans/Artisans";
+import ProductsPage from './Pages/ProductsPage/ProductsPage';
+import ArtisanDetail from "./Pages/ArtisanDetail/ArtisanDetail";
+import ProductDetail from "./Pages/ProductDetail/ProductDetail";
 
 const AppContext = React.createContext({})
 
 function App() {
 
-  //const [user, setUser] = useState(JSON.parse(localStorage.getItem("itti-user") || '{}'))
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("itti-user") || '{}'))
 
- /* function login(user){
+  function login(user){
     localStorage.setItem("itti-user", JSON.stringify(user))
     setUser(user);
   }
@@ -19,19 +22,22 @@ function App() {
   function logout(){
     localStorage.removeItem("itti-user")
     setUser({});
-  }*/
+  }
 
   return (
       <div className="App">
-        <Navbar/>
-        {/*<AppContext.Provider value={{user, login, logout}}>
+       
+        <AppContext.Provider value={{user, login, logout}}>
           <BrowserRouter>
-            <Navbar/>
-            <Switch>
-              <Route path='/' exact component={Home}/>
-            </Switch>
+          <Routes>
+            <Route path="/" exact element={<Home/>}/>
+            <Route path="/artesanos" exact element={<Artisans/>}/>
+            <Route path="/productos" exact element={<ProductsPage/>}/>
+            <Route path="/productos/:_id" exact element={<ProductDetail/>}/>
+            <Route path="/artesanos/:_id" exact element={<ArtisanDetail/>}/>
+          </Routes>
           </BrowserRouter>
-  </AppContext.Provider>*/}
+        </AppContext.Provider>
       </div>
   );
 }

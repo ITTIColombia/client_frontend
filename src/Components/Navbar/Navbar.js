@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Navbar.css"; 
 import { NavLink, useNavigate } from 'react-router-dom';
-import logo from "../../Assets/Logos/logoNav.svg";
+import { FormattedMessage } from 'react-intl';
 
 
 function Navbar() {
@@ -19,35 +19,37 @@ function Navbar() {
                     <div className="navbar-items left">
                         <li key="1" className="navbar-items-text">
                             <NavLink className={({ isActive }) => isActive? "active": ''} to="/">
-                                <span>HOME</span>
+                                <span><FormattedMessage id="Home"/></span>
                             </NavLink>
                         </li>
                         <li key="2" className="navbar-items-text">
                             <NavLink className={({ isActive }) => isActive? "active": ''} to="/productos">
-                                <span>PRODUCTOS</span>
+                                <span><FormattedMessage id="Products"/></span>
                             </NavLink>
                         </li>
                     </div>
                     <div className="navbar-logo">
                         <NavLink to="/">
-                            <img className="navbar-logo-img" src={logo} alt="Logo ITTI" />
+                            <img className="navbar-logo-img" src="/Assets/Logos/logoNav.svg" alt="Logo ITTI" />
                         </NavLink>
                     </div>
                     <div className="navbar-items left">
                         <li key="3" className="navbar-items-text">
                             <NavLink className={({ isActive }) => isActive? "active": ''} to="/artesanos">
-                                <span>ARTESANOS</span>
+                                <span><FormattedMessage id="Artisans"/></span>
                             </NavLink>
                         </li>
                         <li key="4" className="navbar-items-text">
                             <NavLink className={({ isActive }) => isActive? "active": ''} to="/nosotros">
-                                <span>NOSOTROS</span>
+                                <span><FormattedMessage id="AboutUs"/></span>
                             </NavLink>
                         </li>
                     </div>   
             </div>
             <div className="navbar-cart">
-                <button className="user-cart" type="button" onClick={handleGoCart}></button>
+               {/* <button className="user-cart" type="button" onClick={handleGoCart}></button>*/} 
+               <input className="user-cart" type="image" src="/Assets/Icons/Cart.svg" alt={<FormattedMessage id="Cart"/>} onClick={handleGoCart}/>
+
             </div>
         </div>
     )

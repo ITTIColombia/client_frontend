@@ -1,1 +1,71 @@
-{}
+{
+  "AreYouAnArtisan": "¿Eres artesano?",
+  "SignIn": "Ingresa",
+  "Home": "Inicio",
+  "Products": "Productos",
+  "AboutUs": "Nosotros",
+  "Cart": "Bolsa de compra",
+  "Artisans": "Artesanos",
+  "At": "En",
+  "BannerSlogan": "Creemos en el talento de los artesanos colombianos",
+  "BannerDescription": "Descubre un mundo lleno de tesoros e historias de cada rincón de Colombia mientras apoyas un comercio local, justo, sostenible y a baja escala.",
+  "ArtisansDescription": "Los artesanos son narradores de historias. Con sus manos representan los valores y las tradiciones de sus comunidades. Comprando artesanías colombianas fomentarás el comercio local, la producción a baja escala y ayudarás a reducir la brecha entre el mundo artesanal y el mundo digital.",
+  "Filters": "Filtros",
+  "MeetUs": "Conócenos",
+  "ContactUs": "Contáctanos",
+  "FollowUs": "Síguenos",
+  "FAQ": "Preguntas Frecuentes",
+  "AboutUsFooter": "Sobre Nosotros",
+  "FavoritesSlogan1": "Explora nuestra ",
+  "FavoritesSloganSpan": "selección",
+  "FavoritesSlogan2": " de la semana",
+
+  "Job": "Oficio",
+  "Type": "Tipo",
+  "Category": "Categoria",
+  "Region": "Region",
+
+  "Pacific": "Pacífica",
+  "Caribbean": "Caribe",
+  "Andean": "Andina",
+  "Orinoquia": "Orinoquía",
+  "Amazonian": "Amazonía",
+
+  "Indigenous": "Artesanía Indígena",
+  "PopularTraditional": "Artesanía Tradicional",
+  "Contemporary": "Artesanía Contemporánea",
+
+  "Necklaces": "Collares",
+  "Earrings": "Aretes",
+  "Bracelets": "Brazaletes",
+  "Scarfs": "Bufandas",
+  "Handbags": "Carteras",
+  "Bags": "Bolsos",
+  "Mochilas":"Mochilas",
+  "Textiles": "Textiles",
+  "Hats": "Sombreros",
+  "HomeDecor": "Decoración del Hogar",
+
+  "JewelerySilversmith": "Joyería",
+  "PotteryCeramicGlass":  "Cerámica y Vidrio",
+  "KnittingEmbroidery": "Tejeduría",
+  "BasketryHats": "Cestería y Sombreros" ,
+  "WoodWork":  "Madera",
+  "Leather": "Cuero",
+
+  "SeeProducts": "Ver productos",
+  "Department": "Departamento",
+  "Community": "Comunidad",
+  "TheTechnique": "La Técnica",
+
+  "TheWorldOf": "El mundo de los",
+  "Labour": "Oficio",
+  "Technique": "Técnica",
+  "ElaborationTime": "Tiempo Elaboración",
+  "Days": "Dias",
+  "LearnMoreAbout": "Learn more about",
+  "Here": "Here"
+
+
+
+}

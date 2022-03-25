@@ -1,0 +1,28 @@
+{
+  "_id": "621d2b717df84d0e55daddd3",
+  "name": "Tejidos Machines",
+  "cellphoneNumber": "3216368883",
+  "address": "9787 Mills Orchard",
+  "postalCode": "000000",
+  "city": "Cumbal",
+  "department": "Nariño",
+  "country": "Colombia",
+  "email": "tejidosmachines@hotmail.com",
+  "shortDescriptionES": "Tejidos Machines es una comunidad de 35 artesanas del municipio de Cumbal, Pasto en Nariño que tienen el propósito de empezar a comercializar su trabajo. Actualmente tienen más de 50 diseños ancestrales que tejen en tapetes, chumbes, cobijas, bolsos, mochilas, telas y ruanas.",
+  "detailedDescriptionES": "Procesar la lana de oveja demanda tiempo y destreza. Cada vellón pesa entre uno y dos kilos, y el proceso puede tardar hasta 15 días. Blanca Alicia Tarapues debe tizar o abrir la lana con las manos. Luego la hila dependiendo del tipo de hebra que necesite. Gruesa para las cobijas y delgada para las telas, ruanas y paños. Después se pasan las hebras a la ovilladora, que une la lana, y al aspador, donde se forma la madeja.",
+  "shortDescriptionEN": "Fabrics Machines is a community of 35 artisans from the municipality of Cumbal, Pasto in Nariño who have the purpose of starting to market their work. They currently have more than 50 ancestral designs that they weave into rugs, chumbes, blankets, bags, backpacks, fabrics, and ruanas.",
+  "detailedDescriptionEN": "Processing sheep's wool takes time and skill. Each fleece weighs between one and two kilos, and the process can take up to 15 days. Blanca Alicia Tarapues must chalk or open the wool with her hands. She then spins it depending on the type of yarn she needs. Thick for blankets and thin for fabrics, ruanas and cloths. The strands are then passed to the winding machine, which unites the wool, and to the reel, where the skein is formed.",
+  "organizationSize": 25,
+  "url": "daniella.name",
+  "logo": "jaquelin.name",
+  "profilePhoto": "/Images/Mockup/Artisan/Artisan1.png",
+  "media": ["/Images/Mockup/Artisan1/Video.mp4",
+            "/Images/Mockup/Artisan1/Technique1.png",
+            "/Images/Mockup/Artisan1/Technique2.png",
+            "/Images/Mockup/Artisan1/Technique3.png",
+            "/Images/Mockup/Artisan1/Technique4.png"
+  ],
+  "updatedAt": "2022-02-28T20:07:13.198Z",
+  "createdAt": "2022-02-28T20:07:13.198Z",
+  "__v": 0
+}

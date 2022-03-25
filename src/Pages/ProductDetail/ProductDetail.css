@@ -1,0 +1,142 @@
+
+
+.productDetail-container{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    padding-left: 12vw;
+    padding-right: 12vw;
+    margin-top: 3rem;
+    color: var(--black);
+
+}
+
+.productDetail-container-first{
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.productDetail-img-princ{
+    width: 40vw;
+}
+
+.productDetail-container-first-right{
+    margin-left: 7rem;
+
+}
+.productDetail-brandName{
+    font-family: "Montserrat";
+    font-size: 1.05rem;
+    text-transform: uppercase;
+
+}
+
+.productDetail-productName{
+    font-family: "Playfair Display";
+    font-weight: bold;
+    font-size: 2.1rem;
+}
+
+.productDetail-productName span{
+    font-style: italic;
+}
+
+.productDetail-description{
+    font-family: "Montserrat";
+    font-size: 0.9rem;
+    margin-top: 5vh;
+}
+
+.productDetail-details{
+    margin-bottom: 5vh;
+}
+
+.productDetail-details p{
+    font-family: "Montserrat";
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+
+.productDetail-details-txt span{
+    color: var(--orange);
+    font-weight: 500;
+}
+
+.productDetail-price{
+    font-family: "Montserrat";
+    color: var(--black);
+    font-size: 1.1rem;
+    margin-bottom: 5vh;
+}
+
+.productDetail-container-second{
+    display: flex;
+    margin-top: 2rem;
+    justify-content: space-between;
+}
+
+.productDetail-img{
+    height: 50vh;
+}
+
+
+.productDetail-container-third{
+    display: flex;
+    margin-top: 5rem;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+#productDetail-Map{
+    height: 80vh;
+}
+
+
+.productDetail-container-third-right{
+    margin-top: 1rem;
+    margin-left: 6vw;
+    margin-right: 11vw;
+
+}
+
+.productDetail-artisans{
+    display: flex;
+}
+
+.productDetail-productNameBrand{
+    font-family: "Playfair Display";
+    font-weight: bold;
+    font-size: 2.1rem;
+    margin-bottom: 4vh;
+}
+
+.productDetail-artisans-description{
+    font-family: "Montserrat";
+    margin-bottom: 4vh;
+
+}
+.productDetail-container-third-right a{
+    color: var(--black);
+    text-decoration: none;
+}
+.productDetail-container-third-right a:hover{
+    color: var(--black);
+    text-decoration: underline;
+}
+.productDetail-arrow{
+    margin-left: 0.6rem;
+}
+
+
+.productDetail-artisans-img{
+    height:37vh;
+}
+
+#right{
+    margin-right: 6vw;
+}
+
+.text-bold{
+    font-weight: bold;
+}
