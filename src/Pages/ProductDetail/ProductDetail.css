@@ -132,3 +132,7 @@
 #right{
     margin-right: 6vw;
 }
+
+.text-bold{
+    font-weight: bold;
+}

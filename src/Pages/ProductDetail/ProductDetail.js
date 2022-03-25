@@ -1,125 +1,87 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { useParams, Link } from 'react-router-dom';
 import "./ProductDetail.css"
+import Product1 from "../../Mockup/Product/Product1/Product1.json";
+import Artisan1 from "../../Mockup/Artisan/Artisan1/Artisan1.json";
+import Department1 from '../../Mockup/Department/Department1/Department1.json';
 import Bread from '../../Components/Breadcrumbs/Breadcrumbs';
 import ButtonOrange from '../../Components/Buttons/ButtonOrange';
 import Footer from '../../Components/Footer/Footer';
 import Navbar from '../../Components/Navbar/Navbar';
 import Topbar from '../../Components/Topbar/Topbar';
+import Products from "../../Mockup/Product/Products";
+import Departments from "../../Mockup/Department/Departments";
+import Artisans from "../../Mockup/Artisan/Artisans";
+import {FormattedMessage, useIntl} from "react-intl";
+import {Form} from "react-bootstrap";
+
 
 function ProductDetail() {
 
+    const intl = useIntl();
+
+    let userLang = navigator.language || navigator.userLanguage;
+
+    const english = userLang.startsWith('en')? true: !userLang.startsWith('es');
+
     let params = useParams();
-    let index = params.id;
- 
-    console.log(params)
 
-    const productos = [
-        {name: "Chaleco Cumbal",
-         price: "$350.000",
-         departament: "Nariño", 
-         brand: "Tejidos Machines", 
-         brandDescription: "Tejidos Machines es un grupo de artesanos de Cumbal, Nariño, al sur del país, casi en la frontera con Ecuador. Los artesanos de Tejidos Machines se especializan en tejeduría en guanga y telar horizontal donde trabajan con lana de obeja e hilo para hacer ruanas, chalecos y cobijas.",
-         description: "Chaleco cumbal tejido a mano en lana de oveja con hilo en tonos tierra con detalles rojos.",
-         type: "Artesanía tradicional", 
-         oficio: "Tejeduría", 
-         tecnica: "Guanga y telar horizontal", 
-         time: "Una semana"},
-        {name: "Anillo filigrana",
-         price: "$80.000"},
-        {name: "Set de anillos",
-         price: "$50.000"},
-        {name: "Anillo amatista",
-         price: "$100.000"},
-        {name: "Mochila wayuu",
-         price: "$200.000"},
-        {name: "Aretes filigrana",
-         price: "90.000"},
-        {name: "Collar chaquiras",
-         price: "$40.000"},
-        {name: "Carteras wayuu",
-         price: "$70.000"},
-        {name: "Mochilas",
-         price: "$150.000"},
-        {name: "Sombrero decorado",
-         price: "$40.000"},
-        {name: "Cadenas en oro",
-         price: "$110.000"},
-        {name: "Gorra artesanal",
-         price: "$40.000"},
-        {name: "Sombreros vueltiao",
-         price: "$120.000"},
-        {name: "Pulseras artesanales",
-         price: "$80.000"},
-        {name: "Set de anillos",
-         price: "$65.000"},
-        {name: "Sombrero azul",
-         price: "$145.000"},
-        {name: "Candongas filigrana",
-         price: "$175.000"},
-        {name: "Anillo plata",
-         price: "$82.000"},
-        {name: "Cartera vinotinto",
-         price: "$220.000"},
-        {name: "Set de cadenas",
-         price: "$40.000"},
-        {name: "Mochila arhuaca",
-         price: "$150.000"},
-        {name: "Aretes tejidos",
-         price: "$60.000"},
-        {name: "Aretes flor",
-         price: "$70.000"},
-        {name: "Mochila chaquiras",
-         price: "$400.000"},
-        {name: "Ruana cruzada",
-         price: "$200.000"},
-        {name: "Mochilas wayuu",
-         price: "$160.000"},
-        {name: "Set de cadenas",
-         price: "$80.000"},
-        {name: "Mochila wayuu",
-         price: "$180.000"}
-    ]
+    const [product, setProduct] = useState(Product1);
 
+    const [artisan, setArtisan] = useState(Artisan1);
+
+    const [department, setDepartment] = useState(Department1);
+
+    useEffect(()=>{
+        setProduct(Products.find(prod => prod._id === params._id || Product1))
+    }, [params._id])
+
+    useEffect(()=>{
+        setArtisan(Artisans.find(art => art._id === product.artisan) || Artisan1)
+    }, [product])
+
+    useEffect(()=>{
+        setDepartment(Departments.find(dept => dept.name === artisan.department))
+    }, [artisan])
 
     return (
         <div className='ProductDetail'>
             <Topbar/>
             <Navbar/>
-            <Bread pathName="PRODUCTOS" path="/productos" name={productos[index-1].name}/>
+            <Bread pathName={intl.formatMessage({id:"Products"})} path="/productos" name={product.name}/>
             <div className='productDetail-container'>
                 <div className='productDetail-container-first'>
-                    <img className="productDetail-img-princ" src={'/Assets/Photos/Artisans/Artisan'+index+'/Product1/Foto1.png'} alt="Foto Producto" />
+                    <img className="productDetail-img-princ" src={product.media[0]["Photo1"]} alt="Photo Product" />
                     <div className='productDetail-container-first-right'>
-                        <p className='productDetail-brandName'>{productos[index-1].brand}</p>
-                        <h3 className='productDetail-productName'>{productos[index-1].name}</h3>
-                        <p className='productDetail-description'>{productos[index-1].description}</p>
+                        <p className='productDetail-brandName'>{artisan.name}</p>
+                        <h3 className='productDetail-productName'>{product.name}</h3>
+                        <p className='productDetail-description'>{product.descriptionES}</p>
                         <div className='productDetail-details'>
-                            <p className='productDetail-details-txt'><span>TIPO</span> - {productos[index-1].type}</p>
-                            <p className='productDetail-details-txt'><span>OFICIO</span> - {productos[index-1].oficio}</p>
-                            <p className='productDetail-details-txt'><span>TÉCNICA</span> - {productos[index-1].tecnica}</p>
-                            <p className='productDetail-details-txt'><span>TIEMPO ELABORACIÓN</span> - {productos[index-1].time}</p>
+                            <p className='productDetail-details-txt'><span className="text-uppercase"><FormattedMessage id="Type"/></span> - <FormattedMessage id={product.productType}/></p>
+                            <p className='productDetail-details-txt'><span className="text-uppercase"><FormattedMessage id="Labour"/></span> - <FormattedMessage id={product.productLabour}/></p>
+                            <p className='productDetail-details-txt'><span className="text-uppercase"><FormattedMessage id="Technique"/></span> - {english? product.techniqueEN:product.techniqueES}</p>
+                            <p className='productDetail-details-txt'><span className="text-uppercase"><FormattedMessage id="ElaborationTime"/></span> - {product.fabricationDays} <FormattedMessage id="Days"/></p>
                         </div>
-                        <p className='productDetail-price'>{productos[index-1].price} + IVA</p>
+                        <p className='productDetail-price'>{product.price} + IVA</p>
                         <ButtonOrange path="/" text="COMPRAR" />
                     </div>
                 </div>
                 <div className='productDetail-container-second'>
-                    <img className="productDetail-img" src={'/Assets/Photos/Artisans/Artisan'+index+'/Product1/Foto1.png'} alt="Foto Producto" />
-                    <img className="productDetail-img" src={'/Assets/Photos/Artisans/Artisan'+index+'/Product1/Foto2.png'} alt="Foto Producto" />
-                    <img className="productDetail-img" src={'/Assets/Photos/Artisans/Artisan'+index+'/Product1/Foto3.png'} alt="Foto Producto" />
+                    <img className="productDetail-img" src={product.media[0]["Photo1"]} alt="Foto Producto" />
+                    <img className="productDetail-img" src={product.media[0]["Photo2"]} alt="Foto Producto" />
+                    <img className="productDetail-img" src={product.media[0]["Photo3"]} alt="Foto Producto" />
                 </div>
                 <div className='productDetail-container-third'>
-                    <img className="product-img" src={'/Assets/Map/Color/'+productos[index-1].departament+'.svg'} alt="Mapa Colombia" />
+                    <img className="product-img" src={'/Assets/Map/Color/Nariño.svg'} alt="Mapa Colombia" />
                     <div className='productDetail-container-third-right'>
-                        <p className='productDetail-productNameBrand'>El mundo de los <span>artesanos...</span></p>
-                        <p className='productDetail-artisans-description'>{productos[index-1].brandDescription}</p>
-                        <Link to="/">
-                            <p className='productDetail-artisans-description'>Conoce más sobre {productos[index-1].brand} aquí <img className="productDetail-arrow" src="/Assets/Icons/rightarrow.svg" alt="Flecha" /> </p>
+                        <p className='productDetail-productNameBrand'><FormattedMessage id="TheWorldOf"/> <span><FormattedMessage id="Artisans"/>...</span></p>
+                        <p className='productDetail-artisans-description'>{english? artisan.shortDescriptionEN || Artisan1.shortDescriptionEN: artisan.shortDescriptionES || Artisan1.shortDescriptionES }</p>
+                        <Link to={"/artesanos/"+artisan._id}>
+                            <p className='productDetail-artisans-description'><FormattedMessage id="LearnMoreAbout"/> <span className="text-bold">{artisan.name}</span> <span className="text-lowercase"><FormattedMessage id="Here"/></span> <img className="productDetail-arrow" src="/Assets/Icons/rightarrow.svg" alt="Flecha" /> </p>
                         </Link>
                         <div className='productDetail-artisans'>
-                            <img className="productDetail-artisans-img" id="right" src={require('../../Assets/Photos/Artisans/Artisan'+index+'/Artisans1.png')} alt="Foto Artesano" /> 
-                            <img className="productDetail-artisans-img" src={require('../../Assets/Photos/Artisans/Artisan'+index+'/Artisans2.png')} alt="Foto Artesano" /> 
+                            <img className="productDetail-artisans-img" id="right" src={artisan.media[1]} alt="Foto Artesano 1" />
+                            <img className="productDetail-artisans-img" src={artisan.media[2]} alt="Foto Artesano 2" />
                         </div>
                     </div>
 

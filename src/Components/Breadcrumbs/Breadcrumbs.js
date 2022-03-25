@@ -6,7 +6,7 @@ function Breadcrumbs(props) {
     return (
         <div className='Breadcrumbs'>
             <Link to={props.path}>
-                <p>{props.pathName}</p>
+                <p className="text-uppercase">{props.pathName}</p>
             </Link>
             <img className="bread-icon" src="/Assets/Icons/chevronRight.svg" alt="Chevron"/>
             <p>{props.name}</p>
