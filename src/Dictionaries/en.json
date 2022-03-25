@@ -32,9 +32,9 @@
   "Orinoquia": "Orinoquia",
   "Amazonian": "Amazonian",
 
-  "Indigenous": "Indigenous Artisans",
-  "PopularTraditional": "Traditional Artisans",
-  "Contemporary": "Contemporary Artisans",
+  "Indigenous": "Indigenous",
+  "PopularTraditional": "Traditional",
+  "Contemporary": "Contemporary",
 
   "Necklaces": "Necklaces",
   "Earrings": "Earrings",
@@ -57,5 +57,13 @@
   "SeeProducts": "See products",
   "Department": "Department",
   "Community": "Community",
-  "TheTechnique": "The Technique"
+  "TheTechnique": "The Technique",
+
+  "TheWorldOf": "The world of",
+  "Labour": "Labour",
+  "Technique": "Technique",
+  "ElaborationTime": "Elaboration Time",
+  "Days": "Days",
+  "LearnMoreAbout": "Learn more about",
+  "Here": "Here"
 }
