@@ -13,7 +13,6 @@ import Products from "../../Mockup/Product/Products";
 import Departments from "../../Mockup/Department/Departments";
 import Artisans from "../../Mockup/Artisan/Artisans";
 import {FormattedMessage, useIntl} from "react-intl";
-import {Form} from "react-bootstrap";
 
 
 function ProductDetail() {
@@ -22,7 +21,7 @@ function ProductDetail() {
 
     let userLang = navigator.language || navigator.userLanguage;
 
-    const english = userLang.startsWith('en')? true: !userLang.startsWith('es');
+    const english = userLang.startsWith('en') ? true : !userLang.startsWith('es');
 
     let params = useParams();
 
@@ -32,15 +31,24 @@ function ProductDetail() {
 
     const [department, setDepartment] = useState(Department1);
 
-    useEffect(()=>{
-        setProduct(Products.find(prod => prod._id === params._id || Product1))
+    const [bigPicture, setBigPicture] = useState(0);
+
+
+    function changePicture(next){
+        let newValue = next? bigPicture + 1 : bigPicture - 1
+        if(newValue < 0) newValue += 3
+        setBigPicture(newValue%3)
+    }
+
+    useEffect(() => {
+        setProduct(Products.find(prod => prod._id == params._id) || Product1)
     }, [params._id])
 
-    useEffect(()=>{
+    useEffect(() => {
         setArtisan(Artisans.find(art => art._id === product.artisan) || Artisan1)
     }, [product])
 
-    useEffect(()=>{
+    useEffect(() => {
         setDepartment(Departments.find(dept => dept.name === artisan.department))
     }, [artisan])
 
@@ -48,40 +56,59 @@ function ProductDetail() {
         <div className='ProductDetail'>
             <Topbar/>
             <Navbar/>
-            <Bread pathName={intl.formatMessage({id:"Products"})} path="/productos" name={product.name}/>
+            <Bread pathName={intl.formatMessage({id: "Products"})} path="/productos" name={product.name}/>
             <div className='productDetail-container'>
                 <div className='productDetail-container-first'>
-                    <img className="productDetail-img-princ" src={product.media[0]["Photo1"]} alt="Photo Product" />
+                    <img className="productDetail-img-princ" src={product.media[0]["Photo1"]} alt="Photo Product"/>
                     <div className='productDetail-container-first-right'>
                         <p className='productDetail-brandName'>{artisan.name}</p>
                         <h3 className='productDetail-productName'>{product.name}</h3>
                         <p className='productDetail-description'>{product.descriptionES}</p>
                         <div className='productDetail-details'>
-                            <p className='productDetail-details-txt'><span className="text-uppercase"><FormattedMessage id="Type"/></span> - <FormattedMessage id={product.productType}/></p>
-                            <p className='productDetail-details-txt'><span className="text-uppercase"><FormattedMessage id="Labour"/></span> - <FormattedMessage id={product.productLabour}/></p>
-                            <p className='productDetail-details-txt'><span className="text-uppercase"><FormattedMessage id="Technique"/></span> - {english? product.techniqueEN:product.techniqueES}</p>
-                            <p className='productDetail-details-txt'><span className="text-uppercase"><FormattedMessage id="ElaborationTime"/></span> - {product.fabricationDays} <FormattedMessage id="Days"/></p>
+                            <p className='productDetail-details-txt'><span className="text-uppercase">
+                                <FormattedMessage id="Type"/></span> - <FormattedMessage id={product.productType}/>
+                            </p>
+                            <p className='productDetail-details-txt'><span className="text-uppercase">
+                                <FormattedMessage id="Labour"/></span> - <FormattedMessage id={product.productLabour}/>
+                            </p>
+                            <p className='productDetail-details-txt'><span className="text-uppercase">
+                                <FormattedMessage
+                                    id="Technique"/></span> - {english ? product.techniqueEN : product.techniqueES}
+                            </p>
+                            <p className='productDetail-details-txt'>
+                                <span className="text-uppercase">
+                                    <FormattedMessage id="ElaborationTime"/>
+                                </span> - {product.fabricationDays} <FormattedMessage id="Days"/></p>
                         </div>
                         <p className='productDetail-price'>{product.price} + IVA</p>
-                        <ButtonOrange path="/" text="COMPRAR" />
+                        <ButtonOrange path="/" text="COMPRAR"/>
                     </div>
                 </div>
                 <div className='productDetail-container-second'>
-                    <img className="productDetail-img" src={product.media[0]["Photo1"]} alt="Foto Producto" />
-                    <img className="productDetail-img" src={product.media[0]["Photo2"]} alt="Foto Producto" />
-                    <img className="productDetail-img" src={product.media[0]["Photo3"]} alt="Foto Producto" />
+                    <img className="productDetail-img" src={product.media[0]["Photo1"]} alt="Foto Producto"/>
+                    <img className="productDetail-img" src={product.media[0]["Photo2"]} alt="Foto Producto"/>
+                    <img className="productDetail-img" src={product.media[0]["Photo3"]} alt="Foto Producto"/>
                 </div>
                 <div className='productDetail-container-third'>
-                    <img className="product-img" src={'/Assets/Map/Color/Nariño.svg'} alt="Mapa Colombia" />
+                    <img id="productDetail-Map" className="product-img" src={department.mapColorRegion}
+                         alt="Mapa Colombia"/>
                     <div className='productDetail-container-third-right'>
-                        <p className='productDetail-productNameBrand'><FormattedMessage id="TheWorldOf"/> <span><FormattedMessage id="Artisans"/>...</span></p>
-                        <p className='productDetail-artisans-description'>{english? artisan.shortDescriptionEN || Artisan1.shortDescriptionEN: artisan.shortDescriptionES || Artisan1.shortDescriptionES }</p>
-                        <Link to={"/artesanos/"+artisan._id}>
-                            <p className='productDetail-artisans-description'><FormattedMessage id="LearnMoreAbout"/> <span className="text-bold">{artisan.name}</span> <span className="text-lowercase"><FormattedMessage id="Here"/></span> <img className="productDetail-arrow" src="/Assets/Icons/rightarrow.svg" alt="Flecha" /> </p>
+                        <p className='productDetail-productNameBrand'><FormattedMessage id="TheWorldOf"/>
+                            <span><FormattedMessage id="Artisans"/>...</span></p>
+                        <p className='productDetail-artisans-description'>
+                            {english ? artisan.shortDescriptionEN || Artisan1.shortDescriptionEN : artisan.shortDescriptionES || Artisan1.shortDescriptionES}
+                        </p>
+                        <Link to={"/artesanos/" + artisan._id}>
+                            <p className='productDetail-artisans-description'><FormattedMessage id="LearnMoreAbout"/>
+                                <span className="text-bold"> {artisan.name} </span> <span
+                                    className="text-lowercase"><FormattedMessage id="Here"/></span> <img
+                                    className="productDetail-arrow" src="/Assets/Icons/rightarrow.svg" alt="Flecha"/>
+                            </p>
                         </Link>
                         <div className='productDetail-artisans'>
-                            <img className="productDetail-artisans-img" id="right" src={artisan.media[1]} alt="Foto Artesano 1" />
-                            <img className="productDetail-artisans-img" src={artisan.media[2]} alt="Foto Artesano 2" />
+                            <img className="productDetail-artisans-img" id="right" src={artisan.media[1]}
+                                 alt="Foto Artesano 1"/>
+                            <img className="productDetail-artisans-img" src={artisan.media[2]} alt="Foto Artesano 2"/>
                         </div>
                     </div>
 
@@ -90,7 +117,7 @@ function ProductDetail() {
             </div>
             <Footer/>
         </div>
-        
+
     )
 }
 
