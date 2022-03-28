@@ -64,8 +64,16 @@
   "ElaborationTime": "Tiempo Elaboración",
   "Days": "Dias",
   "LearnMoreAbout": "Learn more about",
-  "Here": "Here"
+  "Here": "Here",
 
 
+  "PopularArtisansTitle1": "Conoce algunos de ",
+  "PopularArtisansTitleSpan": "nuestros artesanos",
+  "EditorialTitle1": "Marzo es el mes \n del ",
+  "EditorialTitleSpan": "Artesano",
+  "SeeAll": "Ver todos",
+
+  "QuizTitle":"¡ITTI preguntas!",
+  "QuizText":"Diviértete descubrinedo lo mejor del talento colombiano"
 
 }

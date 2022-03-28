@@ -11,6 +11,8 @@ import {useLocation, useParams} from "react-router-dom";
 import ArtisansFinal from "../../Mockup/Artisan/ArtisansFinal";
 import Departments from "../../Mockup/Department/Departments";
 import Products from "../../Mockup/Product/Products";
+import { Breadcrumb } from "react-bootstrap";
+import Breadcrumbs from "../../Components/Breadcrumbs/Breadcrumbs";
 
 function ArtisanDetail(props){
 
@@ -44,18 +46,19 @@ function ArtisanDetail(props){
         <div id="ArtisanDetail">
             <Topbar/>
             <Navbar/>
-
+            <Breadcrumbs path="/artesanos" name={artisan.name} pathName={<FormattedMessage id="Artisans"/>}/>
             <div className="container-fluid">
-                <div className="row artisan-navigation artisan-row">
+               {/* <div className="row artisan-navigation artisan-row">
                     <div className="col-12">
+                        <Breadcrumbs path="/artesanos" name={artisan.name} pathName={<FormattedMessage id="Artisans"/>}/>
                         <p className="inline"><FormattedMessage id="Artisans"/><ChevronRight path=""/> {artisan.name || Artisan1.name} </p>
                     </div>
-                </div>
-                <div className='row artisan-intro artisan-row align-items-center'>
+    </div>*/}
+                <div className='row artisan-intro artisan-row'>
                     <div className="col-5 artisan-intro artisan-left">
                         <h1 className="title-text-artisan orange">{artisan.name || Artisan1.name}</h1>
                         <p className="normal-text-artisan">{english? artisan.shortDescriptionEN || Artisan1.shortDescriptionEN: artisan.shortDescriptionES || Artisan1.shortDescriptionES }</p>
-                        <p className="normal-text-artisan"><FormattedMessage id="SeeProducts"/></p>
+                        {/*<p className="normal-text-artisan"><FormattedMessage id="SeeProducts"/></p>*/}
                     </div>
 
                     <div className="col-7 artisan-intro- artisan-right">
@@ -108,17 +111,14 @@ function ArtisanDetail(props){
                 </div>
                 <div className='row artisan-products artisan-row'>
                     <h2 className="black title-text-artisan text-center"><FormattedMessage id="Products"/></h2>
-                    <p className="black normal-text-artisan text-center"> Explore all the handicrafts of {artisan.name || Artisan1.name} and discover more about their culture.</p>
-                    <div className="col-3">
+                    <p className="black normal-text-artisan text-center"> Explore all the handicrafts of <span className="normal-text-artisan-span">{artisan.name || Artisan1.name}</span> and discover more about their culture.</p>
+                    <div className="artisan-row-photos">
                         <img className="product-figure" src={products[0].media[0]["Photo1"]} alt="product-1"/>
-                    </div>
-                    <div className="col-3">
+                    
                         <img className="product-figure" src={products[1].media[0]["Photo1"]} alt="product-2"/>
-                    </div>
-                    <div className="col-3">
+                    
                         <img className="product-figure" src={products[2].media[0]["Photo1"]} alt="product-3"/>
-                    </div>
-                    <div className="col-3">
+                    
                         <img className="product-figure" src={products[3].media[0]["Photo1"]} alt="product-4"/>
                     </div>
                 </div>
