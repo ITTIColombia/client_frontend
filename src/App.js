@@ -7,6 +7,7 @@ import Artisans from "./Pages/Artisans/Artisans";
 import ProductsPage from './Pages/ProductsPage/ProductsPage';
 import ArtisanDetail from "./Pages/ArtisanDetail/ArtisanDetail";
 import AboutUs from './Pages/AboutUs/AboutUs';
+import ProductDetail from "./Pages/ProductDetail/ProductDetail";
 
 const AppContext = React.createContext({})
 
@@ -33,6 +34,7 @@ function App() {
             <Route path="/" exact element={<Home/>}/>
             <Route path="/artesanos" exact element={<Artisans/>}/>
             <Route path="/productos" exact element={<ProductsPage/>}/>
+            <Route path="/productos/:_id" exact element={<ProductDetail/>}/>
             <Route path="/artesanos/:_id" exact element={<ArtisanDetail/>}/>
             <Route path="/nosotros" exact element={<AboutUs/>}/>
           </Routes>

@@ -7,7 +7,6 @@ function Filter(props){
 
     const intl = useIntl();
 
-    console.log("props", props);
 
     useEffect(()=>{
         console.log(props.state)

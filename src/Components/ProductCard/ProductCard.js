@@ -5,8 +5,8 @@ import {Link} from 'react-router-dom';
 function ProductCard(props) {
     return (
         <div className="ProductCard">
-            <Link to={"/producto/"+props.index}>
-                <img className="productCard-img" src={'/Assets/Photos/Products/foto'+props.index+'.png'} alt="Foto Producto" />
+            <Link to={"/productos/"+props.index}>
+                <img className="productCard-img" src={props.image} alt="Foto Producto" />
             </Link>
             <div className="productCard-over">
                 <p className="productCard-over-text">{props.name}</p>

@@ -88,6 +88,10 @@
     margin-bottom: 5rem;
 }
 
+#productDetail-Map{
+    height: 80vh;
+}
+
 
 .productDetail-container-third-right{
     margin-top: 1rem;
@@ -131,4 +135,8 @@
 
 #right{
     margin-right: 6vw;
+}
+
+.text-bold{
+    font-weight: bold;
 }
