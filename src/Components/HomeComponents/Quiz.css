@@ -1,0 +1,26 @@
+.Quiz{
+    margin-top: 4rem;
+    margin-left: 11vw;
+    margin-right: 11vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--black);
+}
+
+.quiz-questions{
+    display: flex;
+    font-family: "Montserrat";
+    text-align: center;
+}
+
+.quiz-title h3{
+    font-family: "Playfair Display";
+    font-size: 2rem;
+    font-weight: 700;
+
+}
+
+.quiz-title p{
+    font-family: "Montserrat";
+}

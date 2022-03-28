@@ -6,6 +6,8 @@ import './Home.css'
 import Favorites from '../../Components/HomeComponents/Favorites'
 import Editorial from '../../Components/HomeComponents/Editorial'
 import PopularArtisans from '../../Components/HomeComponents/PopularArtisans'
+import QuizQuestion from '../../Components/HomeComponents/QuizQuestion'
+import Quiz from '../../Components/HomeComponents/Quiz'
 
 function Home(){
     return (
@@ -14,6 +16,7 @@ function Home(){
             <Navbar/>
             <Banner/>
             <Favorites/>
+            <Quiz/>
             <PopularArtisans/>
             <Editorial/>
             <Footer/>
