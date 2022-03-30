@@ -31,11 +31,11 @@
 .login-special-text{
     font-family: "Playfair Display";
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.7rem;
 }
 
 .login-form{
-    padding-top: 2em;
+    padding-top: 1.8em;
 }
 
 .login-form > h1 {
