@@ -72,5 +72,16 @@
   "ElaborationTime": "Elaboration Time",
   "Days": "Days",
   "LearnMoreAbout": "Learn more about",
-  "Here": "Here"
+  "Here": "Here",
+
+  "SignInInvitation1": "Sign in to discover",
+  "SignInInvitation2": "Colombian",
+  "SignInInvitation3": "handmade treasures",
+
+  "Email": "Email",
+  "Password": "Password",
+  "Login": "Login",
+  "ForgotYourPassword": "Forgot your password?",
+  "DontHaveAnAccount": "Don't have an account?",
+  "SignUp": "Sign Up"
 }

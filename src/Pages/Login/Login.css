@@ -1,0 +1,80 @@
+.login-image-section{
+    margin: 0;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    background-color: white;
+}
+
+.login-content {
+    margin: 2em 4em 2em 4em !important;
+    background-color: #F5F4F2;
+}
+
+.login-form{
+    height: 100%;
+    align-items: stretch;
+}
+
+.orange{
+    color: var(--orange);
+}
+
+.black{
+    color: var(--black)
+}
+
+.login-normal-text{
+    font-family: "Montserrat";
+    font-size: 1rem;
+}
+
+.login-special-text{
+    font-family: "Playfair Display";
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.login-form{
+    padding-top: 2em;
+}
+
+.login-form > h1 {
+    padding-right: 3em;
+    padding-left: 3em;
+    text-align:center;
+}
+
+.login-input {
+    border-radius: 0 !important;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-top: 0 !important;
+    border-bottom: 1px solid var(--black) !important;
+}
+
+.login-form > form{
+    padding: 1em 6em;
+}
+
+.login-form-section{
+    margin-top: 2em;
+}
+
+#login-button{
+    margin-top: 2em ;
+    text-align:center;
+    width: 100%;
+    background-color: var(--orange);
+    border-color: var(--orange);
+}
+
+.login-noAccount{
+    margin-top: 2em;
+}
+
+
+
+
