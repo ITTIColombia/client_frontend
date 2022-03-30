@@ -75,6 +75,14 @@
     margin-top: 2em;
 }
 
+.login-carousel-item{
+    max-width: 300em;
+}
+
+.login-carousel{
+    max-width: 33em;
+}
+
 
 
 

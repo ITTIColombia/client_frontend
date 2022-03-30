@@ -4,6 +4,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import {useEffect, useState} from "react";
 import {FormattedMessage} from "react-intl";
+import {Carousel} from "react-bootstrap";
 
 
 
@@ -26,7 +27,17 @@ function Login(){
             <div className="container">
                 <div className="row login-content">
                     <div className="col-6 login-image-section d-flex justify-content-end">
-                        <img className="login-image" src="/Assets/Photos/Login/Login1.png" alt="image1-login"/>
+                        <Carousel className="login-carousel" controls={false}>
+                            <Carousel.Item>
+                                <img className="d-block w-100 login-carousel-item" src="/Assets/Photos/Login/Login1.png" alt="First slide"/>
+                            </Carousel.Item>
+                            <Carousel.Item>
+                                <img className="d-block w-100 login-carousel-item" src="/Assets/Photos/Login/Login2.png" alt="Second slide"/>
+                            </Carousel.Item>
+                            <Carousel.Item>
+                                <img className="d-block w-100 login-carousel-item" src="/Assets/Photos/Login/Login3.png" alt="Third slide"/>
+                            </Carousel.Item>
+                        </Carousel>
                     </div>
                     <div className="col-6 login-form">
                         <h1 className="login-special-text black">
