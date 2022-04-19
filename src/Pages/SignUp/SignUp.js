@@ -4,6 +4,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import {useEffect, useState} from "react";
 import {Carousel} from "react-bootstrap";
 import {FormattedMessage} from "react-intl";
+import Footer from "../../Components/Footer/Footer";
 
 function SignUp() {
 
@@ -107,6 +108,7 @@ function SignUp() {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }
