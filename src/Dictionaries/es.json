@@ -85,6 +85,15 @@
   "Login": "Iniciar Sesión",
   "ForgotYourPassword": "Olvidaste tu contraseña?",
   "DontHaveAnAccount": "No tienes cuenta?",
-  "SignUp": "Registrate"
+  "SignUp": "Registrate",
+
+  "Name": "Nombre",
+  "PhoneNumber": "Numero de Teléfono",
+  "RepeatPassword": "Repetir Contraseña",
+
+  "SignUpInvitation1": "Descubre",
+  "SignUpInvitation2": "productos colombianos",
+  "SignUpInvitation3": "de forma rápida y fácil",
+  "AlreadyHaveAnAccount": "Ya tienes una cuenta?"
 
 }

@@ -83,5 +83,14 @@
   "Login": "Login",
   "ForgotYourPassword": "Forgot your password?",
   "DontHaveAnAccount": "Don't have an account?",
-  "SignUp": "Sign Up"
+  "SignUp": "Sign Up",
+
+  "Name": "Name",
+  "PhoneNumber": "Phone Number",
+  "RepeatPassword": "Repeat Password",
+
+  "SignUpInvitation1": "Discover",
+  "SignUpInvitation2": "Colombian handmade",
+  "SignUpInvitation3": "products in a quick and easy way",
+  "AlreadyHaveAnAccount": "Already have an account?"
 }

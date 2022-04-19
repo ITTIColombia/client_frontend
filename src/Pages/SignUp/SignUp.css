@@ -1,0 +1,88 @@
+.signup-image-section{
+    margin: 0;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    background-color: white;
+}
+
+.signup-content {
+    margin: 2em 4em 2em 4em !important;
+    background-color: #F5F4F2;
+}
+
+.signup-form{
+    height: 100%;
+    align-items: stretch;
+}
+
+.orange{
+    color: var(--orange);
+}
+
+.black{
+    color: var(--black)
+}
+
+.signup-normal-text{
+    font-family: "Montserrat";
+    font-size: 1rem;
+}
+
+.signup-special-text{
+    font-family: "Playfair Display";
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.signup-form{
+    padding-top: 1.8em;
+}
+
+.signup-form > h1 {
+    padding-right: 3em;
+    padding-left: 3em;
+    text-align:center;
+}
+
+.signup-input {
+    border-radius: 0 !important;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-top: 0 !important;
+    border-bottom: 1px solid var(--black) !important;
+}
+
+.signup-form > form{
+    padding: 1em 6em;
+}
+
+.signup-form-section{
+    margin-top: .5em;
+}
+
+#signup-button{
+    margin-top: 2em ;
+    text-align:center;
+    width: 100%;
+    background-color: var(--orange);
+    border-color: var(--orange);
+}
+
+.signup-noAccount{
+    margin-top: 2em;
+}
+
+.carousel-inner{
+    height: 100%;
+}
+
+.signup-carousel{
+    height: 100%;
+}
+
+.signup-carousel-item{
+    min-height: 41em;
+}
