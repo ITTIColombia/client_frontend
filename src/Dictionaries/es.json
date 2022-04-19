@@ -74,6 +74,17 @@
   "SeeAll": "Ver todos",
 
   "QuizTitle":"¡ITTI preguntas!",
-  "QuizText":"Diviértete descubrinedo lo mejor del talento colombiano"
+  "QuizText":"Diviértete descubrinedo lo mejor del talento colombiano",
+
+  "SignInInvitation1": "Encuentra",
+  "SignInInvitation2": "artesanías colombianas",
+  "SignInInvitation3": "de la mejor calidad de forma rápida y fácil",
+
+  "Email": "Correo Electrónico",
+  "Password": "Contraseña",
+  "Login": "Iniciar Sesión",
+  "ForgotYourPassword": "Olvidaste tu contraseña?",
+  "DontHaveAnAccount": "No tienes cuenta?",
+  "SignUp": "Registrate"
 
 }
