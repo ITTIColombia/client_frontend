@@ -92,5 +92,22 @@
   "SignUpInvitation1": "Discover",
   "SignUpInvitation2": "Colombian handmade",
   "SignUpInvitation3": "products in a quick and easy way",
-  "AlreadyHaveAnAccount": "Already have an account?"
+  "AlreadyHaveAnAccount": "Already have an account?",
+
+  "ShoppingBag": "Shopping Bag",
+  "ShoppingCartMessage": "Thank you for supporting the Colombian handmade sector! Continue your purchase here.",
+  "Item": "Item",
+  "UnitPrice": "Unit Price",
+  "Quantity": "Quantity",
+  "FinalPrice": "Final Price",
+  "Remove": "Remove",
+  "Summary": "Summary",
+  "Subtotal": "Subtotal",
+  "ArtisanRevenueMessage": "*100% of this value will go directly to the artisan",
+  "Tax": "Tax",
+  "EnterLocation": "Enter location",
+  "ShippingCost": "Shopping cost",
+  "ServiceCost": "Service cost",
+  "Total": "Total",
+  "Checkout": "Checkout"
 }
