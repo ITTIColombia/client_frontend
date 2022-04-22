@@ -14,6 +14,7 @@ import en from "./Dictionaries/en.json";
 import es from "./Dictionaries/es.json";
 import Login from "./Pages/Login/Login";
 import SignUp from "./Pages/SignUp/SignUp";
+import Cart from "./Pages/Cart/Cart";
 
 function App() {
 
@@ -59,6 +60,7 @@ function App() {
                 <Route path="/nosotros" exact element={<AboutUs/>}/>
                 <Route path="/login" exact element={<Login/>}/>
                 <Route path="/signup" exact element={<SignUp/>}/>
+                <Route path="/cart" exact element={<Cart/>}/>
               </Routes>
             </BrowserRouter>
           </IntlProvider>

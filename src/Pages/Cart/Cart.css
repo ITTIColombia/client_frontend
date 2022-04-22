@@ -1,0 +1,74 @@
+.cart-container{
+    padding-top: 2.5rem;
+    padding-left: 11vw;
+    padding-right: 11vw;
+}
+
+.cart-container h1, .cart-container h2{
+    font-family: "Playfair Display";
+    color: var(--black);
+}
+
+.cart-container h1{
+    font-weight: bold;
+    margin-bottom: 0;
+    padding-bottom: .5rem;
+}
+
+.cart-container h2{
+    padding-top: 0;
+}
+
+.cart-container p,.cart-container table{
+    font-family: "Montserrat";
+}
+
+.cart-container th, .cart-container td{
+    text-align: center;
+    width: 16.66%;
+}
+
+.cart-container td{
+    height: 5em;
+}
+
+.cart-container th{
+    font-weight: normal;
+}
+
+.cart-container hr{
+    width: 600%;
+}
+
+
+.cart-table-summary-row{
+    margin-top: 1rem;
+}
+
+.cart-table-row{
+    padding-top: 3em;
+}
+
+.cart-container img{
+    width: 80%;
+    padding: 3%;
+}
+
+.cart-container table{
+    font-size: 14px;
+}
+
+#cart-table-divisor{
+    opacity: 15%;
+}
+
+.cart-table-row{
+    padding-right: 10vw;
+}
+
+.cart-summary-col{
+    height: fit-content;
+    background-color: #F5F4F2;
+}
+
+
