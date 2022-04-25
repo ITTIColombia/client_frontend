@@ -38,6 +38,10 @@ function Cart() {
         setShoppingCart(newShoppingCart)
     }
 
+    function checkout(){
+        // TODO: Conexion con API de Whastapp para lograr concluir la venta
+    }
+
 
     const [shoppingCart, setShoppingCart] = useState(mapProductsList(products))
 
@@ -45,8 +49,6 @@ function Cart() {
         const productElement = shoppingCart[currentKey];
         return cumulativeSum + (productElement["product"].price * productElement.quantity);
     }, 0), [shoppingCart])
-
-
 
     return (
         <div className="Cart">
@@ -125,13 +127,15 @@ function Cart() {
                             <span className="bd-highlight">$<FormattedNumber value={totalValue*0.03}/></span>
                         </p>
                         <p className="d-flex justify-content-between bd-highlight mb-3 text-bold">
-                            <span className="bd-highlight text-uppercase"><FormattedMessage id="Total"/></span><span className="bd-highlight">$999.000</span>
+                            <span className="bd-highlight text-uppercase"><FormattedMessage id="Total"/></span><span className="bd-highlight">$<FormattedNumber value={totalValue*1.03}/></span>
                         </p>
-
+                        <button id="cart-checkout-button"
+                                type="submit"
+                                className="btn btn-primary text-uppercase" onClick={checkout}><FormattedMessage id="Checkout"/>
+                        </button>
                     </div>
                 </div>
             </div>
-
             <Footer/>
         </div>
     )

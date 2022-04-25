@@ -28,6 +28,15 @@
     width: 16.66%;
 }
 
+#cart-checkout-button{
+    margin-top: 2em ;
+    text-align:center;
+    width: 100%;
+    background-color: var(--orange);
+    border-color: var(--orange);
+    margin-bottom: 1em;
+}
+
 .cart-summary-cost{
     width: 40%;
 }
