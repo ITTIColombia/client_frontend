@@ -54,7 +54,7 @@ function Cart() {
 
     return (
         <div className="Cart">
-            <Modal show={showModal} className="cart-modal" size="lg" onHide={()=>{setShowModal(false)}}>
+            <Modal show={showModal} className="cart-modal" size="lg" dialogClassName="modal-90w" onHide={()=>{setShowModal(false)}}>
                 <Modal.Header closeButton/>
                 <Modal.Body>
                     <h3><FormattedMessage id="CartModalTitle1"/> <span className="orange">IT<span>T</span>I</span> <FormattedMessage id="CartModalTitle2"/></h3>
