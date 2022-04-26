@@ -94,6 +94,27 @@
   "SignUpInvitation1": "Descubre",
   "SignUpInvitation2": "productos colombianos",
   "SignUpInvitation3": "de forma rápida y fácil",
-  "AlreadyHaveAnAccount": "Ya tienes una cuenta?"
+  "AlreadyHaveAnAccount": "Ya tienes una cuenta?",
 
+  "ShoppingBag": "Bolsa de compras",
+  "ShoppingCartMessage": "¡Gracias por apoyar el comercio local y las artesanias colombianas! Termina tu compra aquí.",
+  "Item": "Item",
+  "UnitPrice": "Precio unitario",
+  "Quantity": "Cantidad",
+  "FinalPrice": "Precio final",
+  "Remove": "Eliminar",
+  "Summary": "Resumen",
+  "Subtotal": "Subtotal",
+  "ArtisanRevenueMessage": "*100% de este valor ire directamente al artesano",
+  "Tax": "Impuestos",
+  "EnterLocation": "Ingresa ubicación",
+  "ShippingCost": "Costo envío",
+  "ServiceCost": "Costo de servicio",
+  "Total": "Total",
+  "Checkout": "Comprar",
+
+  "CartModalTitle1": "¡Gracias por confiar en",
+  "CartModalTitle2": "y apoyar a los artesanos colombianos!",
+  "CartModalMessage": "Nos encontramos en una etapa inicial de nuestro producto por lo que tu compra finalizará a través de WhatsApp.",
+  "GoToCheckout": "Comprar"
 }
