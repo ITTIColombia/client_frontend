@@ -146,24 +146,21 @@
 
 .cart-modal h3{
     text-align: center;
-    /*padding-left: 3em;*/
-    /*padding-right: 3em;*/
     font-size: 2.7em;
     margin-bottom: .8em;
+    margin-top: 1.5em;
 }
 
 .cart-modal p{
     text-align: center;
     font-family: "Montserrat";
-    /*padding-left: 4.3em;*/
-    /*padding-right: 4.3em;*/
     font-size: 1.7em;
     margin-bottom: 1em;
 }
 
-.cart-modal .modal-content{
-    padding-right: 5em;
-    padding-left: 5em;
+.cart-modal .modal-body{
+    padding-right: 6em;
+    padding-left: 6em;
 }
 
 .cart-modal .modal-header{
