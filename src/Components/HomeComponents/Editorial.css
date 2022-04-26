@@ -1,0 +1,86 @@
+.Editorial{
+    display: flex;
+    font-family: "Montserrat";
+    font-size: 0.9rem;
+    margin-top: 5rem;
+    margin-bottom: 3.5rem;
+    color: #3B373A;
+    margin-right: 8vw;
+    margin-left: 8vw;
+}
+
+.Editorial p{
+    margin-bottom: 0;
+    margin-top: 1vh;
+}
+.Editorial span{
+    color: #BF522A;
+}
+
+
+.stars-line{
+    margin-top: 0.5vh;
+}
+
+.star{
+    margin-right: 5px;
+}
+
+/*.star:hover{
+    background-image:  url("../recursos/Editorial/starH.svg");
+}*/
+
+.editorial-col1{
+    margin-left: 2.5vw;
+    margin-right: 1.5vw;
+    
+}
+.editorial-col2{
+    margin-left: 1vw;
+    margin-right: 3vw;
+    margin-top: 50vh;
+}
+.editorial-col3{
+    margin-left: 4vw;
+    margin-right: 2.5vw;
+}
+.editorial-content{
+    width: 19vw;
+}
+
+.editorial-tit{
+    font-family: "Playfair Display";
+    color: #BF522A;
+    font-size: 3.5rem;
+    /*margin-left: 2vw;*/
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+.editorial-tit span{
+    /*font-weight: 700;*/
+    font-style: italic;
+}
+.tit-des{
+    font-family: "Montserrat";
+    font-size: 1rem;
+    color: #3B373A;
+    margin: 0;
+}
+
+#editorial-img1{
+    margin-top: 8vh;
+    
+}
+
+.editorial-rating{
+    margin-top: 0.4rem;
+}
+
+.editorial-rating path{
+    stroke: var(--black);
+    stroke-width: 0.3px;
+}
+
+.editorial-img{
+    width: 18vw;
+}

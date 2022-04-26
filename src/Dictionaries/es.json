@@ -64,8 +64,57 @@
   "ElaborationTime": "Tiempo Elaboración",
   "Days": "Dias",
   "LearnMoreAbout": "Learn more about",
-  "Here": "Here"
+  "Here": "Here",
 
 
+  "PopularArtisansTitle1": "Conoce algunos de ",
+  "PopularArtisansTitleSpan": "nuestros artesanos",
+  "EditorialTitle1": "Marzo es el mes \n del ",
+  "EditorialTitleSpan": "Artesano",
+  "SeeAll": "Ver todos",
 
+  "QuizTitle":"¡ITTI preguntas!",
+  "QuizText":"Diviértete descubrinedo lo mejor del talento colombiano",
+
+  "SignInInvitation1": "Encuentra",
+  "SignInInvitation2": "artesanías colombianas",
+  "SignInInvitation3": "de la mejor calidad de forma rápida y fácil",
+
+  "Email": "Correo Electrónico",
+  "Password": "Contraseña",
+  "Login": "Iniciar Sesión",
+  "ForgotYourPassword": "Olvidaste tu contraseña?",
+  "DontHaveAnAccount": "No tienes cuenta?",
+  "SignUp": "Registrate",
+
+  "Name": "Nombre",
+  "PhoneNumber": "Numero de Teléfono",
+  "RepeatPassword": "Repetir Contraseña",
+
+  "SignUpInvitation1": "Descubre",
+  "SignUpInvitation2": "productos colombianos",
+  "SignUpInvitation3": "de forma rápida y fácil",
+  "AlreadyHaveAnAccount": "Ya tienes una cuenta?",
+
+  "ShoppingBag": "Bolsa de compras",
+  "ShoppingCartMessage": "¡Gracias por apoyar el comercio local y las artesanias colombianas! Termina tu compra aquí.",
+  "Item": "Item",
+  "UnitPrice": "Precio unitario",
+  "Quantity": "Cantidad",
+  "FinalPrice": "Precio final",
+  "Remove": "Eliminar",
+  "Summary": "Resumen",
+  "Subtotal": "Subtotal",
+  "ArtisanRevenueMessage": "*100% de este valor ire directamente al artesano",
+  "Tax": "Impuestos",
+  "EnterLocation": "Ingresa ubicación",
+  "ShippingCost": "Costo envío",
+  "ServiceCost": "Costo de servicio",
+  "Total": "Total",
+  "Checkout": "Comprar",
+
+  "CartModalTitle1": "¡Gracias por confiar en",
+  "CartModalTitle2": "y apoyar a los artesanos colombianos!",
+  "CartModalMessage": "Nos encontramos en una etapa inicial de nuestro producto por lo que tu compra finalizará a través de WhatsApp.",
+  "GoToCheckout": "Comprar"
 }

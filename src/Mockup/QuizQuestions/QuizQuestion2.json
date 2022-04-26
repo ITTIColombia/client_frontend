@@ -1,0 +1,11 @@
+{
+    "id": "2",
+    "questionES": "Normalmente, ¿te emociona más dar un regalo o recibir uno? ",
+    "questionEN": "Do you usually get more excited about giving a gift or receiving one?",
+    "photo": "/Images/Mockup/QuizQuestions/Foto2.png",
+    "option1ES": "Dar", 
+    "option1EN": "Recibir",
+    "option2ES": "Give",
+    "option2EN": "Receive"
+
+}

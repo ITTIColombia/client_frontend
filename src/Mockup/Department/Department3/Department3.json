@@ -1,0 +1,12 @@
+{
+    "_id": "3",
+    "name": "Guajira",
+    "capital": "Riohacha",
+    "region": "Caribe",
+    "descriptionES": "En el departamento de La Guajira se encuentran más de 800 artesanos y artesanas que elaboran sus artesanías con el fin de subsistir y como herencia ancestral. El eje fundamental de todas las artesanías de La Guajira corresponde al tejido, oficio con el que los artesanos elaboran múltiples productos que van desde una manilla, hasta una lujosa y hermosa manta y/o mochila guajira.",
+    "descriptionEN": "In the department of La Guajira there are more than 800 artisans who make their products in order to survive and as an ancestral heritage. The fundamental axis of all the handmade products of La Guajira corresponds to weaving, a trade with which artisans make multiple products that range from a bracelet to a luxurious and beautiful blanket and/or Guajira backpack.",
+    "mapColorRegion": "/Assets/Map/Color/Guajira.svg",
+    "createdAt": "2022-03-01T14:35:14.281Z",
+    "updatedAt": "2022-03-01T14:35:14.281Z",
+    "__v": 0
+  }

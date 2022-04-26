@@ -1,0 +1,71 @@
+.PopularArtisans{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background-color: var(--gray);
+    width: 100vw;
+    margin-top: 4rem;
+    padding-bottom: 3rem;
+}
+
+.popularArtisans-tit{
+    margin-top: 3rem;
+}
+
+.popularArtisans-tit h3{
+    font-family: "Playfair Display";
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.popularArtisans-tit span{
+    font-style: italic;
+}
+
+.popularArtisans-content{
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+.popularArtisans-content img{
+    height: 25vh;
+}
+
+.popularArtisans-seeAll{
+    text-transform: uppercase;
+}
+
+.popularArtisans-but-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popularArtisans-but-line{
+    width: 33vw;
+}
+
+.popularArtisans-but-line hr{
+    border-top: 1.3px solid var(--black);
+}
+
+.popularArtisans-but-container a{
+    font-family: "Montserrat";
+    color: var(--black);
+    padding-left: 3vw;
+    padding-right: 3vw;
+    text-decoration: none;
+}
+
+.popularArtisans-but-container a:hover{
+    text-decoration: underline;
+    color: var(--black);
+}
