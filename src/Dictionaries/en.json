@@ -114,5 +114,8 @@
   "CartModalTitle1": "¡Thank you for trusting",
   "CartModalTitle2": "and supporting Colombian artisans!",
   "CartModalMessage": "We are in an initial stage of our product, so you purchase will be finalized through WhatsApp",
-  "GoToCheckout": "Go to Checkout"
+  "GoToCheckout": "Go to Checkout",
+
+  "ProductsPageMessage": "These are 100% handmade products from Colombia that are sold directly by the artisans who made them. They will take you to discover every corner of Colombia, its culture, its traditions and its people.",
+  "AddToCart": "Add to Cart"
 }

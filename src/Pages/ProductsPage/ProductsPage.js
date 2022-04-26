@@ -6,6 +6,7 @@ import Topbar from '../../Components/Topbar/Topbar'
 import ProductCard from '../../Components/ProductCard/ProductCard'
 import Filter from "../../Components/Filters/Filter";
 import Products from "../../Mockup/Product/Products";
+import {FormattedMessage} from "react-intl";
 
 function ProductsPage() {
 
@@ -23,14 +24,24 @@ function ProductsPage() {
         <div className='Products'>
             <Topbar/>
             <Navbar/>
-            <div className="products-header">
-                <h3>Productos</h3>
-                <p>Antójate de las mejores artesanías diseñadas y fabricadas en Colombia.</p>
+            <div className="container-fluid">
+                <div className="row products-row">
+                    <div className="col-6">
+                        <div className="products-header">
+                            <h3><FormattedMessage id="Products"/></h3>
+                            <p><FormattedMessage id="ProductsPageMessage"/></p>
+                        </div>
+                        <div className="filter-container">
+                            <Filter options={optionsSearchForm} state={searchForm} setState={setSearchForm}/>
+                        </div>
+                    </div>
+                    <div className="col-6 products-image-col">
+                        <img className="products-image" src="/Assets/Map/MapRegions.png"/>
+                    </div>
+
+                </div>
             </div>
-            <div className="filter-container">
-                <Filter options={optionsSearchForm} state={searchForm} setState={setSearchForm}/>
-                <button type="submit" className="btn">Filtrar</button>
-            </div>
+
             <div className='products-container'>
                 {products.map((producto, index) =>
                     <div className='products-container-row' key={index}><ProductCard index={index+1} name={producto.name} price={producto.price} key={index} image={producto.media[0]["Photo1"]}/></div>

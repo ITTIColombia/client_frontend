@@ -13,9 +13,13 @@ import Products from "../../Mockup/Product/Products";
 import Departments from "../../Mockup/Department/Departments";
 import Artisans from "../../Mockup/Artisan/Artisans";
 import {FormattedMessage, useIntl} from "react-intl";
+import AppContext from "../../AppContext";
+import {useContext} from "react";
 
 
 function ProductDetail() {
+
+    const context = useContext(AppContext)
 
     const intl = useIntl();
 
@@ -63,7 +67,7 @@ function ProductDetail() {
                     <div className='productDetail-container-first-right'>
                         <p className='productDetail-brandName'>{artisan.name}</p>
                         <h3 className='productDetail-productName'>{product.name}</h3>
-                        <p className='productDetail-description'>{product.descriptionES}</p>
+                        <p className='productDetail-description'>{context.languageSettings.locale.startsWith("en") ? product.descriptionEN: product.descriptionES}</p>
                         <div className='productDetail-details'>
                             <p className='productDetail-details-txt'><span className="text-uppercase">
                                 <FormattedMessage id="Type"/></span> - <FormattedMessage id={product.productType}/>
@@ -73,7 +77,7 @@ function ProductDetail() {
                             </p>
                             <p className='productDetail-details-txt'><span className="text-uppercase">
                                 <FormattedMessage
-                                    id="Technique"/></span> - {english ? product.techniqueEN : product.techniqueES}
+                                    id="Technique"/></span> - {context.languageSettings.locale.startsWith("en") ? product.techniqueEN : product.techniqueES}
                             </p>
                             <p className='productDetail-details-txt'>
                                 <span className="text-uppercase">
@@ -81,7 +85,7 @@ function ProductDetail() {
                                 </span> - {product.fabricationDays} <FormattedMessage id="Days"/></p>
                         </div>
                         <p className='productDetail-price'>{product.price} + IVA</p>
-                        <ButtonOrange path="/" text="COMPRAR"/>
+                        <ButtonOrange path="/" text="AddToCart"/>
                     </div>
                 </div>
                 <div className='productDetail-container-second'>
@@ -94,9 +98,9 @@ function ProductDetail() {
                          alt="Mapa Colombia"/>
                     <div className='productDetail-container-third-right'>
                         <p className='productDetail-productNameBrand'><FormattedMessage id="TheWorldOf"/>
-                            <span><FormattedMessage id="Artisans"/>...</span></p>
+                            <span> <FormattedMessage id="Artisans"/>...</span></p>
                         <p className='productDetail-artisans-description'>
-                            {english ? artisan.shortDescriptionEN || Artisan1.shortDescriptionEN : artisan.shortDescriptionES || Artisan1.shortDescriptionES}
+                            {context.languageSettings.locale.startsWith("en") ? artisan.shortDescriptionEN || Artisan1.shortDescriptionEN : artisan.shortDescriptionES || Artisan1.shortDescriptionES}
                         </p>
                         <Link to={"/artesanos/" + artisan._id}>
                             <p className='productDetail-artisans-description'><FormattedMessage id="LearnMoreAbout"/>

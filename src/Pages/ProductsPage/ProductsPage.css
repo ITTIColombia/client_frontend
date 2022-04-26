@@ -7,9 +7,10 @@
 
 .products-header{
     width: 100%;
-    margin-top: 2.5rem;
+    margin-top: 20%;
+    vertical-align: center;
     padding-left: 11vw;
-    padding-right: 11vw;
+    /*padding-right: 11vw;*/
 }
 
 .filter-container{
@@ -33,11 +34,6 @@
 }
 
 .products-container{
-
-    /*display: grid;
-    grid-template-columns: repeat(3);
-  /*padding: 10px;*/
-
   -moz-column-count: 3;
   -webkit-column-count: 3;
   column-count: 3;
@@ -59,8 +55,15 @@
     color: var(--orange);
 }
 
-/*.products-container-row{
-    margin-left: 1rem;
-    margin-right: 1rem;
-}*/
+.products-image-col{
+    text-align: center;
+}
+
+.products-image{
+    width: 50%;
+}
+
+.products-row{
+    margin-bottom: 2em;
+}
 
