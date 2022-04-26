@@ -109,5 +109,10 @@
   "ShippingCost": "Shopping cost",
   "ServiceCost": "Service cost",
   "Total": "Total",
-  "Checkout": "Checkout"
+  "Checkout": "Checkout",
+
+  "CartModalTitle1": "¡Thank you for trusting",
+  "CartModalTitle2": "and supporting Colombian artisans!",
+  "CartModalMessage": "We are in an initial stage of our product, so you purchase will be finalized through WhatsApp",
+  "GoToCheckout": "Go to Checkout"
 }

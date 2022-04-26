@@ -111,5 +111,10 @@
   "ShippingCost": "Costo envío",
   "ServiceCost": "Costo de servicio",
   "Total": "Total",
-  "Checkout": "Comprar"
+  "Checkout": "Comprar",
+
+  "CartModalTitle1": "¡Gracias por confiar en",
+  "CartModalTitle2": "y apoyar a los artesanos colombianos!",
+  "CartModalMessage": "Nos encontramos en una etapa inicial de nuestro producto por lo que tu compra finalizará a través de WhatsApp.",
+  "GoToCheckout": "Comprar"
 }

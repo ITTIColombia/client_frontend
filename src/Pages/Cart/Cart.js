@@ -2,13 +2,22 @@ import './Cart.css';
 import Topbar from "../../Components/Topbar/Topbar";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
-import React, {useEffect, useMemo, useState} from "react";
+import React, {useMemo, useState} from "react";
 import {FormattedMessage, FormattedNumber} from "react-intl";
 import products from "../../Mockup/Product/Products";
-import {typeImplementation} from "@testing-library/user-event/dist/type/typeImplementation";
+import {Modal} from "react-bootstrap";
 
 
 function Cart() {
+
+    const [showModal, setShowModal] = useState(false)
+
+    const [shoppingCart, setShoppingCart] = useState(mapProductsList(products))
+
+    const totalValue = useMemo(() => Object.keys(shoppingCart).reduce((cumulativeSum, currentKey) => {
+        const productElement = shoppingCart[currentKey];
+        return cumulativeSum + (productElement["product"].price * productElement.quantity);
+    }, 0), [shoppingCart])
 
     function mapProductsList(productsList) {
         const productsObject = {};
@@ -40,18 +49,22 @@ function Cart() {
 
     function checkout(){
         // TODO: Conexion con API de Whastapp para lograr concluir la venta
+        setShowModal(false);
     }
-
-
-    const [shoppingCart, setShoppingCart] = useState(mapProductsList(products))
-
-    const totalValue = useMemo(() => Object.keys(shoppingCart).reduce((cumulativeSum, currentKey) => {
-        const productElement = shoppingCart[currentKey];
-        return cumulativeSum + (productElement["product"].price * productElement.quantity);
-    }, 0), [shoppingCart])
 
     return (
         <div className="Cart">
+            <Modal show={showModal} className="cart-modal" size="lg" onHide={()=>{setShowModal(false)}}>
+                <Modal.Header closeButton/>
+                <Modal.Body>
+                    <h3><FormattedMessage id="CartModalTitle1"/> <span className="orange">IT<span>T</span>I</span> <FormattedMessage id="CartModalTitle2"/></h3>
+                    <p><FormattedMessage id="CartModalMessage"/></p>
+                    <button
+                            type="submit"
+                            className="btn text-uppercase cart-button" onClick={checkout}><FormattedMessage id="GoToCheckout"/>
+                    </button>
+                </Modal.Body>
+                </Modal>
             <Topbar/>
             <Navbar/>
             <div className="container-fluid cart-container">
@@ -74,7 +87,6 @@ function Cart() {
                                 <th><FormattedMessage id="Remove"/></th>
                             </tr>
                             </thead>
-
                             <tbody>
                             <tr>
                                 <td colSpan="6">
@@ -126,12 +138,11 @@ function Cart() {
                             <span className="bd-highlight text-uppercase cart-summary-cost"><FormattedMessage id="ServiceCost"/></span>
                             <span className="bd-highlight">$<FormattedNumber value={totalValue*0.03}/></span>
                         </p>
-                        <p className="d-flex justify-content-between bd-highlight mb-3 text-bold">
+                        <p className="d-flex justify-content-between bd-highlight mb-3 text " id="cart-total-region">
                             <span className="bd-highlight text-uppercase"><FormattedMessage id="Total"/></span><span className="bd-highlight">$<FormattedNumber value={totalValue*1.03}/></span>
                         </p>
-                        <button id="cart-checkout-button"
-                                type="submit"
-                                className="btn btn-primary text-uppercase" onClick={checkout}><FormattedMessage id="Checkout"/>
+                        <button type="submit"
+                                className="btn text-uppercase cart-button" onClick={()=>{setShowModal(true)}}><FormattedMessage id="Checkout"/>
                         </button>
                     </div>
                 </div>
