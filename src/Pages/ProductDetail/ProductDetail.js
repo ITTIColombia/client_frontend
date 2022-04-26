@@ -98,7 +98,7 @@ function ProductDetail() {
                          alt="Mapa Colombia"/>
                     <div className='productDetail-container-third-right'>
                         <p className='productDetail-productNameBrand'><FormattedMessage id="TheWorldOf"/>
-                            <span><FormattedMessage id="Artisans"/>...</span></p>
+                            <span> <FormattedMessage id="Artisans"/>...</span></p>
                         <p className='productDetail-artisans-description'>
                             {context.languageSettings.locale.startsWith("en") ? artisan.shortDescriptionEN || Artisan1.shortDescriptionEN : artisan.shortDescriptionES || Artisan1.shortDescriptionES}
                         </p>
