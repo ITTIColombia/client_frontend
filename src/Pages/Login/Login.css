@@ -75,6 +75,10 @@
     margin-top: 2em;
 }
 
+.login-noAccount a{
+    text-decoration: None;
+}
+
 .login-carousel-item{
     max-width: 300em;
 }
