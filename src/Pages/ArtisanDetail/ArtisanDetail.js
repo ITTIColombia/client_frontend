@@ -1,7 +1,7 @@
 import "./ArtisanDetail.css";
 import Topbar from "../../Components/Topbar/Topbar";
 import Navbar from "../../Components/Navbar/Navbar";
-import {useEffect, useState} from "react";
+import {useEffect, useLayoutEffect, useState} from "react";
 import Artisan1 from '../../Mockup/Artisan/Artisan1/Artisan1.json';
 import Department1 from '../../Mockup/Department/Department1/Department1.json';
 import {FormattedMessage} from "react-intl";
@@ -30,6 +30,10 @@ function ArtisanDetail(props){
     useEffect(()=>{
         setArtisan(ArtisansFinal.find(art => art._id === parameters._id) || Artisan1)
     } )
+
+    useLayoutEffect(()=>{
+        window.scrollTo(0,0)
+    })
 
     useEffect(()=>{
         setDepartment(Departments.find(dept => dept.name === artisan.department))
