@@ -119,5 +119,17 @@
   "GoToCheckout": "Comprar",
 
   "ProductsPageMessage": "Estas artesanías son productos hechos 100% a mano en Colombia y vendidos directamente por los artesanos que las fabricaron. Te llevarán a descubrir cada rincón de Colombia, su cultura, sus tradiciones y su gente.",
-  "AddToCart": "Agregar"
+  "AddToCart": "Agregar",
+
+  "TitleAboutUs": "Construimos puentes entre mundos distantes",
+  "SubtitleAboutUs": "Soñamos con un comercio <span>justo</span>, <span>local</span> y <span>sostenible</span>",
+  "ParagraphDream1": "Conectamos a los artesanos de todas las regiones de Colombia directamente con los clientes para que puedan vender sus productos sin intermediarios, desde sus comunidades y a precios justos. Por el momento, nos especializamos en accesorios, complementos y joyería.",
+  "ParagraphDream2": "Los productos artesanales están en hechos principalmente con materias primas naturales y no requieren de maquinaria industrial o especializada para su producción, las cuales contribuyen de forma importante a las emisiones de carbono. Comprar en ITTI es una gran alternativa para migrar hacia un comercio a baja escala, amigable con el medio ambiente y respetuoso con los productores.",
+  "WhoAreTheArtisans": "¿Quiénes son los <span>artesanos</span>?",
+  "ArtisansExplanation1": "Los artesanos son personas que crean piezas únicas, originales e irrepetibles utilizando únicamente sus manos e instrumentos manuales. Estos productos pueden ser desde mochilas hasta decoración para el hogar o piezas de arte.",
+  "ArtisansExplanation2": "Por lo general, los artesanos utilizan labores que han trascendido en sus pueblos o en sus comunidades de generación en generación. En sus piezas plasman las tradiciones y los valores de su cultura. Por esta razón, tener una artesanía es como tener un tesoro.",
+  "ArtisansExplanation3": "¡Mostremos las artesanías colombianas al mundo y hagámoslas parte de nuestro día a día!",
+  "WhoAreWeBehindITTI":"¿Quiénes estamos detrás de ITTI?",
+  "TeamITTI": "Somos Daniela González y Juan David Serrano, dos amigos desde los 6 años. Estudiamos en la Universidad de los Andes y nos graduamos de Ingeniería en abril del 2022. Comenzamos ITTI como un proyecto de la universidad con la intensión crear un producto que genere impacto social. Creemos que podemos apoyarnos en la tecnología para generar cambios en la forma en la que consumimos y adquerimos nuestros productos, especialmente en un país como Colombia en el que algunos sectores todavía carecen de una verdadera transformación digital."
+
 }
