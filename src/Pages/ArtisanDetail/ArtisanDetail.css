@@ -25,10 +25,6 @@
     margin-right: 2rem;
 }
 
-.prueba{
-    height: 100%;
-}
-
 .artisan-navigation{
     font-family: "Montserrat";
     font-size: .8rem;
@@ -40,24 +36,24 @@
     font-size: 2.5rem;
 }
 
-h1, h2{
+#ArtisanDetail h1, #ArtisanDetail h2{
     padding-bottom: 1rem;
     padding-top: 1rem;
 }
 
-.orange{
+#ArtisanDetail .orange{
     color: var(--orange);
 }
 
-.black{
+#ArtisanDetail.black{
     color: var(--black);
 }
 
-video{
+#ArtisanDetail video{
     width: 100%;
 }
 
-.reduced-container{
+#ArtisanDetail .reduced-container{
     padding-left: 3rem;
     padding-right: 3rem;
 }
@@ -67,16 +63,16 @@ video{
     margin-top: 0em;
 }
 
-.technique-figure{
+#ArtisanDetail .technique-figure{
     width: 100%;
     padding: 1rem
 }
 
-.product-figure{
+#ArtisanDetail .product-figure{
     height: 40vh;
     padding: 1rem
 }
 
-.normal-text-artisan-span{
+#ArtisanDetail .normal-text-artisan-span{
     font-weight: 600;
 }

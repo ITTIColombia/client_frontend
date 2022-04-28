@@ -5,6 +5,7 @@ import {useEffect, useState} from "react";
 import {Carousel} from "react-bootstrap";
 import {FormattedMessage} from "react-intl";
 import Footer from "../../Components/Footer/Footer";
+import {Link} from "react-router-dom";
 
 function SignUp() {
 
@@ -83,7 +84,7 @@ function SignUp() {
                                     type="submit"
                                     className="btn btn-primary text-uppercase"><FormattedMessage id="SignUp"/></button>
                             <p className="text-center signup-noAccount"><FormattedMessage id="AlreadyHaveAnAccount"/>
-                                <span className="orange"> <FormattedMessage id="Login"/></span></p>
+                                <Link to="/login"> <span className="orange"> <FormattedMessage id="Login"/></span></Link></p>
                         </form>
                     </div>
                     <div className="col-6 signup-image-section ">
