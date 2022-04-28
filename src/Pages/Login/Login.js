@@ -5,6 +5,7 @@ import Footer from "../../Components/Footer/Footer";
 import {useEffect, useState} from "react";
 import {FormattedMessage} from "react-intl";
 import {Carousel} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 
 function Login() {
@@ -70,16 +71,20 @@ function Login() {
                                        aria-describedby="passwordHelp"
                                        value={form.password}
                                        onChange={handleChange}/>
-                                <small id="passwordHelp"
-                                       className="d-flex justify-content-end orange">
-                                    <FormattedMessage id="ForgotYourPassword"/>
-                                </small>
+                                {
+                                    // TODO: Finish the forgot password page and mailing service problems
+                                    // <small id="passwordHelp"
+                                    //    className="d-flex justify-content-end orange">
+                                    // <FormattedMessage id="ForgotYourPassword"/>
+                                    // </small>
+                                }
                             </div>
                             <button id="login-button"
                                     type="submit"
                                     className="btn btn-primary"><FormattedMessage id="Login"/></button>
                             <p className="text-center login-noAccount"><FormattedMessage id="DontHaveAnAccount"/>
-                                <span className="orange"><FormattedMessage id="SignUp"/></span></p>
+                                <Link to="/signup"> <span className="orange"><FormattedMessage id="SignUp"/></span></Link>
+                            </p>
                         </form>
 
                     </div>
