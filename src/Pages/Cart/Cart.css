@@ -1,0 +1,167 @@
+.cart-container{
+    padding-top: 2.5rem;
+    padding-left: 10vw;
+    padding-right: 5vw;
+}
+
+.cart-container h1, .cart-container h2, .cart-modal h3{
+    font-family: "Playfair Display";
+    color: var(--black);
+}
+
+.cart-container h1{
+    font-weight: bold;
+    margin-bottom: 0;
+    padding-bottom: .5rem;
+}
+
+.cart-container h2{
+    padding-top: 0;
+}
+
+.cart-container p,.cart-container table{
+    font-family: "Montserrat";
+}
+
+.cart-container th, .cart-container td{
+    text-align: center;
+    width: 16.66%;
+}
+
+#cart-checkout-button{
+    margin-top: 2em ;
+    text-align:center;
+    width: 100%;
+    background-color: var(--orange);
+    border-color: var(--orange);
+    margin-bottom: 1em;
+    color: white;
+}
+
+.cart-summary-cost{
+    width: 40%;
+}
+
+#cart-total-region{
+    color: #3B373A;
+    font-weight: bold;
+}
+
+.cart-container td{
+    height: 5em;
+}
+
+.cart-container th{
+    font-weight: normal;
+}
+
+.cart-table-summary-row{
+    margin-top: 1rem;
+}
+
+.cart-container img{
+    width: 80%;
+    padding: 3%;
+}
+
+.cart-container table{
+    font-size: 14px;
+}
+
+#cart-table-divisor{
+    opacity: 15%;
+}
+
+.cart-table-row{
+    padding-top: 3vw;
+    padding-right: 4vw;
+}
+
+
+.cart-summary-col{
+    height: fit-content;
+    background-color: #F5F4F2;
+    padding-top: 2.5vw;
+}
+
+.cart-summary-col p, .cart-summary-col h2{
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+}
+
+.cart-summary-col h2{
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 2em;
+}
+
+.cart-summary-col p{
+    margin-top: 2em;
+}
+
+#cart-underline-location{
+    margin-top: -1em;
+    margin-left: 2.5vw;
+    margin-right: 2.5vw;
+}
+
+.cart-table-row button{
+    margin-right: 1em;
+    margin-left: 1em;
+    border: none;
+    background: none;
+    font-size: 1.2em;
+}
+
+.cart-divisor-line{
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.cart-button{
+    margin-top: 2em ;
+    text-align:center;
+    width: 100%;
+    background-color: var(--orange);
+    border-color: var(--orange);
+    margin-bottom: 1em;
+    color: white;
+}
+.cart-button:hover{
+    color: white;
+}
+
+.modal-content .modal-header{
+    padding-right: 3em;
+    margin-top: 2em;
+    border-bottom: 0px;
+}
+
+.cart-modal h3{
+    text-align: center;
+    font-size: 2.7em;
+    margin-bottom: .8em;
+    margin-top: .8em;
+}
+
+.cart-modal p{
+    text-align: center;
+    font-family: "Montserrat";
+    font-size: 1.3em;
+    margin-bottom: 1em;
+}
+
+.cart-modal .modal-body{
+    padding-right: 6em;
+    padding-left: 6em;
+}
+
+
+
+.cart-modal button{
+    margin-bottom: 2.4em;
+}
+
+.modal-90w{
+    width: 40%;
+}

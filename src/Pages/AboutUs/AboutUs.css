@@ -1,0 +1,82 @@
+.aboutUs-banner .carousel-caption{
+    bottom: 40%;
+}
+
+.aboutUs-banner .carousel{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.aboutUs-banner h1{
+    font-family: "Montserrat";
+    font-weight: bold;
+    padding: 0 4em;
+    font-size: 3rem;
+}
+
+#AboutUs p{
+    font-family: "Montserrat";
+    text-align: justify;
+}
+
+#AboutUs h2{
+    font-family: "Playfair Display";
+    font-weight: bold;
+    font-size: 2.5em;
+    padding: 0 3.5em;
+}
+
+.aboutUs-motivation p{
+    margin-bottom: 1.5em;
+}
+
+#AboutUs h3{
+    font-family: "Playfair Display";
+    font-weight: bold;
+    margin-bottom: 2em;
+}
+
+#AboutUs .text-italic{
+    font-style: italic;
+}
+
+.aboutUs-artisans h3{
+    color: var(--orange);
+    width: 50%;
+}
+
+#AboutUs h3{
+    font-size: 2.5em;
+}
+
+.aboutUs-artisans{
+    background-color: #F5F4F2
+}
+
+.aboutUs-behindITTI, .aboutUs-artisans, .aboutUs-motivation{
+    padding: 5vw 8vw;
+}
+
+
+.aboutUs-behindITTI h3{
+    text-align: center;
+}
+
+.aboutUs-behindITTI p{
+    margin-bottom: 3em;
+}
+
+#team1image{
+    width: 100%;
+}
+
+#team2image{
+    height: 100%;
+}
+
+
+
+
+
+
+

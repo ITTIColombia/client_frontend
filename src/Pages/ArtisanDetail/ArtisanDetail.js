@@ -1,7 +1,7 @@
 import "./ArtisanDetail.css";
 import Topbar from "../../Components/Topbar/Topbar";
 import Navbar from "../../Components/Navbar/Navbar";
-import {useEffect, useState} from "react";
+import {useEffect, useLayoutEffect, useState} from "react";
 import Artisan1 from '../../Mockup/Artisan/Artisan1/Artisan1.json';
 import Department1 from '../../Mockup/Department/Department1/Department1.json';
 import {FormattedMessage} from "react-intl";
@@ -11,14 +11,13 @@ import {useLocation, useParams} from "react-router-dom";
 import ArtisansFinal from "../../Mockup/Artisan/ArtisansFinal";
 import Departments from "../../Mockup/Department/Departments";
 import Products from "../../Mockup/Product/Products";
-import { Breadcrumb } from "react-bootstrap";
 import Breadcrumbs from "../../Components/Breadcrumbs/Breadcrumbs";
+import {useContext} from "react";
+import appContext from "../../AppContext";
 
 function ArtisanDetail(props){
 
-    let userLang = navigator.language || navigator.userLanguage;
-
-    const english = userLang.startsWith('en')? true: !userLang.startsWith('es');
+    let context = useContext(appContext)
 
     const [artisan, setArtisan] = useState(Artisan1);
 
@@ -31,6 +30,10 @@ function ArtisanDetail(props){
     useEffect(()=>{
         setArtisan(ArtisansFinal.find(art => art._id === parameters._id) || Artisan1)
     } )
+
+    useLayoutEffect(()=>{
+        window.scrollTo(0,0)
+    })
 
     useEffect(()=>{
         setDepartment(Departments.find(dept => dept.name === artisan.department))
@@ -57,7 +60,7 @@ function ArtisanDetail(props){
                 <div className='row artisan-intro artisan-row'>
                     <div className="col-5 artisan-intro artisan-left">
                         <h1 className="title-text-artisan orange">{artisan.name || Artisan1.name}</h1>
-                        <p className="normal-text-artisan">{english? artisan.shortDescriptionEN || Artisan1.shortDescriptionEN: artisan.shortDescriptionES || Artisan1.shortDescriptionES }</p>
+                        <p className="normal-text-artisan">{context.languageSettings.locale.startsWith("en") ? artisan.shortDescriptionEN || Artisan1.shortDescriptionEN: artisan.shortDescriptionES || Artisan1.shortDescriptionES }</p>
                         {/*<p className="normal-text-artisan"><FormattedMessage id="SeeProducts"/></p>*/}
                     </div>
 
@@ -84,14 +87,14 @@ function ArtisanDetail(props){
                                 <span className="text-uppercase orange"><FormattedMessage id="Community"/></span> - {artisan.city}
                             </p>
                             <p className="normal-text-artisan">
-                                {english? department.descriptionEN || Department1.descriptionEN: department.descriptionES || Department1.descriptionES }
+                                {context.languageSettings.locale.startsWith("en") ? department.descriptionEN || Department1.descriptionEN: department.descriptionES || Department1.descriptionES }
                             </p>
                         </div>
                     </div>
                 </div>
                 <div className='row artisan-technique artisan-row'>
                     <h2 className="black title-text-artisan text-center"><FormattedMessage id="TheTechnique"/></h2>
-                    <p className="black normal-text-artisan">{english? artisan.detailedDescriptionEN || Artisan1.detailedDescriptionEN: artisan.detailedDescriptionES || Artisan1.detailedDescriptionES }</p>
+                    <p className="black normal-text-artisan">{context.languageSettings.locale.startsWith("en") ? artisan.detailedDescriptionEN || Artisan1.detailedDescriptionEN: artisan.detailedDescriptionES || Artisan1.detailedDescriptionES }</p>
                     <div className="col-6">
                         <img className="technique-figure" src={artisan.media && artisan.media.length > 0? artisan.media[1]: Artisan1.media[1]} alt="technique-1"/>
                     </div>

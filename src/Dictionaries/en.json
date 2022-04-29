@@ -72,5 +72,61 @@
   "ElaborationTime": "Elaboration Time",
   "Days": "Days",
   "LearnMoreAbout": "Learn more about",
-  "Here": "Here"
+  "Here": "Here",
+
+  "SignInInvitation1": "Sign in to discover",
+  "SignInInvitation2": "Colombian",
+  "SignInInvitation3": "handmade treasures",
+
+  "Email": "Email",
+  "Password": "Password",
+  "Login": "Login",
+  "ForgotYourPassword": "Forgot your password?",
+  "DontHaveAnAccount": "Don't have an account?",
+  "SignUp": "Sign Up",
+
+  "Name": "Name",
+  "PhoneNumber": "Phone Number",
+  "RepeatPassword": "Repeat Password",
+
+  "SignUpInvitation1": "Discover",
+  "SignUpInvitation2": "Colombian handmade",
+  "SignUpInvitation3": "products in a quick and easy way",
+  "AlreadyHaveAnAccount": "Already have an account?",
+
+  "ShoppingBag": "Shopping Bag",
+  "ShoppingCartMessage": "Thank you for supporting the Colombian handmade sector! Continue your purchase here.",
+  "Item": "Item",
+  "UnitPrice": "Unit Price",
+  "Quantity": "Quantity",
+  "FinalPrice": "Final Price",
+  "Remove": "Remove",
+  "Summary": "Summary",
+  "Subtotal": "Subtotal",
+  "ArtisanRevenueMessage": "*100% of this value will go directly to the artisan",
+  "Tax": "Tax",
+  "EnterLocation": "Enter location",
+  "ShippingCost": "Shopping cost",
+  "ServiceCost": "Service cost",
+  "Total": "Total",
+  "Checkout": "Checkout",
+
+  "CartModalTitle1": "¡Thank you for trusting",
+  "CartModalTitle2": "and supporting Colombian artisans!",
+  "CartModalMessage": "We are in an initial stage of our product, so you purchase will be finalized through WhatsApp",
+  "GoToCheckout": "Go to Checkout",
+
+  "ProductsPageMessage": "These are 100% handmade products from Colombia that are sold directly by the artisans who made them. They will take you to discover every corner of Colombia, its culture, its traditions and its people.",
+  "AddToCart": "Add to Cart",
+
+  "TitleAboutUs": "We build bridges between distant worlds",
+  "SubtitleAboutUs": "We dream of a <span>fair</span>, <span>sustainable</span> and <span>local</span> trade",
+  "ParagraphDream1": "We connect artisans from all regions of Colombia directly with customers so that they can sell their products without intermediaries, from their communities and at fair prices. At the moment, we specialize in accessories, complements and jewelry.",
+  "ParagraphDream2": "Handmade products are mainly made with natural raw materials and do not require industrial or specialized machinery for their production, which contribute significantly to carbon emissions. Buying at ITTI is a great alternative to migrate towards a small-scale trade, friendly to the environment and respectful to producers.",
+  "WhoAreTheArtisans": "Who are the <span>artisans</span>?",
+  "ArtisansExplanation1": "Artisans are people who create unique, original and unrepeatable pieces using only their hands and manual instruments. These products can be anything from handbags to home decor or pieces of art.",
+  "ArtisansExplanation2": "In general, artisans use techniques that have transcended in their communities from generation to generation. In their pieces they embody the traditions and values of their culture. For this reason, having a handmade product is like having a treasure.",
+  "ArtisansExplanation3": "Let's show Colombian handmade products to the world and make them part of our daily lives!",
+  "WhoAreWeBehindITTI":"Who are we behind ITTI?",
+  "TeamITTI": "We are Daniela González and Juan David Serrano, two friends since we were 6 years old. We studied at the Universidad de los Andes and graduated in Engineering in April 2022. We started ITTI as a university project with the intention of creating a product that generates social impact. We believe that we can take advantage of technology to generate changes in the way we consume and purchase our products, especially in a country like Colombia where some sectors still lack a true digital transformation."
 }

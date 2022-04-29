@@ -12,6 +12,9 @@ import AppContext from "./AppContext";
 import {IntlProvider} from "react-intl";
 import en from "./Dictionaries/en.json";
 import es from "./Dictionaries/es.json";
+import Login from "./Pages/Login/Login";
+import SignUp from "./Pages/SignUp/SignUp";
+import Cart from "./Pages/Cart/Cart";
 
 function App() {
 
@@ -55,6 +58,9 @@ function App() {
                 <Route path="/productos/:_id" exact element={<ProductDetail/>}/>
                 <Route path="/artesanos/:_id" exact element={<ArtisanDetail/>}/>
                 <Route path="/nosotros" exact element={<AboutUs/>}/>
+                <Route path="/login" exact element={<Login/>}/>
+                <Route path="/signup" exact element={<SignUp/>}/>
+                <Route path="/cart" exact element={<Cart/>}/>
               </Routes>
             </BrowserRouter>
           </IntlProvider>
