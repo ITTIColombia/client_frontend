@@ -84,7 +84,7 @@ function ProductDetail() {
                                     <FormattedMessage id="ElaborationTime"/>
                                 </span> - {product.fabricationDays} <FormattedMessage id="Days"/></p>
                         </div>
-                        <p className='productDetail-price'>{product.price} + IVA</p>
+                        <p className='productDetail-price'>{product.price}</p>
                         <ButtonOrange path="/" text="AddToCart"/>
                     </div>
                 </div>
