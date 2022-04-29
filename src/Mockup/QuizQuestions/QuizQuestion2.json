@@ -4,8 +4,8 @@
     "questionEN": "Do you usually get more excited about giving a gift or receiving one?",
     "photo": "/Images/Mockup/QuizQuestions/Foto2.png",
     "option1ES": "Dar", 
-    "option1EN": "Recibir",
-    "option2ES": "Give",
+    "option1EN": "Give",
+    "option2ES": "Recibir",
     "option2EN": "Receive"
 
 }
