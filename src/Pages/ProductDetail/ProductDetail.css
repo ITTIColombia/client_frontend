@@ -118,8 +118,12 @@
 }
 .productDetail-container-third-right a{
     color: var(--black);
+}
+
+#ProductDetail a{
     text-decoration: none;
 }
+
 .productDetail-container-third-right a:hover{
     color: var(--black);
     text-decoration: underline;
