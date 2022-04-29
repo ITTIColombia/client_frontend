@@ -36,7 +36,7 @@ function ProductsPage() {
                         </div>
                     </div>
                     <div className="col-6 products-image-col">
-                        <img className="products-image" src="/Assets/Map/MapRegions.png"/>
+                        <img id="colombia_map" src="/Assets/Map/MapRegions.png"/>
                     </div>
 
                 </div>
