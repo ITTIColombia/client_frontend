@@ -1,5 +1,5 @@
 .Quiz{
-    margin-top: 4rem;
+    margin-top: 4.5rem;
     margin-left: 11vw;
     margin-right: 11vw;
     display: flex;
@@ -12,15 +12,58 @@
     display: flex;
     font-family: "Montserrat";
     text-align: center;
+    margin-left: 12rem;
+    margin-right: 12rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.quiz-title{
+    text-align: center;
 }
 
 .quiz-title h3{
     font-family: "Playfair Display";
     font-size: 2rem;
     font-weight: 700;
+    margin-bottom: 1rem;
 
 }
 
 .quiz-title p{
     font-family: "Montserrat";
+}
+
+.QuizQuestion{
+    width: 20vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+.QuizQuestion h1{
+    font-size: 1rem;
+    color: var(--black) !important;
+}
+
+.QuizQuestion p{
+    font-size: 1rem;
+    font-weight: 500 !important;
+    color: var(--black) !important;
+}
+
+.quiz-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quiz-photo{
+    width: 18em;
+    margin-bottom: 0.5rem;
+}
+
+.Quiz [role=button]{
+    border-radius: 20px !important;
+    box-shadow: 0px 5px 10px 0px rgb(0 0 0 / 5%);
+    width: 16em;
 }
