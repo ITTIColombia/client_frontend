@@ -28,6 +28,10 @@
     width: 16.66%;
 }
 
+.cart-container table{
+    width: 100%;
+}
+
 #cart-checkout-button{
     margin-top: 2em ;
     text-align:center;

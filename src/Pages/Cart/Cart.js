@@ -4,7 +4,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import React, {useMemo, useState} from "react";
 import {FormattedMessage, FormattedNumber} from "react-intl";
-import products from "../../Mockup/Product/Products";
+import products from "../../Mockup/Product/ProductsUserTesting";
 import {Modal} from "react-bootstrap";
 
 
@@ -50,6 +50,7 @@ function Cart() {
     function checkout(){
         // TODO: Conexion con API de Whastapp para lograr concluir la venta
         setShowModal(false);
+        setShoppingCart({})
     }
 
     return (
