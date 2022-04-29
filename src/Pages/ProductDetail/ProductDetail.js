@@ -57,7 +57,7 @@ function ProductDetail() {
     }, [artisan])
 
     return (
-        <div className='ProductDetail'>
+        <div id='ProductDetail'>
             <Topbar/>
             <Navbar/>
             <Bread pathName={intl.formatMessage({id: "Products"})} path="/productos" name={product.name}/>
@@ -85,7 +85,7 @@ function ProductDetail() {
                                 </span> - {product.fabricationDays} <FormattedMessage id="Days"/></p>
                         </div>
                         <p className='productDetail-price'>{product.price}</p>
-                        <ButtonOrange path="/" text="AddToCart"/>
+                        <ButtonOrange path="cart" text="AddToCart"/>
                     </div>
                 </div>
                 <div className='productDetail-container-second'>
