@@ -7,6 +7,7 @@
 
 .products-header{
     width: 100%;
+    
     margin-top: 20%;
     vertical-align: center;
     padding-left: 11vw;
@@ -31,6 +32,7 @@
 .products-header p{
     font-family: "Montserrat";
     color: var(--black);
+    margin-bottom: 3rem;
 }
 
 .products-container{
@@ -67,3 +69,6 @@
     margin-bottom: 2em;
 }
 
+#colombia_map{
+    max-height: 35em;
+}
