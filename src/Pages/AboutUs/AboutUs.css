@@ -42,7 +42,7 @@
 
 .aboutUs-artisans h3{
     color: var(--orange);
-    width: 50%;
+    width: 70%;
 }
 
 #AboutUs h3{
@@ -50,7 +50,8 @@
 }
 
 .aboutUs-artisans{
-    background-color: #F5F4F2
+    background-color: #F5F4F2;
+
 }
 
 .aboutUs-behindITTI, .aboutUs-artisans, .aboutUs-motivation{
@@ -74,9 +75,13 @@
     height: 100%;
 }
 
+.aboutUs-artisans-txt{
+   width: 25rem !important;
+   margin-left: 2rem !important;
+} 
 
-
-
-
+.aboutUs-artisans-img{
+    margin-left: 4rem !important;
+}
 
 

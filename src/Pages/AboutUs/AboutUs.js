@@ -17,11 +17,7 @@ function AboutUs() {
         <div className="aboutUs-banner row">
             <Carousel indicators={false}>
                 <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src="/Assets/Photos/AboutUs/Banner.png"
-                        alt="Banner photo"
-                    />
+                    <img className="d-block w-100" src="/Assets/Photos/AboutUs/Banner.png" alt="Banner artisan" />
                     <Carousel.Caption>
                         <h1>
                             <FormattedMessage id="TitleAboutUs"/>
@@ -44,7 +40,7 @@ function AboutUs() {
           </div>
         </div>
         <div className="aboutUs-artisans row align-items-center">
-            <div className="col-5 center-content">
+            <div className="aboutUs-artisans-txt col-5 center-content">
                 <h3>
                     <FormattedMessage id="WhoAreTheArtisans" values={{
                         span: (chunks) => <span className="text-italic">{chunks}</span>
@@ -55,7 +51,7 @@ function AboutUs() {
                 <p className='text-bold'><FormattedMessage id="ArtisansExplanation3"/></p>
             </div>
             <div className="col-7 text-center ">
-                <img src="/Assets/Photos/AboutUs/Artisans.png" alt="Artisan image"/>
+                <img src="/Assets/Photos/AboutUs/Artisans.png" alt="Artisan" className="aboutUs-artisans-img"/>
             </div>
         </div>
         <div className="aboutUs-behindITTI row">
@@ -67,10 +63,10 @@ function AboutUs() {
 
             <div className="col-6 text-center">
                 <p><FormattedMessage id="TeamITTI"/></p>
-                <img id="team1image" src="/Assets/Photos/AboutUs/Team1.png" alt="ITTI Team Photo #1"/>
+                <img id="team1image" src="/Assets/Photos/AboutUs/Team1.png" alt="ITTI Team #1"/>
             </div>
             <div className="col-6 text-center aboutUs-team2-col">
-                <img id="team2image" src="/Assets/Photos/AboutUs/Team2.png" alt="ITTI Team Photo #2"/>
+                <img id="team2image" src="/Assets/Photos/AboutUs/Team2.png" alt="ITTI Team #2"/>
             </div>
         </div>
       </div>
