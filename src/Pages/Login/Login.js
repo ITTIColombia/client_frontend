@@ -2,7 +2,7 @@ import './Login.css';
 import Topbar from "../../Components/Topbar/Topbar";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
-import {useEffect, useState} from "react";
+import {useEffect, useLayoutEffect, useState} from "react";
 import {FormattedMessage} from "react-intl";
 import {Carousel} from "react-bootstrap";
 import {Link} from "react-router-dom";
@@ -19,6 +19,10 @@ function Login() {
     useEffect(() => {
         console.log(form)
     }, [form])
+
+    useLayoutEffect(()=>{
+        window.scrollTo(0,0)
+    })
 
     return (
         <div className="Login">

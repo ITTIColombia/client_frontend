@@ -8,8 +8,14 @@ import Editorial from '../../Components/HomeComponents/Editorial'
 import PopularArtisans from '../../Components/HomeComponents/PopularArtisans'
 import QuizQuestion from '../../Components/HomeComponents/QuizQuestion'
 import Quiz from '../../Components/HomeComponents/Quiz'
+import {useLayoutEffect} from "react";
 
 function Home(){
+
+    useLayoutEffect(()=>{
+        window.scrollTo(0,0)
+    })
+
     return (
         <div className='Home'>
             <Topbar/>

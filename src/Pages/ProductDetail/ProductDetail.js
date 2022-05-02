@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useLayoutEffect, useState} from 'react'
 import { useParams, Link } from 'react-router-dom';
 import "./ProductDetail.css"
 import Product1 from "../../Mockup/Product/Product1/Product1.json";
@@ -55,6 +55,10 @@ function ProductDetail() {
     useEffect(() => {
         setDepartment(Departments.find(dept => dept.name === artisan.department))
     }, [artisan])
+
+    useLayoutEffect(()=>{
+        window.scrollTo(0,0)
+    })
 
     return (
         <div id='ProductDetail'>
