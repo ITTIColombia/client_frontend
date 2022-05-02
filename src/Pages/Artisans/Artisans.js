@@ -1,7 +1,7 @@
 import './Artisans.css';
 import Topbar from "../../Components/Topbar/Topbar";
 import Navbar from "../../Components/Navbar/Navbar";
-import {useEffect, useState} from "react";
+import {useEffect, useLayoutEffect, useState} from "react";
 import ArtisansMockup from "../../Mockup/Artisan/Artisans";
 import {FormattedMessage} from "react-intl";
 import Filter from "../../Components/Filters/Filter";
@@ -19,6 +19,10 @@ function Artisans(){
 
     const [searchForm, setSearchForm] = useState(
         {"Region":"DEFAULT", "Type": "DEFAULT", "Job": "DEFAULT"})
+
+    useLayoutEffect(()=>{
+        window.scrollTo(0,0)
+    })
 
     useEffect(()=>{
         console.log(artisans)

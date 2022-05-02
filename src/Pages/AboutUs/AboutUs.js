@@ -1,5 +1,5 @@
 import "./AboutUs.css";
-import React from 'react';
+import React, {useLayoutEffect} from 'react';
 import Topbar from "../../Components/Topbar/Topbar";
 import Navbar from "../../Components/Navbar/Navbar";
 import {FormattedMessage} from "react-intl";
@@ -7,6 +7,10 @@ import {Carousel} from "react-bootstrap";
 import Footer from "../../Components/Footer/Footer";
 
 function AboutUs() {
+
+    useLayoutEffect(()=>{
+        window.scrollTo(0,0)
+    })
 
 
   return (

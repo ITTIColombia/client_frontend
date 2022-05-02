@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useLayoutEffect, useState} from 'react'
 import "./ProductsPage.css"
 import Footer from '../../Components/Footer/Footer'
 import Navbar from '../../Components/Navbar/Navbar'
@@ -18,6 +18,10 @@ function ProductsPage() {
 
     const [searchForm, setSearchForm] = useState(
         {"Region":"DEFAULT", "Type": "DEFAULT", "Job": "DEFAULT"})
+
+    useLayoutEffect(()=>{
+        window.scrollTo(0,0)
+    })
 
 
     return (
