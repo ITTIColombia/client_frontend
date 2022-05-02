@@ -1,7 +1,7 @@
 import "./SignUp.css";
 import Topbar from "../../Components/Topbar/Topbar";
 import Navbar from "../../Components/Navbar/Navbar";
-import {useEffect, useState} from "react";
+import {useEffect, useLayoutEffect, useState} from "react";
 import {Carousel} from "react-bootstrap";
 import {FormattedMessage} from "react-intl";
 import Footer from "../../Components/Footer/Footer";
@@ -20,6 +20,10 @@ function SignUp() {
 
     useEffect(() => {
     }, [form])
+
+    useLayoutEffect(()=>{
+        window.scrollTo(0,0)
+    })
 
 
     return (

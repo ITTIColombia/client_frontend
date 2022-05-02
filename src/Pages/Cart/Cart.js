@@ -2,7 +2,7 @@ import './Cart.css';
 import Topbar from "../../Components/Topbar/Topbar";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
-import React, {useMemo, useState} from "react";
+import React, {useLayoutEffect, useMemo, useState} from "react";
 import {FormattedMessage, FormattedNumber} from "react-intl";
 import products from "../../Mockup/Product/ProductsUserTesting";
 import {Modal} from "react-bootstrap";
@@ -52,6 +52,10 @@ function Cart() {
         setShowModal(false);
         setShoppingCart({})
     }
+
+    useLayoutEffect(()=>{
+        window.scrollTo(0,0)
+    })
 
     return (
         <div className="Cart">
