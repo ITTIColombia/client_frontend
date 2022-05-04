@@ -1,58 +1,80 @@
-import React from 'react'
-import "./Navbar.css"; 
-import { NavLink, useNavigate } from 'react-router-dom';
-import { FormattedMessage } from 'react-intl';
-
+import "./Navbar.css";
+import {useNavigate} from "react-router-dom";
+import {FormattedMessage, useIntl} from "react-intl";
+import React from "react";
+import {Container, Nav, Navbar as NavbarReact} from "react-bootstrap";
 
 function Navbar() {
 
- const navigate = useNavigate();
+    const navigate = useNavigate();
 
-    function handleGoCart(event){
+    const intl = useIntl();
+
+    function handleGoCart(event) {
         event.preventDefault();
         navigate("/cart");
     }
 
     return (
-        <div className="Navbar">
-            <div className="navbar-content">
-                    <div className="navbar-items left">
-                        <li key="1" className="navbar-items-text">
-                            <NavLink className={({ isActive }) => isActive? "active": ''} to="/">
-                                <span><FormattedMessage id="Home"/></span>
-                            </NavLink>
-                        </li>
-                        <li key="2" className="navbar-items-text">
-                            <NavLink className={({ isActive }) => isActive? "active": ''} to="/productos">
-                                <span><FormattedMessage id="Products"/></span>
-                            </NavLink>
-                        </li>
-                    </div>
-                    <div className="navbar-logo">
-                        <NavLink to="/">
-                            <img className="navbar-logo-img" src="/Assets/Logos/logoNav.svg" alt="Logo ITTI" />
-                        </NavLink>
-                    </div>
-                    <div className="navbar-items left">
-                        <li key="3" className="navbar-items-text">
-                            <NavLink className={({ isActive }) => isActive? "active": ''} to="/artesanos">
-                                <span><FormattedMessage id="Artisans"/></span>
-                            </NavLink>
-                        </li>
-                        <li key="4" className="navbar-items-text">
-                            <NavLink className={({ isActive }) => isActive? "active": ''} to="/nosotros">
-                                <span><FormattedMessage id="AboutUs"/></span>
-                            </NavLink>
-                        </li>
-                    </div>   
-            </div>
-            <div className="navbar-cart">
-               {/* <button className="user-cart" type="button" onClick={handleGoCart}></button>*/} 
-               <input className="user-cart" type="image" src="/Assets/Icons/Cart.svg" alt={<FormattedMessage id="Cart"/>} onClick={handleGoCart}/>
-
-            </div>
+        <div id="NavbarBootstrap">
+            <NavbarReact expand="lg">
+                <Container>
+                    <NavbarReact.Toggle aria-controls="basic-navbar-nav"
+                                   id="navbarBootstrap-toggle"/>
+                    <NavbarReact.Collapse id="basic-navbar-nav"
+                                     className="navbarBootstrap-collapse">
+                        <Nav className="navbarBootstrap-items-list">
+                            <Nav.Link className="navbarBootstrap-item"
+                                      id="navbarBootstrap-home-link"
+                                      href="/">
+                                <span className={window?.location.pathname === '/'? "navbarBootstrap-active": ""}>
+                                    <FormattedMessage id="Home"/>
+                                </span>
+                            </Nav.Link>
+                            <Nav.Link className="navbarBootstrap-item"
+                                      href="/productos">
+                                <span className={window?.location.pathname === '/productos'? "navbarBootstrap-active": ""}>
+                                    <FormattedMessage id="Products"/>
+                                </span>
+                            </Nav.Link>
+                            <NavbarReact.Brand href="/"
+                                          className="d-none d-lg-block ">
+                                <div className="navbarBootstrap-logo">
+                                    <img className="navbarBootstrap-logo-img"
+                                         src="/Assets/Logos/logoNav.svg"
+                                         alt="Logo ITTI"/>
+                                </div>
+                            </NavbarReact.Brand>
+                            <Nav.Link className="navbarBootstrap-item"
+                                      href="/artesanos">
+                                <span className={window?.location.pathname === '/artesanos'? "navbarBootstrap-active": ""}>
+                                    <FormattedMessage id="Artisans"/>
+                                </span>
+                            </Nav.Link>
+                            <Nav.Link className="navbarBootstrap-item"
+                                      href="/nosotros">
+                                <span className={window?.location.pathname === '/nosotros'? "navbarBootstrap-active": ""}>
+                                    <FormattedMessage id="AboutUs"/>
+                                </span>
+                            </Nav.Link>
+                        </Nav>
+                    </NavbarReact.Collapse>
+                </Container>
+                <div className="navbarBootstrap-logo-sm d-lg-none d-xl-none">
+                    <img className="navbarBootstrap-logo-img"
+                         src="/Assets/Logos/logoNav.svg"
+                         alt="Logo ITTI"/>
+                </div>
+                <div className="navbarBootstrap-cart">
+                    <input className="navbarBootstrap-user-cart"
+                           type="image"
+                           src="/Assets/Icons/Cart.svg"
+                           alt={intl.formatMessage({id: "Cart"})}
+                           onClick={handleGoCart}/>
+                </div>
+            </NavbarReact>
         </div>
     )
 }
 
-export default Navbar
+export default Navbar;

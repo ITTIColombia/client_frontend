@@ -7,6 +7,7 @@ import {FormattedMessage} from "react-intl";
 import Filter from "../../Components/Filters/Filter";
 import Footer from "../../Components/Footer/Footer";
 import {Link} from "react-router-dom";
+import React from "react";
 
 
 function Artisans(){
@@ -30,33 +31,36 @@ function Artisans(){
 
 
     return(
-        <div id="Artisans">
+        <React.Fragment>
             <Topbar/>
             <Navbar/>
-            <div className="row intro-artisans">
-                <div className="col-6 description-artisans">
-                    <h1 id="title-artisans"><FormattedMessage id="Artisans"/></h1>
-                    <p className="text-artisans"><FormattedMessage id="ArtisansDescription"/></p>
-                    <div className="filter-artisans">
-                        <Filter options={optionsSearchForm} state={searchForm} setState={setSearchForm}/>
+            <div id="Artisans">
+                <div className="row intro-artisans">
+                    <div className="col-6 description-artisans">
+                        <h1 id="title-artisans"><FormattedMessage id="Artisans"/></h1>
+                        <p className="text-artisans"><FormattedMessage id="ArtisansDescription"/></p>
+                        <div className="filter-artisans">
+                            <Filter options={optionsSearchForm} state={searchForm} setState={setSearchForm}/>
+                        </div>
+                    </div>
+                    <div className="col-6">
+                        <div className="float-end">
+                            <img id="colombia_map" src='/Assets/Map/MapRegions.png' alt="colombia-map"/>
+                        </div>
                     </div>
                 </div>
-                <div className="col-6">
-                    <div className="float-end">
-                        <img id="colombia_map" src='/Assets/Map/MapRegions.png' alt="colombia-map"/>
-                    </div>
+                <div className="artisans-section row float-left">
+                    {artisans.map((artisan,i) =>{
+                        return (
+                            <Link to={"/artesanos/"+artisan._id} key={"artisan"+i}  className="col-4">
+                                <img src={artisan.profilePhoto} alt={"artisan"+i}/>
+                            </Link>)
+                    })}
                 </div>
-            </div>
-            <div className="artisans-section row float-left">
-                {artisans.map((artisan,i) =>{
-                    return (
-                        <Link to={"/artesanos/"+artisan._id} key={"artisan"+i}  className="col-4">
-                            <img src={artisan.profilePhoto} alt={"artisan"+i}/>
-                        </Link>)
-                })}
             </div>
             <Footer/>
-        </div>
+        </React.Fragment>
+
     )
 }
 

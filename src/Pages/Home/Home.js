@@ -6,9 +6,9 @@ import './Home.css'
 import Favorites from '../../Components/HomeComponents/Favorites'
 import Editorial from '../../Components/HomeComponents/Editorial'
 import PopularArtisans from '../../Components/HomeComponents/PopularArtisans'
-import QuizQuestion from '../../Components/HomeComponents/QuizQuestion'
 import Quiz from '../../Components/HomeComponents/Quiz'
 import {useLayoutEffect} from "react";
+import React from "react";
 
 function Home(){
 
@@ -17,18 +17,19 @@ function Home(){
     })
 
     return (
-        <div className='Home'>
+        <React.Fragment>
             <Topbar/>
             <Navbar/>
-            <Banner/>
-            <Favorites/>
-            <Quiz/>
-            <PopularArtisans/>
-            <Editorial/>
+            <div id='Home'>
+                <Banner/>
+                <Favorites/>
+                <Quiz/>
+                <PopularArtisans/>
+                <Editorial/>
+            </div>
             <Footer/>
+        </React.Fragment>
 
-
-        </div>
     )
 }
 
