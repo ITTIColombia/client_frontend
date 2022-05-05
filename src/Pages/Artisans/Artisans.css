@@ -8,18 +8,13 @@
     font-family: "Playfair Display";
     font-weight: bold;
     color: var(--black);
-    font-size: 2.5rem;
     margin-bottom: .8em;
 }
 
 .text-artisans{
     font-family: "Montserrat";
-    font-size: 1rem;
 }
 
-.description-artisans{
-    padding-top: 7em;
-}
 
 .filter-artisans{
     padding-top: 2em;
@@ -33,6 +28,7 @@
 .artisans-section{
     padding-left: 10vw;
     padding-right: 10vw;
+    text-align: center;
 }
 
 .orange{
@@ -42,5 +38,38 @@
 #colombia_map{
     max-height: 35em;
 }
+
+@media (min-width: 992px){
+    .description-artisans{
+        padding-top: 7em;
+    }
+    .artisans-col img{
+        width: 100%;
+    }
+    #title-artisans{
+        font-size: 2.5rem;
+    }
+
+    .text-artisans{
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 991px){
+    .description-artisans{
+        padding-top: 3em;
+    }
+    .artisans-col img{
+        width: 90%;
+    }
+    #title-artisans{
+        font-size: 2rem;
+    }
+
+    .text-artisans{
+        font-size: .8rem;
+    }
+}
+
 
 
