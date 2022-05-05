@@ -1,6 +1,5 @@
 import "./AboutUs.css";
 import React, {useLayoutEffect} from 'react';
-import Topbar from "../../Components/Topbar/Topbar";
 import {FormattedMessage} from "react-intl";
 import {Carousel} from "react-bootstrap";
 import Footer from "../../Components/Footer/Footer";
@@ -15,7 +14,6 @@ function AboutUs() {
 
   return (
       <React.Fragment>
-          <Topbar/>
           <Navbar/>
           <div id="AboutUs">
               <div className="container-fluid">

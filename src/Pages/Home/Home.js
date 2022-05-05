@@ -1,4 +1,3 @@
-import Topbar from '../../Components/Topbar/Topbar'
 import Navbar from '../../Components/Navbar/Navbar'
 import Banner from '../../Components/HomeComponents/Banner'
 import Footer from '../../Components/Footer/Footer'
@@ -18,7 +17,6 @@ function Home(){
 
     return (
         <React.Fragment>
-            <Topbar/>
             <Navbar/>
             <div id='Home'>
                 <Banner/>

@@ -1,5 +1,4 @@
 import './Login.css';
-import Topbar from "../../Components/Topbar/Topbar";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import {useEffect, useLayoutEffect, useState} from "react";
@@ -27,7 +26,6 @@ function Login() {
 
     return (
         <React.Fragment>
-            <Topbar/>
             <Navbar/>
             <div className="Login">
                 <div className="container">

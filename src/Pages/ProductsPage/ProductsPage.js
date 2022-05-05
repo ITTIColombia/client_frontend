@@ -2,7 +2,6 @@ import React, {useLayoutEffect, useState} from 'react'
 import "./ProductsPage.css"
 import Footer from '../../Components/Footer/Footer'
 import Navbar from '../../Components/Navbar/Navbar'
-import Topbar from '../../Components/Topbar/Topbar'
 import ProductCard from '../../Components/ProductCard/ProductCard'
 import Filter from "../../Components/Filters/Filter";
 import Products from "../../Mockup/Product/Products";
@@ -26,7 +25,6 @@ function ProductsPage() {
 
     return (
         <React.Fragment>
-            <Topbar/>
             <Navbar/>
             <div id='Products'>
                 <div className="container-fluid">

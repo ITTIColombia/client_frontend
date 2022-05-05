@@ -8,9 +8,20 @@
 .products-header{
     width: 100%;
     margin-top: 20%;
-    vertical-align: center;
     padding-left: 11vw;
     padding-right: 11vw;
+}
+
+@media(min-width: 992px) {
+    .products-header{
+        margin-top: 20%;
+    }
+}
+
+@media(max-width: 992px) {
+    .products-header{
+        margin-top: 10%;
+    }
 }
 
 .filter-container{

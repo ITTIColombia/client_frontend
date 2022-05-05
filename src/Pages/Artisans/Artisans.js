@@ -1,5 +1,4 @@
 import './Artisans.css';
-import Topbar from "../../Components/Topbar/Topbar";
 import Navbar from "../../Components/Navbar/Navbar";
 import {useEffect, useLayoutEffect, useState} from "react";
 import ArtisansMockup from "../../Mockup/Artisan/Artisans";
@@ -32,7 +31,6 @@ function Artisans(){
 
     return(
         <React.Fragment>
-            <Topbar/>
             <Navbar/>
             <div id="Artisans">
                 <div className="row intro-artisans">

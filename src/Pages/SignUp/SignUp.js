@@ -1,5 +1,4 @@
 import "./SignUp.css";
-import Topbar from "../../Components/Topbar/Topbar";
 import Navbar from "../../Components/Navbar/Navbar";
 import {useEffect, useLayoutEffect, useState} from "react";
 import {Carousel} from "react-bootstrap";
@@ -29,7 +28,6 @@ function SignUp() {
 
     return (
         <React.Fragment>
-            <Topbar/>
             <Navbar/>
             <div id="SignUp">
                 <div className="container">

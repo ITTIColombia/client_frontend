@@ -8,7 +8,6 @@ import Bread from '../../Components/Breadcrumbs/Breadcrumbs';
 import ButtonOrange from '../../Components/Buttons/ButtonOrange';
 import Footer from '../../Components/Footer/Footer';
 import Navbar from '../../Components/Navbar/Navbar';
-import Topbar from '../../Components/Topbar/Topbar';
 import Products from "../../Mockup/Product/Products";
 import Departments from "../../Mockup/Department/Departments";
 import Artisans from "../../Mockup/Artisan/Artisans";
@@ -58,7 +57,6 @@ function ProductDetail() {
 
     return (
         <React.Fragment>
-            <Topbar/>
             <Navbar/>
             <div id='ProductDetail'>
                 <Bread pathName={intl.formatMessage({id: "Products"})} path="/productos" name={product.name}/>

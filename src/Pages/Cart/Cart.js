@@ -1,5 +1,4 @@
 import './Cart.css';
-import Topbar from "../../Components/Topbar/Topbar";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import React, {useLayoutEffect, useMemo, useState} from "react";
@@ -59,7 +58,6 @@ function Cart() {
 
     return (
         <React.Fragment>
-            <Topbar/>
             <Navbar/>
             <div className="Cart">
                 <Modal show={showModal} className="cart-modal" size="lg" dialogClassName="modal-90w" onHide={()=>{setShowModal(false)}}>

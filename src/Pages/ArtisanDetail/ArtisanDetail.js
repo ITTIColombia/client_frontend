@@ -1,5 +1,4 @@
 import "./ArtisanDetail.css";
-import Topbar from "../../Components/Topbar/Topbar";
 import Navbar from "../../Components/Navbar/Navbar";
 import {useEffect, useLayoutEffect, useState} from "react";
 import Artisan1 from '../../Mockup/Artisan/Artisan1/Artisan1.json';
@@ -47,7 +46,6 @@ function ArtisanDetail(props) {
 
     return (
         <React.Fragment>
-            <Topbar/>
             <Navbar/>
             <div id="ArtisanDetail">
                 <Breadcrumbs path="/artesanos"
