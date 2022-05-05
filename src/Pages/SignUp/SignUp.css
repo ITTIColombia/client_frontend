@@ -15,11 +15,11 @@
     align-items: stretch;
 }
 
-.orange{
+#Signup .orange{
     color: var(--orange);
 }
 
-.black{
+#Signup .black{
     color: var(--black)
 }
 
