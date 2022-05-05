@@ -1,10 +1,30 @@
 /*CSS for filters*/
 
-.Filters{
-    /*width: 100%;*/
+#Filter{
     margin-bottom: 3rem;
-    /*padding-left: 11vw;*/
-    /*padding-right: 11vw;*/
+}
+
+@media(min-width: 992px){
+    #ResponsiveFilter{
+        display: none;
+    }
+}
+
+@media(max-width: 992px) {
+    #Filter{
+        display: none;
+    }
+}
+
+#ResponsiveButton{
+    text-underline: #BF522A;
+    background-color: transparent;
+    border-width: 0;
+    color: var(--orange);
+    text-decoration: underline;
+    font-family: "Montserrat";
+    font-weight: 500;
+    padding: 0;
 }
 
 .filters-content{
@@ -35,19 +55,19 @@
 
 }
 
-.Filters a{
+#Filter a{
     font-family: "Montserrat";
     color: var(--orange);
 }
-.Filters a:hover{
+#Filter a:hover{
     text-decoration: none;
     color: var(--black);
 }
 
-.Filters button{
+#Filter button{
     font-family: "Montserrat";
     color: var(--black);
 }
-.Filters button:hover{
+#Filter button:hover{
     color: var(--orange);
 }
