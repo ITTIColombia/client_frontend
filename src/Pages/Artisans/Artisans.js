@@ -32,25 +32,25 @@ function Artisans(){
     return(
         <React.Fragment>
             <Navbar/>
-            <div id="Artisans">
+            <div id="Artisans" className="container-fluid">
                 <div className="row intro-artisans">
-                    <div className="col-6 description-artisans">
+                    <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 description-artisans">
                         <h1 id="title-artisans"><FormattedMessage id="Artisans"/></h1>
                         <p className="text-artisans"><FormattedMessage id="ArtisansDescription"/></p>
                         <div className="filter-artisans">
                             <Filter options={optionsSearchForm} state={searchForm} setState={setSearchForm}/>
                         </div>
                     </div>
-                    <div className="col-6">
+                    <div className="col-lg-6 col-xl-6 d-none d-lg-block d-xl-block">
                         <div className="float-end">
                             <img id="colombia_map" src='/Assets/Map/MapRegions.png' alt="colombia-map"/>
                         </div>
                     </div>
                 </div>
-                <div className="artisans-section row float-left">
+                <div className="artisans-section row">
                     {artisans.map((artisan,i) =>{
                         return (
-                            <Link to={"/artesanos/"+artisan._id} key={"artisan"+i}  className="col-4">
+                            <Link to={"/artesanos/"+artisan._id} key={"artisan"+i}  className="col-lg-4 col-xl-4 col-sm-12 col-xs-12 artisans-col">
                                 <img src={artisan.profilePhoto} alt={"artisan"+i}/>
                             </Link>)
                     })}

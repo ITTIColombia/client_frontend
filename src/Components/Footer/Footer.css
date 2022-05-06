@@ -32,6 +32,18 @@
     }
 }
 
+@media(max-width: 992px) and (min-width: 540px){
+    .footer-row{
+        padding: 3rem 10rem;
+    }
+}
+
+@media(max-width: 540px){
+    .footer-row{
+        padding: 3rem 5rem;
+    }
+}
+
 #footer-copyright-region span{
     margin-left: 1em;
 }
