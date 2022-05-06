@@ -83,32 +83,42 @@ function ArtisanDetail(props) {
                             </video>
                         </div>
                     </div>
+
                     <div className='row artisan-region artisan-row'>
-                        <div className="col-5 artisan-intro artisan-left">
+                        <div className="col-lg-5 artisan-intro artisan-left d-none d-lg-block">
                             <img id="map-artisan"
                                  src={"/Assets/Map/Color/" + artisan.department + ".svg"}
                                  alt="map artisan"/>
                         </div>
 
-                        <div className="col-7 artisan-intro artisan-right">
+                        <div className="col-12 col-lg-7 artisan-intro artisan-right">
+                            <div className='row'>
+                                <div className="col-6 col-sm-6 artisan-intro artisan-left d-block d-lg-none">
+                                    <img id="map-artisan-small"
+                                         src={"/Assets/Map/Color/" + artisan.department + ".svg"}
+                                         alt="map artisan"/>
+                                </div>
 
-                            <div className="reduced-container">
-                                <h2 className="black title-text-artisan">The corner of Colombia</h2>
-                                <p className="normal-text-artisan">
-                                    <span className="text-uppercase orange"><FormattedMessage id="Region"/></span> - <FormattedMessage id={department.region}/>
-                                    <br/>
-                                    <span className="text-uppercase orange"><FormattedMessage id="Department"/></span> - {artisan.department}
-                                    <br/>
-                                    <span className="text-uppercase orange"><FormattedMessage id="Community"/></span> - {artisan.city}
-                                </p>
-                                <p className="normal-text-artisan">
-                                    {context.languageSettings.locale.startsWith("en") ? department.descriptionEN ||
-                                        Department1.descriptionEN : department.descriptionES ||
-                                        Department1.descriptionES}
-                                </p>
+                                <div className="col-6 col-sm-6 col-lg-12 my-auto center-horizontally-small reduced-container">
+                                    <p className="black title-text-artisan">The corner of Colombia</p>
+                                    <p className="normal-text-artisan">
+                                        <span className="text-uppercase orange"><FormattedMessage id="Region"/></span> - <FormattedMessage id={department.region}/>
+                                        <br/>
+                                        <span className="text-uppercase orange"><FormattedMessage id="Department"/></span> - {artisan.department}
+                                        <br/>
+                                        <span className="text-uppercase orange"><FormattedMessage id="Community"/></span> - {artisan.city}
+                                    </p>
+                                </div>
                             </div>
+                            <p className="normal-text-artisan reduced-container col-12 col-lg-12">
+                                {context.languageSettings.locale.startsWith("en") ? department.descriptionEN ||
+                                    Department1.descriptionEN : department.descriptionES ||
+                                    Department1.descriptionES}
+                            </p>
+
                         </div>
                     </div>
+
                     <div className='row artisan-technique artisan-row'>
                         <h2 className="black title-text-artisan text-center"><FormattedMessage id="TheTechnique"/></h2>
                         <p className="black normal-text-artisan">{context.languageSettings.locale.startsWith(
