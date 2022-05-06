@@ -13,6 +13,7 @@ import Breadcrumbs from "../../Components/Breadcrumbs/Breadcrumbs";
 import {useContext} from "react";
 import appContext from "../../AppContext";
 import React from "react";
+import RightArrow from "../../Components/RightArrow/RightArrow";
 
 function ArtisanDetail(props) {
 
@@ -59,16 +60,20 @@ function ArtisanDetail(props) {
                     </div>
     </div>*/}
                     <div className='row artisan-intro artisan-row'>
-                        <div className="col-5 artisan-intro artisan-left">
+                        <div className="col-lg-5 col-xl-5 col-sm-12 artisan-intro artisan-left">
                             <h1 className="title-text-artisan orange">{artisan.name || Artisan1.name}</h1>
                             <p className="normal-text-artisan">{context.languageSettings.locale.startsWith(
                                 "en") ? artisan.shortDescriptionEN ||
                                 Artisan1.shortDescriptionEN : artisan.shortDescriptionES ||
                                 Artisan1.shortDescriptionES}</p>
-                            {/*<p className="normal-text-artisan"><FormattedMessage id="SeeProducts"/></p>*/}
+                            <p>
+                                <a className="normal-text-artisan artisan-adjust-flex" href="#artisan-product-region">
+                                    <span id="artisanDetail-container-seeProducts"><FormattedMessage id="SeeProducts"/></span><RightArrow/>
+                                </a>
+                            </p>
                         </div>
 
-                        <div className="col-7 artisan-intro- artisan-right">
+                        <div className="col-lg-7 col-xl-7 col-sm-12 artisan-intro- artisan-right">
                             <video autoPlay
                                    controls
                                    name="media">
@@ -85,7 +90,7 @@ function ArtisanDetail(props) {
                                  alt="map artisan"/>
                         </div>
 
-                        <div className="col-7 artisan-intro- artisan-right">
+                        <div className="col-7 artisan-intro artisan-right">
 
                             <div className="reduced-container">
                                 <h2 className="black title-text-artisan">The corner of Colombia</h2>
@@ -138,7 +143,8 @@ function ArtisanDetail(props) {
                             </div>
                         </div>
                     </div>
-                    <div className='row artisan-products artisan-row'>
+                    <div id="artisan-product-region"
+                         className='row artisan-products artisan-row'>
                         <h2 className="black title-text-artisan text-center"><FormattedMessage id="Products"/></h2>
                         <p className="black normal-text-artisan text-center"> Explore all the handicrafts
                             of <span className="normal-text-artisan-span">{artisan.name || Artisan1.name}</span> and

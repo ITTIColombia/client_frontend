@@ -76,3 +76,19 @@
 #ArtisanDetail .normal-text-artisan-span{
     font-weight: 600;
 }
+
+.artisan-adjust-flex{
+    display: flex;
+    text-decoration: none;
+    color: black;
+}
+
+.artisan-adjust-flex:hover{
+    text-decoration: underline;
+    /*color: var(--orange);*/
+    color: black;
+}
+
+#artisanDetail-container-seeProducts{
+    margin-right: 1em;
+}
