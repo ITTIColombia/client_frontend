@@ -41,17 +41,27 @@
     }
 
     .normal-text-artisan{
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 992px) {
+    .title-text-artisan{
+        font-size: 1.7rem;
+    }
+
+    .normal-text-artisan{
         font-size: 0.8rem;
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 575px) {
     .title-text-artisan{
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
 
     .normal-text-artisan{
-        font-size: 0.6rem;
+        font-size: 0.5rem;
     }
 }
 
@@ -89,8 +99,8 @@
 }
 
 #ArtisanDetail .product-figure{
-    height: 40vh;
-    padding: 1rem
+    padding: 1rem;
+    width: 25%;
 }
 
 #ArtisanDetail .normal-text-artisan-span{
