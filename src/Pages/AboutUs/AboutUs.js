@@ -18,31 +18,30 @@ function AboutUs() {
           <div id="AboutUs">
               <div className="container-fluid">
                   <div className="aboutUs-banner row">
-                      <Carousel indicators={false}>
-                          <Carousel.Item>
-                              <img className="d-block w-100" src="/Assets/Photos/AboutUs/Banner.png" alt="Banner artisan" />
-                              <Carousel.Caption>
-                                  <h1>
-                                      <FormattedMessage id="TitleAboutUs"/>
-                                  </h1>
-                              </Carousel.Caption>
-                          </Carousel.Item>
-                      </Carousel>
+                      <div className="col-12 aboutUs-banner-col">
+                          <img className="aboutUs-banner-img" src="/Assets/Photos/AboutUs/Banner.png" alt="Banner artisan" />
+                          <div id="aboutUs-banner-helper">
+                              <h1><FormattedMessage id="TitleAboutUs"/></h1>
+                          </div>
+                      </div>
                   </div>
                   <div className="aboutUs-motivation row align-items-center">
-                      <div className="col-6 center-content">
+                      <div className="col-12 col-lg-6 center-content">
                           <h2>
                               <FormattedMessage id="SubtitleAboutUs" values={{
                                   span: (chunks) => <span className='text-italic'>{chunks}</span>
                               }}/>
                           </h2>
                       </div>
-                      <div className="col-6 center-content">
+                      <div className="col-12 col-lg-6 center-content">
                           <p><FormattedMessage id="ParagraphDream1"/></p>
                           <p><FormattedMessage id="ParagraphDream2"/></p>
                       </div>
                   </div>
                   <div className="aboutUs-artisans row align-items-center">
+                      <div className="col-12 d-block d-lg-none text-center ">
+                          <img src="/Assets/Photos/AboutUs/Artisans.png" alt="Artisan" className="aboutUs-artisans-img"/>
+                      </div>
                       <div className="aboutUs-artisans-txt col-5 center-content">
                           <h3>
                               <FormattedMessage id="WhoAreTheArtisans" values={{
@@ -53,7 +52,7 @@ function AboutUs() {
                           <p><FormattedMessage id="ArtisansExplanation2"/></p>
                           <p className='text-bold'><FormattedMessage id="ArtisansExplanation3"/></p>
                       </div>
-                      <div className="col-7 text-center ">
+                      <div className="col-lg-7 d-none d-lg-block text-center ">
                           <img src="/Assets/Photos/AboutUs/Artisans.png" alt="Artisan" className="aboutUs-artisans-img"/>
                       </div>
                   </div>
