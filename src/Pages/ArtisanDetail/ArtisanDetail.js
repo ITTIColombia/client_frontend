@@ -13,6 +13,8 @@ import Breadcrumbs from "../../Components/Breadcrumbs/Breadcrumbs";
 import {useContext} from "react";
 import appContext from "../../AppContext";
 import React from "react";
+import RightArrow from "../../Components/RightArrow/RightArrow";
+import {Carousel} from "react-bootstrap";
 
 function ArtisanDetail(props) {
 
@@ -59,16 +61,20 @@ function ArtisanDetail(props) {
                     </div>
     </div>*/}
                     <div className='row artisan-intro artisan-row'>
-                        <div className="col-5 artisan-intro artisan-left">
+                        <div className="col-lg-5 col-xl-5 col-sm-12 artisan-intro artisan-left">
                             <h1 className="title-text-artisan orange">{artisan.name || Artisan1.name}</h1>
                             <p className="normal-text-artisan">{context.languageSettings.locale.startsWith(
                                 "en") ? artisan.shortDescriptionEN ||
                                 Artisan1.shortDescriptionEN : artisan.shortDescriptionES ||
                                 Artisan1.shortDescriptionES}</p>
-                            {/*<p className="normal-text-artisan"><FormattedMessage id="SeeProducts"/></p>*/}
+                            <p>
+                                <a className="normal-text-artisan artisan-adjust-flex" href="#artisan-product-region">
+                                    <span id="artisanDetail-container-seeProducts"><FormattedMessage id="SeeProducts"/></span><RightArrow/>
+                                </a>
+                            </p>
                         </div>
 
-                        <div className="col-7 artisan-intro- artisan-right">
+                        <div className="col-lg-7 col-xl-7 col-sm-12 artisan-intro- artisan-right">
                             <video autoPlay
                                    controls
                                    name="media">
@@ -78,52 +84,62 @@ function ArtisanDetail(props) {
                             </video>
                         </div>
                     </div>
+
                     <div className='row artisan-region artisan-row'>
-                        <div className="col-5 artisan-intro artisan-left">
+                        <div className="col-lg-5 artisan-intro artisan-left d-none d-lg-block">
                             <img id="map-artisan"
                                  src={"/Assets/Map/Color/" + artisan.department + ".svg"}
                                  alt="map artisan"/>
                         </div>
 
-                        <div className="col-7 artisan-intro- artisan-right">
+                        <div className="col-12 col-lg-7 artisan-intro artisan-right">
+                            <div className='row'>
+                                <div className="col-6 artisan-intro artisan-left d-block d-lg-none">
+                                    <img id="map-artisan-small"
+                                         src={"/Assets/Map/Color/" + artisan.department + ".svg"}
+                                         alt="map artisan"/>
+                                </div>
 
-                            <div className="reduced-container">
-                                <h2 className="black title-text-artisan">The corner of Colombia</h2>
-                                <p className="normal-text-artisan">
-                                    <span className="text-uppercase orange"><FormattedMessage id="Region"/></span> - <FormattedMessage id={department.region}/>
-                                    <br/>
-                                    <span className="text-uppercase orange"><FormattedMessage id="Department"/></span> - {artisan.department}
-                                    <br/>
-                                    <span className="text-uppercase orange"><FormattedMessage id="Community"/></span> - {artisan.city}
-                                </p>
-                                <p className="normal-text-artisan">
-                                    {context.languageSettings.locale.startsWith("en") ? department.descriptionEN ||
-                                        Department1.descriptionEN : department.descriptionES ||
-                                        Department1.descriptionES}
-                                </p>
+                                <div className="col-6 col-sm-6 col-lg-12 my-auto center-horizontally-small reduced-container">
+                                    <p className="black title-text-artisan">The corner of Colombia</p>
+                                    <p className="normal-text-artisan">
+                                        <span className="text-uppercase orange"><FormattedMessage id="Region"/></span> - <FormattedMessage id={department.region}/>
+                                        <br/>
+                                        <span className="text-uppercase orange"><FormattedMessage id="Department"/></span> - {artisan.department}
+                                        <br/>
+                                        <span className="text-uppercase orange"><FormattedMessage id="Community"/></span> - {artisan.city}
+                                    </p>
+                                </div>
                             </div>
+                            <p className="normal-text-artisan reduced-container col-12 col-lg-12">
+                                {context.languageSettings.locale.startsWith("en") ? department.descriptionEN ||
+                                    Department1.descriptionEN : department.descriptionES ||
+                                    Department1.descriptionES}
+                            </p>
+
                         </div>
                     </div>
+
                     <div className='row artisan-technique artisan-row'>
-                        <h2 className="black title-text-artisan text-center"><FormattedMessage id="TheTechnique"/></h2>
-                        <p className="black normal-text-artisan">{context.languageSettings.locale.startsWith(
+                        <h2 className="col-12 black title-text-artisan text-center"><FormattedMessage id="TheTechnique"/></h2>
+                        <p className="col-12 black normal-text-artisan">{context.languageSettings.locale.startsWith(
                             "en") ? artisan.detailedDescriptionEN ||
                             Artisan1.detailedDescriptionEN : artisan.detailedDescriptionES ||
                             Artisan1.detailedDescriptionES}</p>
-                        <div className="col-6">
+                        <div className="col-12 col-lg-6">
                             <img className="technique-figure"
                                  src={artisan.media && artisan.media.length > 0 ? artisan.media[1] : Artisan1.media[1]}
                                  alt="technique-1"/>
                         </div>
-                        <div className="col-6">
+                        <div className="col-12 col-lg-6">
                             <div className="row">
-                                <div className="col-6">
+                                <div className="col-12 col-lg-6">
                                     <img className="technique-figure"
                                          src={artisan.media && artisan.media.length >
                                          0 ? artisan.media[2] : Artisan1.media[2]}
                                          alt="technique-2"/>
                                 </div>
-                                <div className="col-6">
+                                <div className="col-12 col-lg-6">
                                     <img className="technique-figure"
                                          src={artisan.media && artisan.media.length >
                                          0 ? artisan.media[3] : Artisan1.media[3]}
@@ -138,28 +154,32 @@ function ArtisanDetail(props) {
                             </div>
                         </div>
                     </div>
-                    <div className='row artisan-products artisan-row'>
-                        <h2 className="black title-text-artisan text-center"><FormattedMessage id="Products"/></h2>
-                        <p className="black normal-text-artisan text-center"> Explore all the handicrafts
+                    <div id="artisan-product-region"
+                         className='row artisan-products artisan-row'>
+                        <h2 className="col-12 black title-text-artisan text-center"><FormattedMessage id="Products"/></h2>
+                        <p className="col-12 black normal-text-artisan "> Explore all the handicrafts
                             of <span className="normal-text-artisan-span">{artisan.name || Artisan1.name}</span> and
                             discover more about their culture.</p>
-                        <div className="artisan-row-photos">
-                            <img className="product-figure"
-                                 src={products[0].media[0]["Photo1"]}
-                                 alt="product-1"/>
+                        <div className="artisan-row-photos col-12 d-none d-lg-block">
 
-                            <img className="product-figure"
-                                 src={products[1].media[0]["Photo1"]}
-                                 alt="product-2"/>
-
-                            <img className="product-figure"
-                                 src={products[2].media[0]["Photo1"]}
-                                 alt="product-3"/>
-
-                            <img className="product-figure"
-                                 src={products[3].media[0]["Photo1"]}
-                                 alt="product-4"/>
+                            {products.map((product, i)=>
+                                <img className="product-figure"
+                                     src={product.media[0]["Photo1"]}
+                                     alt={"product-"+i}
+                                     key={i}/>
+                            )}
                         </div>
+                        <Carousel className='d-block d-lg-none'>
+                            {products.map((product, i)=>
+                                <Carousel.Item interval={1000} key={i}>
+                                    <img
+                                        className="d-block w-100 product-figure"
+                                        src={product.media[0]["Photo1"]}
+                                        alt={"product-"+i}
+                                    />
+                                </Carousel.Item>
+                            )}
+                        </Carousel>
                     </div>
                 </div>
             </div>
