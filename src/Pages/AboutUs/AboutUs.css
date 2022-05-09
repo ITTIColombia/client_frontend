@@ -49,17 +49,68 @@
     .aboutUs-banner h1{
         font-size: 3rem;
     }
+    #AboutUs h2{
+        font-size: 2.2em;
+        padding: 0 3.5em;
+    }
+
+    #AboutUs h3{
+        font-size: 2.5em;
+        margin-bottom: 2.5em;
+    }
+    .aboutUs-artisans h3{
+        width: 70%;
+    }
+
+    #AboutUs p{
+        font-size: 1em;
+    }
 }
 
 @media(min-width: 576px) and (max-width: 991px) {
     .aboutUs-banner h1{
         font-size: 2rem;
     }
+
+    #AboutUs h2{
+        font-size: 2em;
+        width: 60%;
+        margin-bottom: 1em;
+    }
+
+    #AboutUs h3{
+        font-size: 2em;
+        margin-bottom: 2em;
+    }
+
+    .aboutUs-artisans h3{
+        width: 80%;
+    }
+    #AboutUs p{
+        font-size: .9em;
+    }
 }
 
 @media(max-width: 575px) {
     .aboutUs-banner h1{
         font-size: 1.5rem;
+    }
+
+    #AboutUs h2{
+        font-size: 1.5em;
+        width: 80%;
+        margin-bottom: 1em;
+    }
+
+    #AboutUs h3{
+        font-size: 1.5em;
+        margin-bottom: 1.7em;
+    }
+    .aboutUs-artisans h3{
+        width: 80%;
+    }
+    #AboutUs p{
+        font-size: .7em;
     }
 }
 
@@ -71,8 +122,6 @@
 #AboutUs h2{
     font-family: "Playfair Display";
     font-weight: bold;
-    font-size: 2.5em;
-    padding: 0 3.5em;
 }
 
 .aboutUs-motivation p{
@@ -82,7 +131,6 @@
 #AboutUs h3{
     font-family: "Playfair Display";
     font-weight: bold;
-    margin-bottom: 2em;
 }
 
 #AboutUs .text-italic{
@@ -91,12 +139,14 @@
 
 .aboutUs-artisans h3{
     color: var(--orange);
-    width: 70%;
 }
 
-#AboutUs h3{
-    font-size: 2.5em;
+#aboutUs-artisans-small-image{
+    width: 100%;
+    margin-top: 4em;
+    margin-bottom: 3em;
 }
+
 
 .aboutUs-artisans{
     background-color: #F5F4F2;
@@ -116,21 +166,22 @@
     margin-bottom: 3em;
 }
 
-#team1image{
+#team1image, #team1imageSmall{
     width: 100%;
+}
+
+#team1imageSmall{
+    margin-bottom: 2em;
 }
 
 #team2image{
     height: 100%;
 }
 
-.aboutUs-artisans-txt{
-   width: 25rem !important;
-   margin-left: 2rem !important;
-} 
 
 .aboutUs-artisans-img{
     margin-left: 4rem !important;
+    width: 100%;
 }
 
 

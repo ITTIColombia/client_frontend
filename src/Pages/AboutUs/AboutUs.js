@@ -26,7 +26,7 @@ function AboutUs() {
                       </div>
                   </div>
                   <div className="aboutUs-motivation row align-items-center">
-                      <div className="col-12 col-lg-6 center-content">
+                      <div className="col-12 col-lg-6">
                           <h2>
                               <FormattedMessage id="SubtitleAboutUs" values={{
                                   span: (chunks) => <span className='text-italic'>{chunks}</span>
@@ -39,10 +39,10 @@ function AboutUs() {
                       </div>
                   </div>
                   <div className="aboutUs-artisans row align-items-center">
-                      <div className="col-12 d-block d-lg-none text-center ">
-                          <img src="/Assets/Photos/AboutUs/Artisans.png" alt="Artisan" className="aboutUs-artisans-img"/>
+                      <div className="col-12 d-block d-lg-none">
+                          <img id="aboutUs-artisans-small-image" src="/Assets/Photos/AboutUs/Artisans.png" alt="Artisan"/>
                       </div>
-                      <div className="aboutUs-artisans-txt col-5 center-content">
+                      <div className="aboutUs-artisans-txt col-12 col-lg-5">
                           <h3>
                               <FormattedMessage id="WhoAreTheArtisans" values={{
                                   span: (chunks) => <span className="text-italic">{chunks}</span>
@@ -63,11 +63,12 @@ function AboutUs() {
                           </h3>
                       </div>
 
-                      <div className="col-6 text-center">
+                      <div className="col-12 col-lg-6 text-center">
+                          <img id="team1imageSmall" src="/Assets/Photos/AboutUs/Team1.png" alt="ITTI Team #1" className="d-block d-lg-none"/>
                           <p><FormattedMessage id="TeamITTI"/></p>
-                          <img id="team1image" src="/Assets/Photos/AboutUs/Team1.png" alt="ITTI Team #1"/>
+                          <img id="team1image" src="/Assets/Photos/AboutUs/Team1.png" alt="ITTI Team #1" className="d-none d-lg-block"/>
                       </div>
-                      <div className="col-6 text-center aboutUs-team2-col">
+                      <div className="col-lg-6 text-center aboutUs-team2-col d-none d-lg-block">
                           <img id="team2image" src="/Assets/Photos/AboutUs/Team2.png" alt="ITTI Team #2"/>
                       </div>
                   </div>
