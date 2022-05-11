@@ -27,11 +27,11 @@ function Login() {
     return (
         <React.Fragment>
             <Navbar/>
-            <div className="Login">
+            <div id="Login">
                 <div className="container">
                     <div className="row login-content">
-                        <div className="col-6 login-image-section d-flex justify-content-end">
-                            <Carousel className="login-carousel"
+                        <div className="col-lg-6 login-image-section d-flex justify-content-end">
+                            <Carousel className="login-carousel hide-sm"
                                       controls={false}>
                                 <Carousel.Item>
                                     <img className="d-block w-100 login-carousel-item"
@@ -50,18 +50,18 @@ function Login() {
                                 </Carousel.Item>
                             </Carousel>
                         </div>
-                        <div className="col-6 login-form">
+                        <div className="col-12 col-lg-6 login-form">
                             <h1 className="login-special-text black">
-                                <FormattedMessage id="SignInInvitation1"/>
-                                <span className="orange"><FormattedMessage id="SignInInvitation2"/></span>
-                                <FormattedMessage id="SignInInvitation3"/>
+                                <FormattedMessage id="SignInInvitation" values={{
+                                    span: (chunks) => <span className="orange">{chunks}</span>
+                                }}/>
                             </h1>
                             <form className="login-normal-text ">
                                 <div className="form-group login-form-section">
                                     <label htmlFor="email"><FormattedMessage id="Email"/></label>
                                     <input name="email"
                                            type="email"
-                                           className="form-control login-input"
+                                           className="login-input"
                                            id="email"
                                            value={form.email}
                                            onChange={handleChange}/>
@@ -70,7 +70,7 @@ function Login() {
                                     <label htmlFor="password"><FormattedMessage id="Password"/></label>
                                     <input name="password"
                                            type="password"
-                                           className="form-control login-input"
+                                           className="login-input"
                                            id="password"
                                            aria-describedby="passwordHelp"
                                            value={form.password}
