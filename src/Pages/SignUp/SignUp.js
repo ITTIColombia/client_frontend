@@ -30,9 +30,9 @@ function SignUp() {
         <React.Fragment>
             <Navbar/>
             <div id="SignUp">
-                <div className="container">
+                <div className="container-fluid">
                     <div className="row signup-content">
-                        <div className="col-6 signup-form">
+                        <div className="col-12 col-lg-6 signup-form">
                             <h1 className="signup-special-text black">
                                 <FormattedMessage id="SignUpInvitation1"/>
                                 <span className="orange"> <FormattedMessage id="SignUpInvitation2"/> </span>
@@ -43,7 +43,7 @@ function SignUp() {
                                     <label htmlFor="name"><FormattedMessage id="Name"/></label>
                                     <input name="name"
                                            type="text"
-                                           className="form-control signup-input"
+                                           className="signup-input"
                                            id="name"
                                            value={form.name}
                                            onChange={handleChange}/>
@@ -52,7 +52,7 @@ function SignUp() {
                                     <label htmlFor="email"><FormattedMessage id="Email"/></label>
                                     <input name="email"
                                            type="email"
-                                           className="form-control signup-input"
+                                           className="signup-input"
                                            id="email"
                                            value={form.email}
                                            onChange={handleChange}/>
@@ -61,7 +61,7 @@ function SignUp() {
                                     <label htmlFor="phoneNumber"><FormattedMessage id="PhoneNumber"/></label>
                                     <input name="phoneNumber"
                                            type="text"
-                                           className="form-control signup-input"
+                                           className=" signup-input"
                                            id="phoneNumber"
                                            value={form.phoneNumber}
                                            onChange={handleChange}/>
@@ -70,7 +70,7 @@ function SignUp() {
                                     <label htmlFor="password"><FormattedMessage id="Password"/></label>
                                     <input name="password"
                                            type="password"
-                                           className="form-control signup-input"
+                                           className="signup-input"
                                            id="password"
                                            value={form.password}
                                            onChange={handleChange}/>
@@ -79,7 +79,7 @@ function SignUp() {
                                     <label htmlFor="repeatPassword"><FormattedMessage id="RepeatPassword"/></label>
                                     <input name="repeatPassword"
                                            type="password"
-                                           className="form-control signup-input"
+                                           className= "signup-input"
                                            id="repeatPassword"
                                            value={form.repeatPassword}
                                            onChange={handleChange}/>
@@ -91,8 +91,8 @@ function SignUp() {
                                     <Link to="/login"> <span className="orange"> <FormattedMessage id="Login"/></span></Link></p>
                             </form>
                         </div>
-                        <div className="col-6 signup-image-section ">
-                            <Carousel className="signup-carousel"
+                        <div className="col-lg-6 signup-image-section ">
+                            <Carousel className="signup-carousel signup-hide-sm"
                                       controls={false}>
                                 <Carousel.Item>
                                     <img className="d-block w-100 signup-carousel-item"

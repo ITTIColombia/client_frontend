@@ -31,7 +31,7 @@ function Login() {
                 <div className="container">
                     <div className="row login-content">
                         <div className="col-lg-6 login-image-section d-flex justify-content-end">
-                            <Carousel className="login-carousel hide-sm"
+                            <Carousel className="login-carousel login-hide-sm"
                                       controls={false}>
                                 <Carousel.Item>
                                     <img className="d-block w-100 login-carousel-item"
