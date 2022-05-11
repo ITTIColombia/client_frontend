@@ -34,9 +34,9 @@ function SignUp() {
                     <div className="row signup-content">
                         <div className="col-12 col-lg-6 signup-form">
                             <h1 className="signup-special-text black">
-                                <FormattedMessage id="SignUpInvitation1"/>
-                                <span className="orange"> <FormattedMessage id="SignUpInvitation2"/> </span>
-                                <FormattedMessage id="SignUpInvitation3"/>
+                                <FormattedMessage id="SignInInvitation" values={{
+                                    span: (chunks) => <span className="orange">{chunks}</span>
+                                }}/>
                             </h1>
                             <form className="signup-normal-text justify-content-end">
                                 <div className="form-group signup-form-section">
