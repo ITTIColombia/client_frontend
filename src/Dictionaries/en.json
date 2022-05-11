@@ -74,9 +74,7 @@
   "LearnMoreAbout": "Learn more about",
   "Here": "Here",
 
-  "SignInInvitation1": "Sign in to discover",
-  "SignInInvitation2": "Colombian",
-  "SignInInvitation3": "handmade treasures",
+  "SignInInvitation": "Sign in to discover <span>Colombian</span> handmade treasures",
 
   "Email": "Email",
   "Password": "Password",
