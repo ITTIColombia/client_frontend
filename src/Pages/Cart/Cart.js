@@ -46,28 +46,36 @@ function Cart() {
         setShoppingCart(newShoppingCart)
     }
 
-    function checkout(){
+    function checkout() {
         // TODO: Conexion con API de Whastapp para lograr concluir la venta
         setShowModal(false);
         setShoppingCart({})
     }
 
-    useLayoutEffect(()=>{
-        window.scrollTo(0,0)
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0)
     })
 
     return (
         <React.Fragment>
             <Navbar/>
-            <div className="Cart">
-                <Modal show={showModal} className="cart-modal" size="lg" dialogClassName="modal-90w" onHide={()=>{setShowModal(false)}}>
+            <div id="Cart">
+                <Modal show={showModal}
+                       className="cart-modal"
+                       size="lg"
+                       dialogClassName="modal-90w"
+                       onHide={() => {
+                           setShowModal(false)
+                       }}>
                     <Modal.Header closeButton/>
                     <Modal.Body>
-                        <h3><FormattedMessage id="CartModalTitle1"/> <span className="orange">IT<span>T</span>I</span> <FormattedMessage id="CartModalTitle2"/></h3>
+                        <h3><FormattedMessage id="CartModalTitle1"/> <span className="orange">IT<span>T</span>I</span>
+                            <FormattedMessage id="CartModalTitle2"/></h3>
                         <p><FormattedMessage id="CartModalMessage"/></p>
                         <button
                             type="submit"
-                            className="btn text-uppercase cart-button" onClick={checkout}><FormattedMessage id="GoToCheckout"/>
+                            className="btn text-uppercase cart-button"
+                            onClick={checkout}><FormattedMessage id="GoToCheckout"/>
                         </button>
                     </Modal.Body>
                 </Modal>
@@ -79,15 +87,15 @@ function Cart() {
                         </div>
                     </div>
                     <div className='row cart-table-summary-row'>
-                        <div className='col-9 cart-table-row'>
+                        <div className='col-12 col-lg-9 cart-table-row'>
                             <table>
                                 <thead>
                                 <tr className="text-uppercase">
                                     <th><FormattedMessage id="Item"/></th>
                                     <th></th>
-                                    <th><FormattedMessage id="UnitPrice"/></th>
+                                    <th className="cart-hide-sm"><FormattedMessage id="UnitPrice"/></th>
                                     <th><FormattedMessage id="Quantity"/></th>
-                                    <th><FormattedMessage id="FinalPrice"/></th>
+                                    <th className="cart-hide-sm"><FormattedMessage id="FinalPrice"/></th>
                                     <th><FormattedMessage id="Remove"/></th>
                                 </tr>
                                 </thead>
@@ -103,22 +111,24 @@ function Cart() {
                                     return (
                                         <tr key={`cart-item-` + i}>
                                             <td><img src={product.media[0]["Photo1"]}/></td>
-                                            <td>{product.name}</td>
-                                            <td>{product.price}</td>
+                                            <td>{product.name}<span className="cart-hide-lg"><br/>${finalPrice}</span></td>
+                                            <td className="cart-hide-sm">${product.price}</td>
                                             <td>
-                                                <button onClick={()=>getAddSubtractQty(productKey, -1)}>-</button>
+                                                <button onClick={() => getAddSubtractQty(productKey, -1)}>-</button>
                                                 {shoppingCart[productKey].quantity}
-                                                <button onClick={()=>getAddSubtractQty(productKey, 1)}>+</button>
+                                                <button onClick={() => getAddSubtractQty(productKey, 1)}>+</button>
                                             </td>
-                                            <td>{finalPrice}</td>
-                                            <td><button onClick={()=>remove(productKey)}>X</button></td>
+                                            <td className="cart-hide-sm">${finalPrice}</td>
+                                            <td>
+                                                <button onClick={() => remove(productKey)}>X</button>
+                                            </td>
                                         </tr>
                                     )
                                 })}
                                 </tbody>
                             </table>
                         </div>
-                        <div className="col-3 cart-summary-col">
+                        <div className="col-12 col-lg-3 cart-summary-col">
                             <h2><FormattedMessage id="Summary"/></h2>
                             <p className="d-flex justify-content-between bd-highlight mb-3">
                                 <span className="bd-highlight text-uppercase cart-summary-cost"><FormattedMessage id="Subtotal"/></span><span className="bd-highlight">$<FormattedNumber value={totalValue}/></span>
@@ -140,13 +150,18 @@ function Cart() {
                             <hr className="cart-divisor-line"/>
                             <p className="d-flex justify-content-between bd-highlight mb-3">
                                 <span className="bd-highlight text-uppercase cart-summary-cost"><FormattedMessage id="ServiceCost"/></span>
-                                <span className="bd-highlight">$<FormattedNumber value={totalValue*0.03}/></span>
+                                <span className="bd-highlight">$<FormattedNumber value={totalValue * 0.03}/></span>
                             </p>
-                            <p className="d-flex justify-content-between bd-highlight mb-3 text " id="cart-total-region">
-                                <span className="bd-highlight text-uppercase"><FormattedMessage id="Total"/></span><span className="bd-highlight">$<FormattedNumber value={totalValue*1.03}/></span>
+                            <p className="d-flex justify-content-between bd-highlight mb-3 text "
+                               id="cart-total-region">
+                                <span className="bd-highlight text-uppercase"><FormattedMessage id="Total"/></span><span className="bd-highlight">$<FormattedNumber value={totalValue *
+                                1.03}/></span>
                             </p>
                             <button type="submit"
-                                    className="btn text-uppercase cart-button" onClick={()=>{setShowModal(true)}}><FormattedMessage id="Checkout"/>
+                                    className="btn text-uppercase cart-button"
+                                    onClick={() => {
+                                        setShowModal(true)
+                                    }}><FormattedMessage id="Checkout"/>
                             </button>
                         </div>
                     </div>
