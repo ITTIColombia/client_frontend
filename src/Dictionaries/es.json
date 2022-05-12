@@ -89,9 +89,7 @@
   "PhoneNumber": "Numero de Teléfono",
   "RepeatPassword": "Repetir Contraseña",
 
-  "SignUpInvitation1": "Descubre",
-  "SignUpInvitation2": "productos colombianos",
-  "SignUpInvitation3": "de forma rápida y fácil",
+  "SignUpInvitation": "Descubre <span>productos colombianos</span> de forma rápida y fácil",
   "AlreadyHaveAnAccount": "Ya tienes una cuenta?",
 
   "ShoppingBag": "Bolsa de compras",

@@ -87,9 +87,7 @@
   "PhoneNumber": "Phone Number",
   "RepeatPassword": "Repeat Password",
 
-  "SignUpInvitation1": "Discover",
-  "SignUpInvitation2": "Colombian handmade",
-  "SignUpInvitation3": "products in a quick and easy way",
+  "SignUpInvitation": "Discover <span>Colombian handmade</span> products in a quick and easy way",
   "AlreadyHaveAnAccount": "Already have an account?",
 
   "ShoppingBag": "Shopping Bag",
