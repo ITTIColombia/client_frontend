@@ -3,16 +3,8 @@
     padding-right: 11vw;
 }
 
-#ProductDetail .row{
-    margin-bottom: 5em;
-}
-
 #productDetail-main-image{
     width: 100%;
-}
-
-#productDetail-productDescription-col{
-    padding-left: 5em;
 }
 
 
@@ -20,29 +12,14 @@
     max-height: 24.5vw;
 }
 
-#productDetail-images-row img{
-    max-width: 100%;
-    max-height: 100%;
-}
-
-#productDetail-artisans-images-row img{
-    width: 65%;
-}
-
 #ProductDetail h1{
     margin-bottom:1em;
 }
-
-#ProductDetail h2{
-    margin-bottom: 1.5em;
-}
-
 
 
 #ProductDetail p{
     font-family: "Montserrat";
     color: var(--black);
-    font-size: 1.1rem;
 }
 
 #ProductDetail h1, #ProductDetail h2{
@@ -50,10 +27,6 @@
     font-weight: bold;
 }
 
-#productDetail-productDescription-col{
-    display: flex;
-    margin: auto;
-}
 
 #productDetail-link-artisan{
     text-decoration: none;
@@ -72,12 +45,141 @@
     font-style: italic;
 }
 
-#productDetail-arrow{
-    margin-left: 0.6rem;
-}
 
 .productDetail-productTag{
     text-transform: uppercase;
     color: var(--orange);
     font-weight: bold;
+}
+
+#productDetail-map{
+    max-width: 100%;
+}
+
+@media (max-width: 992px) {
+    #ProductDetail .ButtonOrange{
+        width: 100%;
+        text-align: center;
+    }
+
+    #ProductDetail .Breadcrumbs{
+        display: none;
+    }
+
+    #productDetail-productDescription-container{
+        margin-top:2em;
+    }
+
+    #productDetail-images-row img {
+        margin-bottom: 1em;
+    }
+
+    #productDetail-artisan-description{
+        margin-top: 2em;
+    }
+
+    #productDetail-artisans-images-row img{
+        margin-bottom: 1em;
+    }
+    #ProductDetail .row{
+        margin-bottom: 1.5em;
+    }
+
+    #productDetail-arrow{
+        margin-left: 0.4rem;
+    }
+
+    #ProductDetail #Footer{
+        display: none;
+    }
+
+    #productDetail-buttonOrange-container{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+    }
+
+}
+
+@media (max-width: 576px){
+    #productDetail-images-row img{
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    #ProductDetail p{
+        font-size: .85rem;
+    }
+
+    #productDetail-artisans-images-row img{
+        width: 100%;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 992px){
+    #productDetail-images-row .col-12{
+        text-align: center;
+    }
+
+    #productDetail-images-row img{
+        max-width: 70%;
+        max-height: 100%;
+    }
+
+    #ProductDetail p{
+        font-size: 1.1rem;
+    }
+
+    #productDetail-artisans-images-row img{
+        width: 70%;
+    }
+
+    #productDetail-artisans-images-row .col-12{
+        text-align: center;
+    }
+
+}
+
+@media (min-width: 992px) {
+    #productDetail-images-row img{
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    #productDetail-productDescription-col{
+        padding-left: 5em;
+    }
+    #ProductDetail h2{
+        margin-bottom: 1.5em;
+    }
+    #ProductDetail .row{
+        margin-bottom: 5em;
+    }
+
+    #productDetail-arrow{
+        margin-left: 0.6rem;
+    }
+
+    #productDetail-productDescription-col{
+        display: flex;
+        margin: auto;
+    }
+
+    #ProductDetail p{
+        font-size: 1.1rem;
+    }
+
+    #productDetail-artisans-images-row img{
+        width: 65%;
+    }
+}
+
+#productDetail-subtitle-container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    align-content: center;
+    text-align: center;
 }

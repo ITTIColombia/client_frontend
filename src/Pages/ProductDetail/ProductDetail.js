@@ -61,11 +61,11 @@ function ProductDetail(){
                 <Bread pathName={intl.formatMessage({id: "Products"})} path="/productos" name={product.name}/>
                 <div className="container-fluid">
                     <div className="row">
-                        <div className="col-lg-6">
+                        <div className="col-lg-6 d-none d-lg-block">
                             <img id="productDetail-main-image" src={product.media[0]["Photo1"]} alt="Front Product Image"/>
                         </div>
-                        <div className="col-lg-6" id="productDetail-productDescription-col">
-                            <div>
+                        <div className="col-12 col-lg-6" id="productDetail-productDescription-col">
+                            <div id="productDetail-productDescription-container">
                                 <p>{artisan.name}</p>
                                 <h1>{product.name}</h1>
                                 <p>{context.languageSettings.locale.startsWith("en") ? product.descriptionEN: product.descriptionES}</p>
@@ -80,32 +80,44 @@ function ProductDetail(){
                                         <FormattedMessage id="ElaborationTime"/></span> - {product.fabricationDays} <FormattedMessage id="Days"/>
                                 </p>
                                 <p className='productDetail-price'>${product.price}</p>
-                                <ButtonOrange path="cart" text="AddToCart"/>
+                                <div id="productDetail-buttonOrange-container">
+                                    <ButtonOrange path="cart" text="AddToCart"/>
+                                </div>
+
                             </div>
                         </div>
                     </div>
                     <div className="row" id="productDetail-images-row">
-                        <div className="col-4">
+                        <div className="col-12 col-lg-4">
                             <img src={product.media[0]["Photo1"]} alt="Foto Producto"/>
                         </div>
-                        <div className="col-4">
+                        <div className="col-12 col-lg-4">
                             <img src={product.media[0]["Photo2"]} alt="Foto Producto"/>
                         </div>
-                        <div className="col-4">
+                        <div className=" col-12 col-lg-4">
                             <img src={product.media[0]["Photo3"]} alt="Foto Producto"/>
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-4">
+                        <div className="col-7 col-lg-4">
                             <img id="productDetail-map" src={department.mapColorRegion} alt="Mapa Colombia"/>
                         </div>
-                        <div className="col-8">
-                            <h2>
+                        <div className="col-5 d-block d-lg-none">
+                            <div id="productDetail-subtitle-container">
+                                <h2>
+                                    <FormattedMessage id="TheWorldOfArtisans" values={{
+                                        span: (chunks) => <span className="productDetail-italic">{chunks}</span>
+                                    }}/>
+                                </h2>
+                            </div>
+                        </div>
+                        <div className="col-12 col-lg-8">
+                            <h2 className="d-none d-lg-block">
                                 <FormattedMessage id="TheWorldOfArtisans" values={{
                                     span: (chunks) => <span className="productDetail-italic">{chunks}</span>
                                 }}/>
                             </h2>
-                            <p>
+                            <p id="productDetail-artisan-description">
                                 {context.languageSettings.locale.startsWith("en") ? artisan.shortDescriptionEN || Artisan1.shortDescriptionEN : artisan.shortDescriptionES || Artisan1.shortDescriptionES}
                             </p>
                             <Link to={"/artesanos/" + artisan._id} id="productDetail-link-artisan">
@@ -117,19 +129,19 @@ function ProductDetail(){
                                 </p>
                             </Link>
                             <div className='row' id="productDetail-artisans-images-row">
-                                <div className='col-6'>
+                                <div className='col-12 col-lg-6'>
                                     <img src={artisan.media[1]} alt="Artisans photo 1"/>
                                 </div>
-                                <div className='col-6'>
+                                <div className='col-12 col-lg-6'>
                                     <img src={artisan.media[2]} alt="Artisans photo 2"/>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
+                <Footer/>
             </div>
-            <Footer/>
+
         </React.Fragment>
     )
 
