@@ -58,13 +58,12 @@
   "Community": "Comunidad",
   "TheTechnique": "La Técnica",
 
-  "TheWorldOf": "El mundo de los ",
+  "TheWorldOfArtisans": "El mundo de los <span>artesanos</span>...",
   "Labour": "Oficio",
   "Technique": "Técnica",
   "ElaborationTime": "Tiempo Elaboración",
   "Days": "Dias",
-  "LearnMoreAbout": "Learn more about",
-  "Here": "Here",
+  "LearnMoreAbout": "Aprende mas sobre <span></span> aquí",
 
 
   "PopularArtisansTitle1": "Conoce algunos de ",

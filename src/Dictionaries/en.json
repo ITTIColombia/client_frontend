@@ -66,13 +66,12 @@
 
   "QuizTitle":"ITTI questions",
   "QuizText":"Have fun discovering the best of Colombian talent",
-  "TheWorldOf": "The world of ",
+  "TheWorldOfArtisans": "The world of <span>artisans</span>...",
   "Labour": "Labour",
   "Technique": "Technique",
   "ElaborationTime": "Elaboration Time",
   "Days": "Days",
-  "LearnMoreAbout": "Learn more about",
-  "Here": "Here",
+  "LearnMoreAbout": "Learn more about <span></span> here",
 
   "SignInInvitation": "Sign in to discover <span>Colombian</span> handmade treasures",
 
