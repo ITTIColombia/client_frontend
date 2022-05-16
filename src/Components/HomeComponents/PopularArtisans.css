@@ -1,3 +1,64 @@
+@media (min-width: 992px){
+    .popularArtisans-content{
+        padding-left: 6rem;
+        padding-right: 6rem;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .popularArtisans-tit h3{
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .popularArtisans-content{
+        padding-left: 13rem;
+        padding-right: 13rem;
+        justify-content: space-around;
+    }
+
+    .popularArtisans-content img{
+        margin-bottom: 1.5em;
+    }
+
+    .popularArtisans-tit h3{
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .popularArtisans-content{
+        padding-left: 10rem;
+        padding-right: 10rem;
+        justify-content: space-around;
+    }
+
+    .popularArtisans-content img{
+        margin-bottom: 1.5em;
+    }
+
+    .popularArtisans-tit h3{
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .popularArtisans-content{
+        padding-left: 5rem;
+        padding-right: 5rem;
+        justify-content: space-around;
+    }
+
+    .popularArtisans-content img{
+        margin-bottom: 1.5em;
+    }
+
+    .popularArtisans-tit h3{
+        font-size: 1.3rem;
+    }
+}
+
 .PopularArtisans{
     display: flex;
     flex-direction: column;
@@ -17,7 +78,6 @@
 .popularArtisans-tit h3{
     font-family: "Playfair Display";
     font-weight: 700;
-    font-size: 2rem;
     color: var(--black);
 }
 
@@ -25,19 +85,31 @@
     font-style: italic;
 }
 
-.popularArtisans-content{
-    margin-top: 4rem;
-    margin-bottom: 3rem;
-    padding-left: 6rem;
-    padding-right: 6rem;
-    width: 100vw;
-    display: flex;
-    justify-content: space-around;
+
+@media (min-width: 576px) {
+    .popularArtisans-content{
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
 }
 
-.popularArtisans-content img{
-    height: 25vh;
+@media (max-width: 576px) {
+    .popularArtisans-content{
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
 }
+
+
+.popularArtisans-content{
+    width: 100%;
+}
+
+
+.popularArtisans-content img{
+    width: 94%;
+}
+
 
 .popularArtisans-seeAll{
     text-transform: uppercase;

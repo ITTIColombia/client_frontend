@@ -28,6 +28,18 @@
     }
 }
 
+@media (max-width: 576px) {
+    .quiz-title h3{
+        font-size: 1.3rem;
+    }
+}
+
+@media (min-width: 576px) {
+    .quiz-title h3{
+        font-size: 2rem;
+    }
+}
+
 
 
 .Quiz{
@@ -51,10 +63,8 @@
 
 .quiz-title h3{
     font-family: "Playfair Display";
-    font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1rem;
-
 }
 
 .quiz-title p{
