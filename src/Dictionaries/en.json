@@ -52,8 +52,7 @@
   "WoodWork":  "Wood Work",
   "Leather": "Leather",
 
-  "PopularArtisansTitle1": "Meet some of ",
-  "PopularArtisansTitleSpan": "our artisans",
+  "PopularArtisansTitle": "Meet some of <span>our artisans</span>",
   "EditorialTitle1": "March is the month \n of ",
   "EditorialTitleSpan": "Artisans",
   "SeeAll": "See All",

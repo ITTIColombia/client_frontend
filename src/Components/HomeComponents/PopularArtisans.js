@@ -7,7 +7,9 @@ function PopularArtisans() {
     return (
         <div className="PopularArtisans" id="popularArtisans">
             <div className="popularArtisans-tit">
-                <h3><FormattedMessage id="PopularArtisansTitle1"/><span><FormattedMessage id="PopularArtisansTitleSpan"/></span></h3>
+                <h3><FormattedMessage id="PopularArtisansTitle" values={{
+                    span: (chunks) => <span>{chunks}</span>
+                }}/></h3>
             </div>
             <div className="popularArtisans-content">
                 <Link to="/artesanos/:_1"><img className="img" src={"/Images/Mockup/Artisan/Artisan1.png"} alt="Artesano 1" /></Link>
