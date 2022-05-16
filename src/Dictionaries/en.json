@@ -16,9 +16,7 @@
   "FollowUs": "Follow Us",
   "FAQ": "Frequently Ask Questions",
   "AboutUsFooter": "About Us",
-  "FavoritesSlogan1": "Explore our ",
-  "FavoritesSloganSpan": "selection",
-  "FavoritesSlogan2": " of the week",
+  "FavoritesSlogan": "Explore our <span>selection</span> of the week",
 
   "Job": "Job",
   "Type": "Type",

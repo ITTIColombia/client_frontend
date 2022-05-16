@@ -16,6 +16,7 @@
     #Banner{
         display: flex;
         position: relative;
+        margin-bottom: 3em;
     }
 
     #banner-white-extrusion{
