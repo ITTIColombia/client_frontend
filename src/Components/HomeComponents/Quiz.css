@@ -1,3 +1,35 @@
+@media (min-width: 992px){
+    .quiz-questions{
+        display: flex;
+    }
+
+    .QuizQuestion{
+        width: 20vw;
+        margin-left: 5em;
+        margin-right: 5em;
+    }
+
+    .quiz-questions{
+        margin: 2rem 12rem;
+    }
+
+    .quiz-photo{
+        height: 17em;
+    }
+}
+
+@media (max-width: 992px) {
+    .quiz-questions{
+        margin: 1.5rem 10%;
+    }
+
+    .quiz-photo{
+        width: 100%;
+    }
+}
+
+
+
 .Quiz{
     margin-top: 4.5rem;
     margin-left: 11vw;
@@ -9,13 +41,8 @@
 }
 
 .quiz-questions{
-    display: flex;
     font-family: "Montserrat";
     text-align: center;
-    margin-left: 12rem;
-    margin-right: 12rem;
-    margin-bottom: 2rem;
-    margin-top: 2rem;
 }
 
 .quiz-title{
@@ -32,12 +59,6 @@
 
 .quiz-title p{
     font-family: "Montserrat";
-}
-
-.QuizQuestion{
-    width: 20vw;
-    margin-left: 5vw;
-    margin-right: 5vw;
 }
 
 .QuizQuestion h1{
@@ -60,7 +81,6 @@
 }
 
 .quiz-photo{
-    height: 18em;
     margin-bottom: 2.7rem;
 }
 
