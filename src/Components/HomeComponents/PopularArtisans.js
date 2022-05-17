@@ -7,13 +7,15 @@ function PopularArtisans() {
     return (
         <div className="PopularArtisans" id="popularArtisans">
             <div className="popularArtisans-tit">
-                <h3><FormattedMessage id="PopularArtisansTitle1"/><span><FormattedMessage id="PopularArtisansTitleSpan"/></span></h3>
+                <h3><FormattedMessage id="PopularArtisansTitle" values={{
+                    span: (chunks) => <span>{chunks}</span>
+                }}/></h3>
             </div>
             <div className="popularArtisans-content">
                 <Link to="/artesanos/:_1"><img className="img" src={"/Images/Mockup/Artisan/Artisan1.png"} alt="Artesano 1" /></Link>
                 <Link to="/artesanos/:_2"><img className="img" src={ "/Images/Mockup/Artisan/Artisan2.png"} alt="Artesano 2" /></Link>
-                <img className="img" src={ "/Images/Mockup/Artisan/Artisan3.png"} alt="Artesano 3" />
-                <img className="img" src={ "/Images/Mockup/Artisan/Artisan4.png"} alt="Artesano 4" />
+                <Link to="/artesanos/:_1"><img className="img" src={ "/Images/Mockup/Artisan/Artisan3.png"} alt="Artesano 3" /></Link>
+                <Link to="/artesanos/:_2"><img className="img" src={ "/Images/Mockup/Artisan/Artisan4.png"} alt="Artesano 4" /></Link>
             </div>
             <div className="popularArtisans-but-container">
                     <div className="popularArtisans-but-line">

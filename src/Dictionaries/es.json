@@ -16,9 +16,7 @@
   "FollowUs": "Síguenos",
   "FAQ": "Preguntas Frecuentes",
   "AboutUsFooter": "Sobre Nosotros",
-  "FavoritesSlogan1": "Explora nuestra ",
-  "FavoritesSloganSpan": "selección",
-  "FavoritesSlogan2": " de la semana",
+  "FavoritesSlogan": "Explora nuestra <span>selección</span> de la semana",
 
   "Job": "Oficio",
   "Type": "Tipo",
@@ -58,27 +56,22 @@
   "Community": "Comunidad",
   "TheTechnique": "La Técnica",
 
-  "TheWorldOf": "El mundo de los ",
+  "TheWorldOfArtisans": "El mundo de los <span>artesanos</span>...",
   "Labour": "Oficio",
   "Technique": "Técnica",
   "ElaborationTime": "Tiempo Elaboración",
   "Days": "Dias",
-  "LearnMoreAbout": "Learn more about",
-  "Here": "Here",
+  "LearnMoreAbout": "Aprende mas sobre <span></span> aquí",
 
 
-  "PopularArtisansTitle1": "Conoce algunos de ",
-  "PopularArtisansTitleSpan": "nuestros artesanos",
-  "EditorialTitle1": "Marzo es el mes \n del ",
-  "EditorialTitleSpan": "Artesano",
+  "PopularArtisansTitle": "Conoce algunos de <span>nuestros artesanos</span>",
+  "EditorialTitle": "Marzo es el mes \n del <span>Artesano</span>",
   "SeeAll": "Ver todos",
 
   "QuizTitle":"¡ITTI preguntas!",
   "QuizText":"Diviértete descubrinedo lo mejor del talento colombiano",
 
-  "SignInInvitation1": "Encuentra",
-  "SignInInvitation2": "artesanías colombianas",
-  "SignInInvitation3": "de la mejor calidad de forma rápida y fácil",
+  "SignInInvitation": "Encuentra <span>artesanías colombianas</span> de la mejor calidad de forma rápida y fácil",
 
   "Email": "Correo Electrónico",
   "Password": "Contraseña",
@@ -91,9 +84,7 @@
   "PhoneNumber": "Numero de Teléfono",
   "RepeatPassword": "Repetir Contraseña",
 
-  "SignUpInvitation1": "Descubre",
-  "SignUpInvitation2": "productos colombianos",
-  "SignUpInvitation3": "de forma rápida y fácil",
+  "SignUpInvitation": "Descubre <span>productos colombianos</span> de forma rápida y fácil",
   "AlreadyHaveAnAccount": "Ya tienes una cuenta?",
 
   "ShoppingBag": "Bolsa de compras",
@@ -130,6 +121,6 @@
   "ArtisansExplanation2": "Por lo general, los artesanos utilizan labores que han trascendido en sus pueblos o en sus comunidades de generación en generación. En sus piezas plasman las tradiciones y los valores de su cultura. Por esta razón, tener una artesanía es como tener un tesoro.",
   "ArtisansExplanation3": "¡Mostremos las artesanías colombianas al mundo y hagámoslas parte de nuestro día a día!",
   "WhoAreWeBehindITTI":"¿Quiénes estamos detrás de ITTI?",
-  "TeamITTI": "Somos Daniela González y Juan David Serrano, dos amigos desde los 6 años. Estudiamos en la Universidad de los Andes y nos graduamos de Ingeniería en abril del 2022. Comenzamos ITTI como un proyecto de la universidad con la intensión crear un producto que genere impacto social. Creemos que podemos apoyarnos en la tecnología para generar cambios en la forma en la que consumimos y adquerimos nuestros productos, especialmente en un país como Colombia en el que algunos sectores todavía carecen de una verdadera transformación digital."
-
+  "TeamITTI": "Somos Daniela González y Juan David Serrano, dos amigos desde los 6 años. Estudiamos en la Universidad de los Andes y nos graduamos de Ingeniería en abril del 2022. Comenzamos ITTI como un proyecto de la universidad con la intensión crear un producto que genere impacto social. Creemos que podemos apoyarnos en la tecnología para generar cambios en la forma en la que consumimos y adquerimos nuestros productos, especialmente en un país como Colombia en el que algunos sectores todavía carecen de una verdadera transformación digital.",
+  "AllRightsReserved": "All Rights Reserved."
 }

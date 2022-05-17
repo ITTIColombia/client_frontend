@@ -16,9 +16,7 @@
   "FollowUs": "Follow Us",
   "FAQ": "Frequently Ask Questions",
   "AboutUsFooter": "About Us",
-  "FavoritesSlogan1": "Explore our ",
-  "FavoritesSloganSpan": "selection",
-  "FavoritesSlogan2": " of the week",
+  "FavoritesSlogan": "Explore our <span>selection</span> of the week",
 
   "Job": "Job",
   "Type": "Type",
@@ -54,10 +52,8 @@
   "WoodWork":  "Wood Work",
   "Leather": "Leather",
 
-  "PopularArtisansTitle1": "Meet some of ",
-  "PopularArtisansTitleSpan": "our artisans",
-  "EditorialTitle1": "March is the month \n of ",
-  "EditorialTitleSpan": "Artisans",
+  "PopularArtisansTitle": "Meet some of <span>our artisans</span>",
+  "EditorialTitle": "March is the month \n of <span>Artisans</span>",
   "SeeAll": "See All",
   "SeeProducts": "See products",
   "Department": "Department",
@@ -66,17 +62,14 @@
 
   "QuizTitle":"ITTI questions",
   "QuizText":"Have fun discovering the best of Colombian talent",
-  "TheWorldOf": "The world of ",
+  "TheWorldOfArtisans": "The world of <span>artisans</span>...",
   "Labour": "Labour",
   "Technique": "Technique",
   "ElaborationTime": "Elaboration Time",
   "Days": "Days",
-  "LearnMoreAbout": "Learn more about",
-  "Here": "Here",
+  "LearnMoreAbout": "Learn more about <span></span> here",
 
-  "SignInInvitation1": "Sign in to discover",
-  "SignInInvitation2": "Colombian",
-  "SignInInvitation3": "handmade treasures",
+  "SignInInvitation": "Sign in to discover <span>Colombian</span> handmade treasures",
 
   "Email": "Email",
   "Password": "Password",
@@ -89,9 +82,7 @@
   "PhoneNumber": "Phone Number",
   "RepeatPassword": "Repeat Password",
 
-  "SignUpInvitation1": "Discover",
-  "SignUpInvitation2": "Colombian handmade",
-  "SignUpInvitation3": "products in a quick and easy way",
+  "SignUpInvitation": "Discover <span>Colombian handmade</span> products in a quick and easy way",
   "AlreadyHaveAnAccount": "Already have an account?",
 
   "ShoppingBag": "Shopping Bag",
@@ -128,5 +119,6 @@
   "ArtisansExplanation2": "In general, artisans use techniques that have transcended in their communities from generation to generation. In their pieces they embody the traditions and values of their culture. For this reason, having a handmade product is like having a treasure.",
   "ArtisansExplanation3": "Let's show Colombian handmade products to the world and make them part of our daily lives!",
   "WhoAreWeBehindITTI":"Who are we behind ITTI?",
-  "TeamITTI": "We are Daniela González and Juan David Serrano, two friends since we were 6 years old. We studied at the Universidad de los Andes and graduated in Engineering in April 2022. We started ITTI as a university project with the intention of creating a product that generates social impact. We believe that we can take advantage of technology to generate changes in the way we consume and purchase our products, especially in a country like Colombia where some sectors still lack a true digital transformation."
+  "TeamITTI": "We are Daniela González and Juan David Serrano, two friends since we were 6 years old. We studied at the Universidad de los Andes and graduated in Engineering in April 2022. We started ITTI as a university project with the intention of creating a product that generates social impact. We believe that we can take advantage of technology to generate changes in the way we consume and purchase our products, especially in a country like Colombia where some sectors still lack a true digital transformation.",
+  "AllRightsReserved": "All Rights Reserved."
 }
