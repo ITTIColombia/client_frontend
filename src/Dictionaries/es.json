@@ -65,8 +65,7 @@
 
 
   "PopularArtisansTitle": "Conoce algunos de <span>nuestros artesanos</span>",
-  "EditorialTitle1": "Marzo es el mes \n del ",
-  "EditorialTitleSpan": "Artesano",
+  "EditorialTitle": "Marzo es el mes \n del <span>Artesano</span>",
   "SeeAll": "Ver todos",
 
   "QuizTitle":"¡ITTI preguntas!",

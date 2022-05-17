@@ -53,8 +53,7 @@
   "Leather": "Leather",
 
   "PopularArtisansTitle": "Meet some of <span>our artisans</span>",
-  "EditorialTitle1": "March is the month \n of ",
-  "EditorialTitleSpan": "Artisans",
+  "EditorialTitle": "March is the month \n of <span>Artisans</span>",
   "SeeAll": "See All",
   "SeeProducts": "See products",
   "Department": "Department",
