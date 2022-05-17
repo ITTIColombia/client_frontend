@@ -16,9 +16,7 @@
   "FollowUs": "Síguenos",
   "FAQ": "Preguntas Frecuentes",
   "AboutUsFooter": "Sobre Nosotros",
-  "FavoritesSlogan1": "Explora nuestra ",
-  "FavoritesSloganSpan": "selección",
-  "FavoritesSlogan2": " de la semana",
+  "FavoritesSlogan": "Explora nuestra <span>selección</span> de la semana",
 
   "Job": "Oficio",
   "Type": "Tipo",
@@ -66,10 +64,8 @@
   "LearnMoreAbout": "Aprende mas sobre <span></span> aquí",
 
 
-  "PopularArtisansTitle1": "Conoce algunos de ",
-  "PopularArtisansTitleSpan": "nuestros artesanos",
-  "EditorialTitle1": "Marzo es el mes \n del ",
-  "EditorialTitleSpan": "Artesano",
+  "PopularArtisansTitle": "Conoce algunos de <span>nuestros artesanos</span>",
+  "EditorialTitle": "Marzo es el mes \n del <span>Artesano</span>",
   "SeeAll": "Ver todos",
 
   "QuizTitle":"¡ITTI preguntas!",

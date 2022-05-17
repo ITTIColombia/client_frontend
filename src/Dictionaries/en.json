@@ -16,9 +16,7 @@
   "FollowUs": "Follow Us",
   "FAQ": "Frequently Ask Questions",
   "AboutUsFooter": "About Us",
-  "FavoritesSlogan1": "Explore our ",
-  "FavoritesSloganSpan": "selection",
-  "FavoritesSlogan2": " of the week",
+  "FavoritesSlogan": "Explore our <span>selection</span> of the week",
 
   "Job": "Job",
   "Type": "Type",
@@ -54,10 +52,8 @@
   "WoodWork":  "Wood Work",
   "Leather": "Leather",
 
-  "PopularArtisansTitle1": "Meet some of ",
-  "PopularArtisansTitleSpan": "our artisans",
-  "EditorialTitle1": "March is the month \n of ",
-  "EditorialTitleSpan": "Artisans",
+  "PopularArtisansTitle": "Meet some of <span>our artisans</span>",
+  "EditorialTitle": "March is the month \n of <span>Artisans</span>",
   "SeeAll": "See All",
   "SeeProducts": "See products",
   "Department": "Department",
