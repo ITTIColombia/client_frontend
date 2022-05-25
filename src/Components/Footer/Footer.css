@@ -1,81 +1,74 @@
-.Footer{
-    width: 100vw;
-    display: flex;
-    margin-top: 1rem;
-}
-.footer-content{
+.footer-row{
+    margin-top: 2rem;
     background-color: var(--black);
-    width: 100vw;
-    display: flex;
     align-items: center;
-    justify-content: space-around;
-    height: fit-content;
-    padding-bottom: 3rem;
-    padding-top: 3rem;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    margin-top: 1rem;
-}
-
-.footer-logo{
-    margin-left: 9vw;
-}
-
-.footer-copy{
-    display: flex;
-    align-items: center;
-}
-
-.footer-copy p{
     font-family: "Montserrat";
     color: white;
+}
+
+
+
+.footer-icon-col{
     font-size: 0.7rem;
-    margin-bottom: 0;
-    margin-left: 0.5rem;
 }
 
-.footer-info{
+#footer-copyright-region{
     display: flex;
-    margin-top: 1rem;
+    align-items: center;
 }
 
-.footer-info-item{
-    margin-right:   9vw;
-    display: flex;
-    flex-direction: column;
+@media(max-width: 992px){
+    .footer-col{
+        margin-top: 3em;
+    }
+    .footer-row{
+        padding: 3rem 5rem;
+    }
 }
 
-.footer-info-item p{
-    font-family: "Montserrat";
-    color: white;
-    font-size: 0.8rem;
-    margin-bottom: 0;
+@media (min-width: 992px){
+    .footer-row{
+        padding: 3rem 15rem;
+    }
 }
 
-.footer-info-tit{
-    font-size: 0.9rem !important;
-    margin-bottom: 1px !important;
-    text-transform: uppercase;
+@media(max-width: 992px) and (min-width: 540px){
+    .footer-row{
+        padding: 3rem 10rem;
+    }
 }
 
-.footer-info-item a{
-    font-family: "Montserrat";
-    color: white;
-    font-size: 0.8rem;
+@media(max-width: 540px){
+    .footer-row{
+        padding: 3rem 5rem;
+    }
+}
+
+#footer-copyright-region span{
+    margin-left: 1em;
+}
+
+
+.footer-col a{
     text-decoration-line: none;
-}
-.footer-info-item a:hover{
-    font-family: "Montserrat";
     color: white;
-    /*color: lightgrey;*/
-    font-size: 0.8rem;
+}
+
+.footer-col a:hover{
     text-decoration: underline;
 }
 
-.footer-info-item-row{
-    display: flex;
+.footer-section-title{
+    font-size: 0.9rem;
+    margin-bottom: .1em;
+    text-transform: uppercase;
 }
-.footer-info-item-row a{
-    margin-right: 1.5rem;
 
+.footer-section-content{
+    font-size: 0.8rem;
+    margin: 0;
+    padding: 0;
 }
+
+
+

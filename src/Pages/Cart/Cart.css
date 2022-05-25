@@ -1,7 +1,5 @@
 .cart-container{
     padding-top: 2.5rem;
-    padding-left: 10vw;
-    padding-right: 5vw;
 }
 
 .cart-container h1, .cart-container h2, .cart-modal h3{
@@ -68,24 +66,15 @@
     padding: 3%;
 }
 
-.cart-container table{
-    font-size: 14px;
-}
 
 #cart-table-divisor{
     opacity: 15%;
-}
-
-.cart-table-row{
-    padding-top: 3vw;
-    padding-right: 4vw;
 }
 
 
 .cart-summary-col{
     height: fit-content;
     background-color: #F5F4F2;
-    padding-top: 2.5vw;
 }
 
 .cart-summary-col p, .cart-summary-col h2{
@@ -94,7 +83,6 @@
 }
 
 .cart-summary-col h2{
-    font-size: 24px;
     font-weight: bold;
     margin-bottom: 2em;
 }
@@ -110,11 +98,8 @@
 }
 
 .cart-table-row button{
-    margin-right: 1em;
-    margin-left: 1em;
     border: none;
     background: none;
-    font-size: 1.2em;
 }
 
 .cart-divisor-line{
@@ -168,4 +153,179 @@
 
 .modal-90w{
     width: 40%;
+}
+
+@media (max-width: 992px){
+    .cart-hide-sm{
+        display: none;
+    }
+}
+
+@media (min-width: 992px){
+    .cart-hide-lg{
+        display: none;
+    }
+}
+
+@media (min-width: 1265px){
+    .cart-container h1{
+        font-size: 2.5em;
+    }
+
+    .cart-container table{
+        font-size: 1em;
+    }
+
+    #Cart p{
+        font-size: 1em;
+    }
+
+    .cart-summary-col h2{
+        font-size: 2em;
+    }
+
+    .cart-table-row{
+        padding-top: 3vw;
+        padding-right: 4vw;
+    }
+    .cart-container{
+        padding-left: 10vw;
+        padding-right: 5vw;
+    }
+    .cart-summary-col{
+        margin-top: 2em;
+        padding-top: 2.5vw;
+    }
+    .cart-table-row button{
+        margin-right: 1em;
+        margin-left: 1em;
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1265px){
+    .cart-container h1{
+        font-size: 2.4em;
+    }
+    .cart-container table{
+        font-size: .7em;
+    }
+    #Cart p{
+        font-size: .8em;
+    }
+    .cart-summary-col h2{
+        font-size: 1.5em;
+    }
+    .cart-table-row{
+        padding-top: 3vw;
+        padding-right: 4vw;
+    }
+    .cart-summary-col{
+        margin-top: 2em;
+        padding-top: 2.5vw;
+    }
+    .cart-container{
+        padding-left: 10vw;
+        padding-right: 5vw;
+    }
+    .cart-table-row button{
+        margin-right: 1em;
+        margin-left: 1em;
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px){
+    .cart-container h1{
+        font-size: 2em;
+    }
+
+    .cart-container table{
+        font-size: 1em;
+    }
+
+    #Cart p{
+        font-size: 1em;
+    }
+    .cart-summary-col h2{
+        font-size: 2em;
+    }
+
+    .cart-summary-col{
+        margin-top: 2em ;
+        padding: 4em;
+    }
+    .cart-container{
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+    .cart-table-row button{
+        margin-right: .5em;
+        margin-left: .5em;
+    }
+
+}
+
+@media (min-width: 576px) and (max-width: 768px){
+    .cart-container h1{
+        font-size: 2em;
+    }
+
+    .cart-container table{
+        font-size: 1em;
+    }
+
+    #Cart p{
+        font-size: 1em;
+    }
+
+    .cart-summary-col h2{
+        font-size: 2em;
+    }
+
+    .cart-summary-col{
+        margin-top: 2em ;
+        padding: 4em;
+    }
+    .cart-container{
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+    .cart-table-row button{
+        margin-right: .5em;
+        margin-left: .5em;
+    }
+}
+
+@media (max-width: 576px){
+    .cart-container h1{
+        font-size: 2em;
+    }
+
+    .cart-container table{
+        font-size: .8em;
+    }
+
+    #Cart p{
+        font-size: .8em;
+    }
+
+    .cart-summary-col h2{
+        font-size: 1.8em;
+    }
+
+    .cart-summary-col{
+        margin-top: 2em ;
+        padding: 2em;
+    }
+
+    .cart-container{
+        padding-left: 8vw;
+        padding-right: 8vw;
+    }
+    .cart-table-row button{
+        margin-right: .5em;
+        margin-left: .5em;
+    }
+
 }

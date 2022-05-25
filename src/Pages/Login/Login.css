@@ -6,7 +6,6 @@
 }
 
 .login-content {
-    margin: 2em 4em 2em 4em !important;
     background-color: #F5F4F2;
 }
 
@@ -15,36 +14,29 @@
     align-items: stretch;
 }
 
-.orange{
+#Login .orange{
     color: var(--orange);
 }
 
-.black{
-    color: var(--black)
-}
 
 .login-normal-text{
     font-family: "Montserrat";
-    font-size: 1rem;
 }
 
-.login-special-text{
-    font-family: "Playfair Display";
-    font-weight: bold;
-    font-size: 1.7rem;
-}
+
 
 .login-form{
     padding-top: 1.8em;
 }
 
-.login-form > h1 {
-    padding-right: 3em;
-    padding-left: 3em;
+#Login h1 {
     text-align:center;
+    font-family: "Playfair Display";
+    font-weight: bold;
 }
 
 .login-input {
+    width: 100%;
     border-radius: 0 !important;
     background-color: transparent;
     resize: none;
@@ -55,9 +47,7 @@
     border-bottom: 1px solid var(--black) !important;
 }
 
-.login-form > form{
-    padding: 1em 6em;
-}
+
 
 .login-form-section{
     margin-top: 2em;
@@ -85,6 +75,90 @@
 
 .login-carousel{
     max-width: 33em;
+}
+
+
+@media (max-width: 992px){
+    .login-hide-sm{
+        display: none;
+    }
+}
+
+
+@media (min-width: 1200px){
+    #Login h1 {
+        font-size: 1.5rem;
+        padding-right: 3em;
+        padding-left: 3em;
+    }
+
+    .login-form > form{
+        padding: 1em 6em;
+    }
+
+    .login-normal-text{
+        font-family: "Montserrat";
+        font-size: 1rem;
+    }
+
+    .login-content {
+        margin: 2em 4em 2em 4em !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px){
+    #Login h1 {
+        font-size: 1.4rem;
+        padding-right: 2em;
+        padding-left: 2em;
+    }
+
+    .login-form > form{
+        padding: 0em 3em;
+    }
+
+    .login-normal-text{
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 992px) {
+    #Login h1 {
+        font-size: 1.4rem;
+        padding-right: 2em;
+        padding-left: 2em;
+    }
+
+    .login-form > form{
+        padding: 1em 3em;
+    }
+
+    .login-normal-text{
+        font-size: 1rem;
+    }
+    .login-content {
+        margin: 2em 4em 2em 4em !important;
+    }
+}
+
+@media (max-width: 576px){
+    #Login h1 {
+        font-size: 1.3rem;
+        padding-right: 2em;
+        padding-left: 2em;
+    }
+
+    .login-form > form{
+        padding: 1em 1em;
+    }
+
+    .login-normal-text{
+        font-size: .9rem;
+    }
+
+    .login-content {
+        margin: 2em 1em 2em 1em !important;
+    }
 }
 
 

@@ -1,58 +1,120 @@
-import React from 'react'
-import "./Navbar.css"; 
-import { NavLink, useNavigate } from 'react-router-dom';
-import { FormattedMessage } from 'react-intl';
-
+import "./Navbar.css";
+import "./Topbar.css";
+import {Link, useNavigate} from "react-router-dom";
+import {FormattedMessage, useIntl} from "react-intl";
+import React from "react";
+import {Container, Nav, Navbar as NavbarReact} from "react-bootstrap";
+import AppContext from "../../AppContext";
+import {useContext} from "react";
 
 function Navbar() {
 
- const navigate = useNavigate();
+    const context = useContext(AppContext);
 
-    function handleGoCart(event){
+    const navigate = useNavigate();
+
+    const intl = useIntl();
+
+    function handleGoCart(event) {
         event.preventDefault();
         navigate("/cart");
     }
 
-    return (
-        <div className="Navbar">
-            <div className="navbar-content">
-                    <div className="navbar-items left">
-                        <li key="1" className="navbar-items-text">
-                            <NavLink className={({ isActive }) => isActive? "active": ''} to="/">
-                                <span><FormattedMessage id="Home"/></span>
-                            </NavLink>
-                        </li>
-                        <li key="2" className="navbar-items-text">
-                            <NavLink className={({ isActive }) => isActive? "active": ''} to="/productos">
-                                <span><FormattedMessage id="Products"/></span>
-                            </NavLink>
-                        </li>
-                    </div>
-                    <div className="navbar-logo">
-                        <NavLink to="/">
-                            <img className="navbar-logo-img" src="/Assets/Logos/logoNav.svg" alt="Logo ITTI" />
-                        </NavLink>
-                    </div>
-                    <div className="navbar-items left">
-                        <li key="3" className="navbar-items-text">
-                            <NavLink className={({ isActive }) => isActive? "active": ''} to="/artesanos">
-                                <span><FormattedMessage id="Artisans"/></span>
-                            </NavLink>
-                        </li>
-                        <li key="4" className="navbar-items-text">
-                            <NavLink className={({ isActive }) => isActive? "active": ''} to="/nosotros">
-                                <span><FormattedMessage id="AboutUs"/></span>
-                            </NavLink>
-                        </li>
-                    </div>   
-            </div>
-            <div className="navbar-cart">
-               {/* <button className="user-cart" type="button" onClick={handleGoCart}></button>*/} 
-               <input className="user-cart" type="image" src="/Assets/Icons/Cart.svg" alt={<FormattedMessage id="Cart"/>} onClick={handleGoCart}/>
+    function handleChangeLanguage(event) {
+        context.setLang(event.target.value);
+    }
 
+    return (
+        <React.Fragment>
+            <div className="container-fluid">
+                <div className="row">
+                    <div className='col-lg-12 col-xl-12 Topbar d-none d-lg-block d-xl-block'>
+                        <div className='Topbar-text d-flex justify-content-end'>
+                            <Link id="Topbar-text-artisan" to="/signupArtesanos"><p className='Topbar-text-high'><FormattedMessage id="AreYouAnArtisan"/></p></Link>
+                            <Link to="/login"><p className='Topbar-text-center'><FormattedMessage id="SignIn"/></p></Link>
+                            <button className={ context.languageSettings.locale.startsWith("es") ? 'Topbar-button-active' : 'Topbar-button'} id="ES" value="es" onClick={handleChangeLanguage}>ES</button>
+                            <button className={ context.languageSettings.locale.startsWith("en") ? 'Topbar-button-active' : 'Topbar-button'} id="EN" value="en" onClick={handleChangeLanguage}>EN</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+
+            <div id="NavbarBootstrap">
+                <NavbarReact expand="lg">
+                    <Container>
+                        <NavbarReact.Toggle aria-controls="basic-navbar-nav"
+                                            id="navbarBootstrap-toggle"/>
+                        <NavbarReact.Collapse id="basic-navbar-nav"
+                                              className="navbarBootstrap-collapse">
+                            <Nav className="navbarBootstrap-items-list">
+                                <Nav.Link className="navbarBootstrap-item"
+                                          id="navbarBootstrap-home-link"
+                                          href="/">
+                                <span className={window?.location.pathname === '/' ? "navbarBootstrap-active" : ""}>
+                                    <FormattedMessage id="Home"/>
+                                </span>
+                                </Nav.Link>
+                                <Nav.Link className="navbarBootstrap-item"
+                                          href="/productos">
+                                <span className={window?.location.pathname ===
+                                '/productos' ? "navbarBootstrap-active" : ""}>
+                                    <FormattedMessage id="Products"/>
+                                </span>
+                                </Nav.Link>
+                                <NavbarReact.Brand href="/"
+                                                   className="d-none d-lg-block ">
+                                    <div className="navbarBootstrap-logo">
+                                        <img className="navbarBootstrap-logo-img"
+                                             src="/Assets/Logos/logoNav.svg"
+                                             alt="Logo ITTI"/>
+                                    </div>
+                                </NavbarReact.Brand>
+                                <Nav.Link className="navbarBootstrap-item"
+                                          href="/artesanos">
+                                <span className={window?.location.pathname ===
+                                '/artesanos' ? "navbarBootstrap-active" : ""}>
+                                    <FormattedMessage id="Artisans"/>
+                                </span>
+                                </Nav.Link>
+                                <Nav.Link className="navbarBootstrap-item"
+                                          href="/nosotros">
+                                <span className={window?.location.pathname ===
+                                '/nosotros' ? "navbarBootstrap-active" : ""}>
+                                    <FormattedMessage id="AboutUs"/>
+                                </span>
+                                </Nav.Link>
+                                <div className="Topbar-hide-lg">
+                                    <button className={ context.languageSettings.locale.startsWith("es") ? 'Topbar-button-active' : 'Topbar-button'} id="ES" value="es" onClick={handleChangeLanguage}>ES</button>
+                                    <button className={ context.languageSettings.locale.startsWith("en") ? 'Topbar-button-active' : 'Topbar-button'} id="EN" value="en" onClick={handleChangeLanguage}>EN</button>
+                                </div>
+                            </Nav>
+                            <div className='Topbar Topbar-text Topbar-hide-lg'>
+                                <div className="topbar-text-hide-are-you">
+                                    <Link id="Topbar-text-artisan" to="/signupArtesanos"><p className='Topbar-text-high'><FormattedMessage id="AreYouAnArtisan"/></p></Link>
+                                </div>
+                                <div >
+                                    <Link to="/login"><p className='Topbar-text-center'><FormattedMessage id="SignIn"/></p></Link>
+                                </div>
+                            </div>
+                        </NavbarReact.Collapse>
+                    </Container>
+                    <div className="navbarBootstrap-logo-sm d-lg-none d-xl-none">
+                        <img className="navbarBootstrap-logo-img"
+                             src="/Assets/Logos/logoNav.svg"
+                             alt="Logo ITTI"/>
+                    </div>
+                    <div className="navbarBootstrap-cart">
+                        <input className="navbarBootstrap-user-cart"
+                               type="image"
+                               src="/Assets/Icons/Cart.svg"
+                               alt={intl.formatMessage({id: "Cart"})}
+                               onClick={handleGoCart}/>
+                    </div>
+                </NavbarReact>
+            </div>
+        </React.Fragment>
+
     )
 }
 
-export default Navbar
+export default Navbar;

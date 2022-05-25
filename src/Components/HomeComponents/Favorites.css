@@ -1,18 +1,215 @@
-.Favorites{
+@media (min-width: 992px) {
+    .favorites-content{
+        display: flex;
+    }
+
+    .favorite-container{
+        width: 25%;
+        margin: 0 1.5em;
+    }
+
+    .favorite-number{
+        width: 25%;
+    }
+
+    .favorite-name, .favorite-description{
+        margin-left: 25%;
+    }
+
+    .favorite-image{
+        width: 75%;
+    }
+
+
+
+}
+@media (max-width: 992px) {
+    .favorite-container{
+        width: 100%;
+        padding: 0 10%;
+        margin-top: 3em;
+    }
+
+    .favorite-number{
+        width: 25%;
+    }
+
+    .favorite-name, .favorite-description{
+        margin-left: 25%;
+    }
+
+    .favorite-image{
+        width: 75%;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .favorite-name{
+        font-size: 1.1rem;
+    }
+
+    .favorite-description{
+        font-size: 0.9rem;
+    }
+
+    .favorite-number{
+        font-size: 5.5rem;
+    }
+
+    .favorites-title h3{
+        font-size: 2rem;
+    }
+
+    .favorites-content{
+        padding-right: 2em;
+        padding-left: 2em;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px){
+
+    .favorites-title h3{
+        font-size: 1.8rem;
+    }
+
+    .favorite-name{
+        font-size: 1rem;
+    }
+
+    .favorite-description{
+        font-size: 0.7rem;
+    }
+
+    .favorite-number{
+        font-size: 4rem;
+    }
+
+    .favorites-content{
+        padding-right: 2em;
+        padding-left: 2em;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px){
+    .favorite-name{
+        font-size: 1.5rem;
+    }
+
+    .favorite-description{
+        font-size: 1.2rem;
+    }
+
+    .favorite-number{
+        font-size: 5.5rem;
+    }
+
+    .favorites-title h3{
+        font-size: 2rem;
+    }
+
+    .favorites-content{
+        padding-right: 5em;
+        padding-left: 4em;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px){
+    .favorite-name{
+        font-size: 1.5rem;
+    }
+
+    .favorite-description{
+        font-size: 1.2rem;
+    }
+
+    .favorite-number{
+        font-size: 5.5rem;
+    }
+
+    .favorites-title h3{
+        font-size: 2rem;
+    }
+
+    .favorites-content{
+        padding-right: 3em;
+    }
+}
+
+@media (max-width: 576px){
+    .favorite-name{
+        font-size: 1.2rem;
+    }
+
+    .favorite-description{
+        font-size: 1rem;
+    }
+
+    .favorite-number{
+        font-size: 5rem;
+    }
+
+    .favorites-title h3{
+        font-size: 1.3rem;
+    }
+
+    .favorites-content{
+        padding-right: 3em;
+    }
+}
+
+
+.favorite-name, .favorite-description{
+    text-align: left;
+}
+
+.favorite-number{
+    font-family: "Playfair Display";
+    color: #BF522A;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    text-align: center;
     display: flex;
-    flex-direction: column;
+}
+
+.favorites-content{
+    width: 100%;
+    position: relative;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-top: 2.5rem;
+}
+
+.favorite-container-image{
+    width: 100%;
+    display: flex;
+}
+
+
+.favorite-name{
+    color: #BF522A;
+    font-family: "Montserrat";
+    margin-bottom: 0;
+}
+
+.favorite-description{
+    color: #3B373A;
+    font-family: "Montserrat";
+}
+
+.Favorites{
     align-items: center;
     text-align: center;
     position: relative;
     background-color: #F5F4F2;
-    width: 100vw;
-    margin-top: 3rem;
+    width: 100%;
     padding-bottom: 2.5rem;
+    padding-top: 2.5rem;
 }
 
-.favorites-title{
-    margin-top: 2.5rem;
-}
 
 .favorites-title span{
     font-style: italic;
@@ -21,57 +218,5 @@
 .favorites-title h3{
     font-family: "Playfair Display";
     font-weight: 700;
-    font-size: 2rem;
     color: #3B373A;
-}
-
-.favorites-content{
-    display: flex;
-    margin-top: 2.5rem;
-    align-items: center;
-    margin-right: 5vw;
-    margin-left: 4.5vw;
-}
-
-.favorites-detail{
-    display: flex;
-}
-
-.favorites-number{
-    font-family: "Playfair Display";
-    font-size: 6.5rem;
-    color: #BF522A;
-    margin-right: 1.5vw;
-    margin-left: 2.5vw;
-}
-
-.favorites-block{
-    display: flex;
-    flex-direction: column;
-    text-align: start;
-    font-family: "Montserrat";
-    align-items: flex-start;
-    max-width: fit-content;
-    margin-right: 2vw;
-}
-
-.favorites-name{
-    color: #BF522A;
-    font-size: 1.1rem;
-    margin: 0;
-    margin-top: 1vh;
-}
-
-.favorites-desc{
-    color: #3B373A;
-    margin: 0;
-    margin-top: 0.5vh;
-    font-size: 0.9rem;
-}
-
-.favorites-img{
-    height: fit-content;
-}
-.favorites-img1{
-    max-width: 13vw;
 }
