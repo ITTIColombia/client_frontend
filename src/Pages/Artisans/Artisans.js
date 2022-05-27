@@ -1,7 +1,6 @@
 import './Artisans.css';
 import Navbar from "../../Components/Navbar/Navbar";
 import {useEffect, useLayoutEffect, useState} from "react";
-import ArtisansMockup from "../../Mockup/Artisan/Artisans";
 import {FormattedMessage} from "react-intl";
 import Filter from "../../Components/Filters/Filter";
 import Footer from "../../Components/Footer/Footer";
@@ -33,7 +32,6 @@ function Artisans(){
             if(res.status === 200){
                 res.json().then(json=>{
                     setArtisans(json)
-                    console.log(json)
                 }).catch(err=>{
                     console.log("Error extracting json:", err)
                 })
