@@ -29,31 +29,31 @@ function ArtisanDetail(props) {
         fetch(`${process.env.REACT_APP_BACKEND_URL}/artisans/${parameters._id}`, {
             method: 'GET',
             headers: {'Content-Type': 'application/json'}
-        }).then((res)=>{
-            if(res.status === 200){
-                res.json().then(json=>{
+        }).then((res) => {
+            if (res.status === 200) {
+                res.json().then(json => {
                     setArtisan(json)
-                }).catch(err=>{
+                }).catch(err => {
                     console.log("Error extracting json:", err)
                 })
-            }else if(res.status === 204){
+            } else if (res.status === 204) {
                 setArtisan({})
             }
-        }).catch(err=>{
+        }).catch(err => {
             console.log("Error receiving artisans:", err)
         })
     }, [parameters._id])
 
     useEffect(() => {
-        if(artisan.department){
+        if (artisan.department) {
             fetch(`${process.env.REACT_APP_BACKEND_URL}/departments/${artisan.department}`, {
                 method: 'GET',
                 headers: {'Content-Type': 'application/json'}
-            }).then((res)=>{
-                if(res.status === 200){
-                    res.json().then(json=>{
+            }).then((res) => {
+                if (res.status === 200) {
+                    res.json().then(json => {
                         setDepartment(json)
-                    }).catch(err=>{
+                    }).catch(err => {
                         console.log("Error extracting json:", err)
                     })
                 } else if (res.status === 204) {
@@ -67,16 +67,17 @@ function ArtisanDetail(props) {
 
 
     useEffect(() => {
-        if(artisan._id){
-            fetch(`${process.env.REACT_APP_BACKEND_URL}/artisans/${artisan._id}/products/sample?`+ new URLSearchParams({qty: "2"}), {
+        if (artisan._id) {
+            fetch(`${process.env.REACT_APP_BACKEND_URL}/artisans/${artisan._id}/products/sample?` +
+                new URLSearchParams({qty: "4"}), {
                 method: 'GET',
                 headers: {'Content-Type': 'application/json'}
-            }).then((res)=>{
-                if(res.status === 200){
-                    res.json().then(json=>{
+            }).then((res) => {
+                if (res.status === 200) {
+                    res.json().then(json => {
                         setProducts(json)
                         console.log(json)
-                    }).catch(err=>{
+                    }).catch(err => {
                         console.log("Error extracting json:", err)
                     })
                 } else {
@@ -89,10 +90,10 @@ function ArtisanDetail(props) {
     }, [artisan])
 
 
-    useEffect(()=>{
-        if(artisan['_id']){
+    useEffect(() => {
+        if (artisan['_id']) {
             setContentURL(`https://s3.amazonaws.com/${process.env.REACT_APP_BUCKET_ID}/artisans/${artisan['_id']}`)
-        }else{
+        } else {
             setContentURL(undefined)
         }
     }, [artisan])
@@ -208,23 +209,24 @@ function ArtisanDetail(props) {
                         <h2 className="col-12 black title-text-artisan text-center"><FormattedMessage id="Products"/>
                         </h2>
                         <p className="col-12 black normal-text-artisan ">
-                            <FormattedMessage id="InvitationExploreProducts" values={{
-                                span: (chunks) => <span className="normal-text-artisan-span">{artisan.name}</span>
-                            }}/>
+                            <FormattedMessage id="InvitationExploreProducts"
+                                              values={{
+                                                  span: (chunks) =>
+                                                      <span className="normal-text-artisan-span">{artisan.name}</span>
+                                              }}/>
                         </p>
                         <div className="artisan-row-photos col-12 d-none d-lg-block">
 
-                            {products.map((product, i) =>{
-                                const size = products.length>0? 100/products.length : 100;
-                                return(
-                                    <img className="product-figure"
-                                         src={`${contentURL}/${product.media?.photos?.[0]}`}
-                                         alt={"product-" + i}
-                                         key={i}
-                                         style={{maxWidth: size+"%"}}/>
-                                )
-                            }
-
+                            {products.map((product, i) => {
+                                    const size = products.length > 0 ? 100 / products.length : 100;
+                                    return (
+                                        <img className="product-figure"
+                                             src={`${contentURL}/${product.media?.photos?.[0]}`}
+                                             alt={"product-" + i}
+                                             key={i}
+                                             style={{maxWidth: size + "%"}}/>
+                                    )
+                                }
                             )}
                         </div>
                         <Carousel className='d-block d-lg-none'>
