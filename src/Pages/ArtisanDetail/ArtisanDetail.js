@@ -3,7 +3,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import {useEffect, useLayoutEffect, useState} from "react";
 import {FormattedMessage} from "react-intl";
 import Footer from "../../Components/Footer/Footer";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import Breadcrumbs from "../../Components/Breadcrumbs/Breadcrumbs";
 import {useContext} from "react";
 import appContext from "../../AppContext";
@@ -130,12 +130,11 @@ function ArtisanDetail(props) {
                         </div>
 
                         <div className="col-lg-7 col-xl-7 col-sm-12 artisan-intro- artisan-right">
-                            <video autoPlay
-                                   controls
-                                   name="media">
-                                <source src={artisan.media?.video ? `${contentURL}/${artisan.media.video}` : ""}
-                                        type="video/mp4"/>
+                            <video controls
+                                   name="media"
+                                   src={artisan.media?.video ? `${contentURL}/${artisan.media.video}` : ""}>
                             </video>
+
                         </div>
                     </div>
 
@@ -220,11 +219,13 @@ function ArtisanDetail(props) {
                             {products.map((product, i) => {
                                     const size = products.length > 0 ? 100 / products.length : 100;
                                     return (
-                                        <img className="product-figure"
-                                             src={`${contentURL}/${product.media?.photos?.[0]}`}
-                                             alt={"product-" + i}
-                                             key={i}
-                                             style={{maxWidth: size + "%"}}/>
+                                        <Link to={"/productos/"+product._id} key={i}>
+                                            <img className="product-figure"
+                                                 src={`${contentURL}/${product.media?.photos?.[0]}`}
+                                                 alt={"product-" + i}
+                                                 style={{maxWidth: size + "%"}}/>
+                                        </Link>
+
                                     )
                                 }
                             )}
@@ -233,11 +234,12 @@ function ArtisanDetail(props) {
                             {products.map((product, i) =>
                                 <Carousel.Item interval={1000}
                                                key={i}>
-                                    <img
-                                        className="d-block w-100 product-figure"
-                                        src={`${contentURL}/${product.media?.photos?.[0]}`}
-                                        alt={"product-" + i}
-                                    />
+                                    <Link to={"/productos/"+product._id} key={i}>
+                                        <img className="d-block w-100 product-figure"
+                                            src={`${contentURL}/${product.media?.photos?.[0]}`}
+                                            alt={"product-" + i}
+                                        />
+                                    </Link>
                                 </Carousel.Item>
                             )}
                         </Carousel>
