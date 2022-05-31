@@ -36,7 +36,7 @@ function ArtisanDetail(props) {
                 }).catch(err => {
                     console.log("Error extracting json:", err)
                 })
-            } else if (res.status === 204) {
+            } else{
                 setArtisan({})
             }
         }).catch(err => {
@@ -56,7 +56,7 @@ function ArtisanDetail(props) {
                     }).catch(err => {
                         console.log("Error extracting json:", err)
                     })
-                } else if (res.status === 204) {
+                }else {
                     setDepartment({})
                 }
             }).catch(err => {
@@ -122,7 +122,7 @@ function ArtisanDetail(props) {
                             <p className="normal-text-artisan">{context.languageSettings.locale.startsWith(
                                 "en") ? artisan.shortDescriptionEN : artisan.shortDescriptionES}</p>
                             <p>
-                                <a className="normal-text-artisan artisan-adjust-flex"
+  ==                              <a className="normal-text-artisan artisan-adjust-flex"
                                    href="#artisan-product-region">
                                     <span id="artisanDetail-container-seeProducts"><FormattedMessage id="SeeProducts"/></span><RightArrow/>
                                 </a>
@@ -156,7 +156,7 @@ function ArtisanDetail(props) {
                                 <div className="col-6 col-sm-6 col-lg-12 my-auto center-horizontally-small reduced-container">
                                     <p className="black title-text-artisan">The corner of Colombia</p>
                                     <p className="normal-text-artisan">
-                                        <span className="text-uppercase orange"><FormattedMessage id="Region"/></span> - {department.region}
+                                        <span className="text-uppercase orange"><FormattedMessage id="Region"/></span> - {department.region? <FormattedMessage id="Region"/>: ""}
                                         <br/>
                                         <span className="text-uppercase orange"><FormattedMessage id="Department"/></span> - {department.name}
                                         <br/>
