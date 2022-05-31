@@ -146,21 +146,21 @@ function ProductDetail() {
                     </div>
                     <div className="row"
                          id="productDetail-images-row">
-                        <div className="col-12 col-lg-4">
-                            <img src={product.media?.photos?.[0] ?
-                                `${contentURL}/${product.media.photos[0]}` : ""}
-                                 alt="Foto Producto"/>
-                        </div>
-                        <div className="col-12 col-lg-4">
-                            <img src={product.media?.photos?.[1] ?
-                                `${contentURL}/${product.media.photos[1]}` : ""}
-                                 alt="Foto Producto"/>
-                        </div>
-                        <div className=" col-12 col-lg-4">
-                            <img src={product.media?.photos?.[2] ?
-                                `${contentURL}/${product.media.photos[2]}` : ""}
-                                 alt="Foto Producto"/>
-                        </div>
+                        {
+                            product.media?.photos?.map((photo, i)=>{
+                                if(i>2){
+                                    return ""
+                                }else{
+                                    return(
+                                        <div className="col-12 col-lg-4" key={i}>
+                                            <img src={`${contentURL}/${photo}`}
+                                                 alt={`Foto Producto ${i}`}/>
+                                        </div>
+                                    )
+                                }
+
+                            })
+                        }
                     </div>
                     <div className="row">
                         <div className="col-7 col-lg-4">
