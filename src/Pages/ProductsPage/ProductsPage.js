@@ -1,15 +1,14 @@
-import React, {useLayoutEffect, useState} from 'react'
+import React, {useEffect, useLayoutEffect, useState} from 'react'
 import "./ProductsPage.css"
 import Footer from '../../Components/Footer/Footer'
 import Navbar from '../../Components/Navbar/Navbar'
 import ProductCard from '../../Components/ProductCard/ProductCard'
 import Filter from "../../Components/Filters/Filter";
-import Products from "../../Mockup/Product/Products";
 import {FormattedMessage} from "react-intl";
 
 function ProductsPage() {
 
-    const [products, setProducts] = useState(Products);
+    const [products, setProducts] = useState([]);
 
     const optionsSearchForm = {"Region": ["Pacific", "Caribbean", "Andean", "Orinoquia", "Amazonian"],
         "Type": ["Indigenous", "PopularTraditional", "Contemporary"],
@@ -21,6 +20,27 @@ function ProductsPage() {
     useLayoutEffect(()=>{
         window.scrollTo(0,0)
     })
+
+    // Retrieve artisans from backend
+    useEffect(()=> {
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/products`, {
+            method: 'GET',
+            headers: {'Content-Type': 'application/json'}
+        }).then((res)=>{
+            if(res.status === 200){
+                res.json().then(json=>{
+                    setProducts(json)
+                }).catch(err=>{
+                    console.log("Error extracting json:", err)
+                })
+            }else if(res.status === 204){
+                setProducts([])
+            }
+        }).catch(err=>{
+            console.log("Error receiving artisans:", err)
+        })
+    }, [])
+
 
 
     return (
@@ -46,7 +66,9 @@ function ProductsPage() {
                 </div>
                 <div className='products-container'>
                     {products.map((producto, index) =>
-                        <div className='products-container-row' key={index}><ProductCard index={index+1} name={producto.name} price={producto.price} key={index} image={producto.media[0]["Photo1"]}/></div>
+                        <div className='products-container-row' key={index}>
+                            <ProductCard index={index+1} name={producto.name} price={producto.price} key={index}
+                                         image={`https://s3.amazonaws.com/${process.env.REACT_APP_BUCKET_ID}/artisans/${producto.artisan}/`+producto.media.photos[0]}/></div>
                     )}
                 </div>
             </div>
