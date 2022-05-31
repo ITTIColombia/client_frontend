@@ -1,7 +1,6 @@
 import './Artisans.css';
 import Navbar from "../../Components/Navbar/Navbar";
 import {useEffect, useLayoutEffect, useState} from "react";
-import ArtisansMockup from "../../Mockup/Artisan/Artisans";
 import {FormattedMessage} from "react-intl";
 import Filter from "../../Components/Filters/Filter";
 import Footer from "../../Components/Footer/Footer";
@@ -15,7 +14,7 @@ function Artisans(){
         "Type": ["Indigenous", "PopularTraditional", "Contemporary"],
         "Job": ["JewelerySilversmith", "PotteryCeramicGlass", "KnittingEmbroidery", "BasketryHats", "WoodWork", "Leather"]}
 
-    const [artisans, setArtisans] = useState(ArtisansMockup)
+    const [artisans, setArtisans] = useState([])
 
     const [searchForm, setSearchForm] = useState(
         {"Region":"DEFAULT", "Type": "DEFAULT", "Job": "DEFAULT"})
@@ -24,9 +23,25 @@ function Artisans(){
         window.scrollTo(0,0)
     })
 
-    useEffect(()=>{
-        console.log(artisans)
-    }, [artisans])
+    // Retrieve artisans from backend
+    useEffect(()=> {
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/artisans`, {
+            method: 'GET',
+            headers: {'Content-Type': 'application/json'}
+        }).then((res)=>{
+            if(res.status === 200){
+                res.json().then(json=>{
+                    setArtisans(json)
+                }).catch(err=>{
+                    console.log("Error extracting json:", err)
+                })
+            }else if(res.status === 204){
+                setArtisans([])
+            }
+        }).catch(err=>{
+            console.log("Error receiving artisans:", err)
+        })
+    }, [])
 
 
     return(
@@ -50,8 +65,8 @@ function Artisans(){
                 <div className="artisans-section row">
                     {artisans.map((artisan,i) =>{
                         return (
-                            <Link to={"/artesanos/"+artisan._id} key={"artisan"+i}  className="col-lg-4 col-xl-4 col-sm-12 col-xs-12 artisans-col">
-                                <img src={artisan.profilePhoto} alt={"artisan"+i}/>
+                            <Link to={"/artesanos/"+artisan["_id"]} key={"artisan"+i}  className="col-lg-4 col-xl-4 col-sm-12 col-xs-12 artisans-col">
+                                <img src={`https://s3.amazonaws.com/${process.env.REACT_APP_BUCKET_ID}/artisans/${artisan['_id']}/`+artisan.media.profile} alt={"artisan"+i}/>
                             </Link>)
                     })}
                 </div>

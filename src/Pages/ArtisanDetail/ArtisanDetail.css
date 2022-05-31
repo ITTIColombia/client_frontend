@@ -9,6 +9,7 @@
 .artisan-row-photos{
     display: flex;
     justify-content: space-between;
+    text-align: center
 }
 
 .artisan-navigation{
@@ -42,6 +43,10 @@
 
     .normal-text-artisan{
         font-size: 1rem;
+    }
+
+    #ArtisanDetail .product-figure{
+        max-height: 20em;
     }
 }
 
@@ -100,7 +105,6 @@
 
 #ArtisanDetail .product-figure{
     padding: 1rem;
-    width: 25%;
 }
 
 #ArtisanDetail .normal-text-artisan-span{
