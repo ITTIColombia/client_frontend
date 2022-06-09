@@ -76,7 +76,6 @@ function ArtisanDetail(props) {
                 if (res.status === 200) {
                     res.json().then(json => {
                         setProducts(json)
-                        console.log(json)
                     }).catch(err => {
                         console.log("Error extracting json:", err)
                     })
@@ -121,11 +120,11 @@ function ArtisanDetail(props) {
                             <h1 className="title-text-artisan orange">{artisan.name}</h1>
                             <p className="normal-text-artisan">{context.languageSettings.locale.startsWith(
                                 "en") ? artisan.shortDescriptionEN : artisan.shortDescriptionES}</p>
-                            <p>
-  ==                              <a className="normal-text-artisan artisan-adjust-flex"
-                                   href="#artisan-product-region">
-                                    <span id="artisanDetail-container-seeProducts"><FormattedMessage id="SeeProducts"/></span><RightArrow/>
-                                </a>
+                            <p><a className="normal-text-artisan artisan-adjust-flex"
+                                  href="#artisan-product-region">
+                                <span id="artisanDetail-container-seeProducts"><FormattedMessage
+                                    id="SeeProducts"/></span><RightArrow/>
+                            </a>
                             </p>
                         </div>
 
@@ -179,24 +178,24 @@ function ArtisanDetail(props) {
                             "en") ? artisan.detailedDescriptionEN : artisan.detailedDescriptionES}</p>
                         <div className="col-12 col-lg-6">
                             <img className="technique-figure"
-                                 src={`${contentURL}/${artisan.media?.technique[0]}`}
+                                 src={artisan.media?.technique?.[0]? `${contentURL}/${artisan.media?.technique[0]}`: ""}
                                  alt="technique-1"/>
                         </div>
                         <div className="col-12 col-lg-6">
                             <div className="row">
                                 <div className="col-12 col-lg-6">
                                     <img className="technique-figure"
-                                         src={`${contentURL}/${artisan.media?.technique[1]}`}
+                                         src={artisan.media?.technique?.[1]? `${contentURL}/${artisan.media?.technique[1]}`: ""}
                                          alt="technique-2"/>
                                 </div>
                                 <div className="col-12 col-lg-6">
                                     <img className="technique-figure"
-                                         src={`${contentURL}/${artisan.media?.technique[2]}`}
+                                         src={artisan.media?.technique?.[2]? `${contentURL}/${artisan.media?.technique[2]}`: ""}
                                          alt="technique-3"/>
                                 </div>
                                 <div className="col-12">
                                     <img className="technique-figure"
-                                         src={`${contentURL}/${artisan.media?.technique[3]}`}
+                                         src={artisan.media?.technique?.[3]? `${contentURL}/${artisan.media?.technique[3]}`: ""}
                                          alt="technique-4"/>
                                 </div>
                             </div>

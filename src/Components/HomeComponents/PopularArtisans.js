@@ -50,7 +50,7 @@ function PopularArtisans() {
                     <div className="popularArtisans-but-line">
                         <hr/>
                     </div>
-                    <Link to="/marcas">
+                    <Link to="/artesanos">
                         <span className='popularArtisans-seeAll'><FormattedMessage id="SeeAll"/></span>
                     </Link>
                     <div className="popularArtisans-but-line">
