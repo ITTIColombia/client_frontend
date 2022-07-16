@@ -1,17 +1,18 @@
 import './Cart.css';
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
-import React, {useLayoutEffect, useMemo, useState} from "react";
+import React, {useLayoutEffect, useMemo, useState, useContext} from "react";
 import {FormattedMessage, FormattedNumber} from "react-intl";
-import products from "../../Mockup/Product/ProductsUserTesting";
 import {Modal} from "react-bootstrap";
+import AppContext from './../../AppContext';
 
 
 function Cart() {
+    const context = useContext(AppContext);
 
-    const [showModal, setShowModal] = useState(false)
+    const [showModal, setShowModal] = useState(false);
 
-    const [shoppingCart, setShoppingCart] = useState(mapProductsList(products))
+/*    const [shoppingCart, setShoppingCart] = useState(mapProductsList(products));
 
     const totalValue = useMemo(() => Object.keys(shoppingCart).reduce((cumulativeSum, currentKey) => {
         const productElement = shoppingCart[currentKey];
@@ -45,12 +46,14 @@ function Cart() {
         delete newShoppingCart[_id]
         setShoppingCart(newShoppingCart)
     }
+*/
 
     function checkout() {
         // TODO: Conexion con API de Whastapp para lograr concluir la venta
         setShowModal(false);
-        setShoppingCart({})
+        context.clearCart();
     }
+
 
     useLayoutEffect(() => {
         window.scrollTo(0, 0)
@@ -105,33 +108,42 @@ function Cart() {
                                         <hr/>
                                     </td>
                                 </tr>
-                                {Object.keys(shoppingCart).map((productKey, i) => {
-                                    const product = shoppingCart[productKey].product;
-                                    const finalPrice = shoppingCart[productKey].quantity * product.price;
+                                {
+                                context.cart.items.map((item, index) => {
+                                    const product = item.product;
+                                    const itemPrice = item.product.price * item.quantity;
                                     return (
-                                        <tr key={`cart-item-` + i}>
-                                            <td><img src={product.media[0]["Photo1"]}/></td>
-                                            <td>{product.name}<span className="cart-hide-lg"><br/>${finalPrice}</span></td>
+                                        <tr key={`cart-item-${index}`}>
+                                            <td><img src={`https://s3.amazonaws.com/${process.env.REACT_APP_BUCKET_ID}/artisans/${product.artisan}/`+product.media.photos[0]} alt="product"/></td>
+                                            <td>{product.name}<span className="cart-hide-lg"><br/>${itemPrice}</span></td>
                                             <td className="cart-hide-sm">${product.price}</td>
                                             <td>
-                                                <button onClick={() => getAddSubtractQty(productKey, -1)}>-</button>
-                                                {shoppingCart[productKey].quantity}
-                                                <button onClick={() => getAddSubtractQty(productKey, 1)}>+</button>
+                                                <tr>
+                                                    <td>
+                                                        <button onClick={() => context.substractToCart(product)}>-</button>
+                                                    </td>
+                                                    <td>{item.quantity}</td>
+                                                    <td>
+                                                        <button onClick={() => context.addToCart(product)}>+</button>
+                                                    </td>
+                                                </tr>
+                                                
                                             </td>
-                                            <td className="cart-hide-sm">${finalPrice}</td>
+                                            <td className="cart-hide-sm">${itemPrice}</td>
                                             <td>
-                                                <button onClick={() => remove(productKey)}>X</button>
+                                                <button onClick={() => context.removeFromCart(product)}>X</button>
                                             </td>
                                         </tr>
                                     )
-                                })}
+                                })
+                                }
                                 </tbody>
                             </table>
                         </div>
                         <div className="col-12 col-lg-3 cart-summary-col">
                             <h2><FormattedMessage id="Summary"/></h2>
                             <p className="d-flex justify-content-between bd-highlight mb-3">
-                                <span className="bd-highlight text-uppercase cart-summary-cost"><FormattedMessage id="Subtotal"/></span><span className="bd-highlight">$<FormattedNumber value={totalValue}/></span>
+                                <span className="bd-highlight text-uppercase cart-summary-cost"><FormattedMessage id="Subtotal"/></span><span className="bd-highlight">$<FormattedNumber value={context.cart.totalPrice}/></span>
                             </p>
                             <p className="d-flex justify-content-between bd-highlight mb-3">
                                 <span className="bd-highlight text-uppercase cart-summary-cost"><FormattedMessage id="Tax"/></span><span className="bd-highlight">$0</span>
@@ -145,16 +157,16 @@ function Cart() {
                             <hr id="cart-underline-location"/>
                             <p className="d-flex justify-content-between bd-highlight mb-3">
                             <span className="bd-highlight text-uppercase"><FormattedMessage id="ShippingCost"/>
-                            </span><span className="bd-highlight">$<FormattedNumber value={totalValue}/></span>
+                            </span><span className="bd-highlight">$<FormattedNumber value={context.cart.totalPrice}/></span>
                             </p>
                             <hr className="cart-divisor-line"/>
                             <p className="d-flex justify-content-between bd-highlight mb-3">
                                 <span className="bd-highlight text-uppercase cart-summary-cost"><FormattedMessage id="ServiceCost"/></span>
-                                <span className="bd-highlight">$<FormattedNumber value={totalValue * 0.03}/></span>
+                                <span className="bd-highlight">$<FormattedNumber value={context.cart.totalPrice * 0.03}/></span>
                             </p>
                             <p className="d-flex justify-content-between bd-highlight mb-3 text "
                                id="cart-total-region">
-                                <span className="bd-highlight text-uppercase"><FormattedMessage id="Total"/></span><span className="bd-highlight">$<FormattedNumber value={totalValue *
+                                <span className="bd-highlight text-uppercase"><FormattedMessage id="Total"/></span><span className="bd-highlight">$<FormattedNumber value={context.cart.totalPrice *
                                 1.03}/></span>
                             </p>
                             <button type="submit"

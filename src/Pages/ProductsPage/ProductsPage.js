@@ -65,10 +65,11 @@ function ProductsPage() {
                     </div>
                 </div>
                 <div className='products-container'>
-                    {products.map((producto, index) =>
+                    {products.map((product, index) =>
                         <div className='products-container-row' key={index}>
-                            <ProductCard index={index+1} name={producto.name} price={producto.price} key={index}
-                                         image={`https://s3.amazonaws.com/${process.env.REACT_APP_BUCKET_ID}/artisans/${producto.artisan}/`+producto.media.photos[0]}/></div>
+                            <ProductCard index={index+1} name={product.name} price={product.price} key={index} product={product}
+                                         image={`https://s3.amazonaws.com/${process.env.REACT_APP_BUCKET_ID}/artisans/${product.artisan}/`+product.media.photos[0]}/>
+                        </div>
                     )}
                 </div>
             </div>
