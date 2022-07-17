@@ -1,9 +1,10 @@
 import './Cart.css';
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
-import React, {useLayoutEffect, useMemo, useState, useContext} from "react";
+import React, {useLayoutEffect, useState, useContext} from "react";
 import {FormattedMessage, FormattedNumber} from "react-intl";
 import {Modal} from "react-bootstrap";
+import {Link} from 'react-router-dom';
 import AppContext from './../../AppContext';
 
 
@@ -54,7 +55,6 @@ function Cart() {
         context.clearCart();
     }
 
-
     useLayoutEffect(() => {
         window.scrollTo(0, 0)
     })
@@ -73,7 +73,8 @@ function Cart() {
                     <Modal.Header closeButton/>
                     <Modal.Body>
                         <h3><FormattedMessage id="CartModalTitle1"/> <span className="orange">IT<span>T</span>I</span>
-                            <FormattedMessage id="CartModalTitle2"/></h3>
+                            <FormattedMessage id="CartModalTitle2"/>
+                        </h3>
                         <p><FormattedMessage id="CartModalMessage"/></p>
                         <button
                             type="submit"
@@ -91,7 +92,7 @@ function Cart() {
                     </div>
                     <div className='row cart-table-summary-row'>
                         <div className='col-12 col-lg-9 cart-table-row'>
-                            <table>
+                            {context.cart.items.length > 0 ? <table>
                                 <thead>
                                 <tr className="text-uppercase">
                                     <th><FormattedMessage id="Item"/></th>
@@ -118,16 +119,9 @@ function Cart() {
                                             <td>{product.name}<span className="cart-hide-lg"><br/>${itemPrice}</span></td>
                                             <td className="cart-hide-sm">${product.price}</td>
                                             <td>
-                                                <tr>
-                                                    <td>
-                                                        <button onClick={() => context.substractToCart(product)}>-</button>
-                                                    </td>
-                                                    <td>{item.quantity}</td>
-                                                    <td>
-                                                        <button onClick={() => context.addToCart(product)}>+</button>
-                                                    </td>
-                                                </tr>
-                                                
+                                                    <button onClick={() => context.substractToCart(product)}>-</button>
+                                                    {item.quantity}
+                                                    <button onClick={() => context.addToCart(product)}>+</button>
                                             </td>
                                             <td className="cart-hide-sm">${itemPrice}</td>
                                             <td>
@@ -138,7 +132,9 @@ function Cart() {
                                 })
                                 }
                                 </tbody>
-                            </table>
+                            </table> : <div className="cart-container-no-items-added">
+                                            <h2>No products added to cart, <Link to="/productos">browse them</Link> </h2>
+                                       </div>}
                         </div>
                         <div className="col-12 col-lg-3 cart-summary-col">
                             <h2><FormattedMessage id="Summary"/></h2>
@@ -169,12 +165,12 @@ function Cart() {
                                 <span className="bd-highlight text-uppercase"><FormattedMessage id="Total"/></span><span className="bd-highlight">$<FormattedNumber value={context.cart.totalPrice *
                                 1.03}/></span>
                             </p>
-                            <button type="submit"
+                            {context.cart.items.length > 0 && <button type="submit"
                                     className="btn text-uppercase cart-button"
                                     onClick={() => {
                                         setShowModal(true)
                                     }}><FormattedMessage id="Checkout"/>
-                            </button>
+                            </button>}
                         </div>
                     </div>
                 </div>

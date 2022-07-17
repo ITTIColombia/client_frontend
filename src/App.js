@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
 import Home from "./Pages/Home/Home";
@@ -15,9 +15,6 @@ import es from "./Dictionaries/es.json";
 import Login from "./Pages/Login/Login";
 import SignUp from "./Pages/SignUp/SignUp";
 import Cart from "./Pages/Cart/Cart";
-
-//delete this
-import products from './Mockup/Product/Products';
 
 const defaultCart = {
   items: [],
@@ -55,15 +52,6 @@ function App() {
 
       //TODO Tony: show alert
 }
-
-  //delete this
-  useEffect(() => {
-    console.log(cart);
-  }, [cart])
-
-  //useEffect(() => {
-  //  addToCart(products[0]);
-  //}, [])
 
   const substractToCart = (product) => {
       const updatedCart = { ...cart };
