@@ -90,6 +90,8 @@
 
   "ShoppingBag": "Bolsa de compras",
   "ShoppingCartMessage": "¡Gracias por apoyar el comercio local y las artesanias colombianas! Termina tu compra aquí.",
+  "NoItems": "La bolsa de compras está vacía",
+  "AddedToCart":" agregado a la bolsa de compras",
   "Item": "Item",
   "UnitPrice": "Precio unitario",
   "Quantity": "Cantidad",

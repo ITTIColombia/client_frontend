@@ -1,10 +1,10 @@
 import './Cart.css';
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
+import ButtonOrange from "../../Components/Buttons/ButtonOrange";
 import React, {useLayoutEffect, useState, useContext} from "react";
 import {FormattedMessage, FormattedNumber} from "react-intl";
 import {Modal} from "react-bootstrap";
-import {Link} from 'react-router-dom';
 import AppContext from './../../AppContext';
 
 
@@ -132,9 +132,14 @@ function Cart() {
                                 })
                                 }
                                 </tbody>
-                            </table> : <div className="cart-container-no-items-added">
-                                            <h2>No products added to cart, <Link to="/productos">browse them</Link> </h2>
-                                       </div>}
+                            </table> : 
+                                <div className="container-fluid cart-container">
+                                    <h2 className="d-flex justify-content-between bd-highlight mb-3">
+                                        <span className="bd-highlight"><FormattedMessage id="NoItems"/></span>
+                                    </h2>
+                                    <ButtonOrange path="productos" text="SeeProducts">Browse</ButtonOrange>
+                                </div>
+                            }
                         </div>
                         <div className="col-12 col-lg-3 cart-summary-col">
                             <h2><FormattedMessage id="Summary"/></h2>
@@ -152,8 +157,8 @@ function Cart() {
                             </p>
                             <hr id="cart-underline-location"/>
                             <p className="d-flex justify-content-between bd-highlight mb-3">
-                            <span className="bd-highlight text-uppercase"><FormattedMessage id="ShippingCost"/>
-                            </span><span className="bd-highlight">$<FormattedNumber value={context.cart.totalPrice}/></span>
+                                <span className="bd-highlight text-uppercase"><FormattedMessage id="ShippingCost"/></span>
+                                <span className="bd-highlight">$<FormattedNumber value={context.cart.totalPrice}/></span>
                             </p>
                             <hr className="cart-divisor-line"/>
                             <p className="d-flex justify-content-between bd-highlight mb-3">

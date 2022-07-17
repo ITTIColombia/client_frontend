@@ -65,9 +65,9 @@ function ProductsPage() {
                     </div>
                 </div>
                 <div className='products-container'>
-                    {products.map((product, index) =>
-                        <div className='products-container-row' key={index}>
-                            <ProductCard index={index+1} name={product.name} price={product.price} key={index} product={product}
+                    {products.map((product) =>
+                        <div className='products-container-row' key={product._id}>
+                            <ProductCard id={product._id} name={product.name} price={product.price} key={product._id} product={product}
                                          image={`https://s3.amazonaws.com/${process.env.REACT_APP_BUCKET_ID}/artisans/${product.artisan}/`+product.media.photos[0]}/>
                         </div>
                     )}
@@ -79,4 +79,4 @@ function ProductsPage() {
     )
 }
 
-export default ProductsPage
+export default ProductsPage;

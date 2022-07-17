@@ -15,6 +15,9 @@ import es from "./Dictionaries/es.json";
 import Login from "./Pages/Login/Login";
 import SignUp from "./Pages/SignUp/SignUp";
 import Cart from "./Pages/Cart/Cart";
+import Noty from 'noty';
+import "../node_modules/noty/lib/noty.css";  
+import "../node_modules/noty/lib/themes/bootstrap-v4.css"; // Noty CSS
 
 const defaultCart = {
   items: [],
@@ -50,7 +53,16 @@ function App() {
       localStorage.setItem('cart', JSON.stringify(updatedCart));
       setCart(updatedCart);
 
-      //TODO Tony: show alert
+      if (showAlert) {
+        new Noty({
+          text: product.name+(languageSettings.locale.startsWith(
+            "en") ? en.AddedToCart : es.AddedToCart),
+          timeout: 2000,
+          progressBar: false,
+          type: "warning",
+          theme: 'bootstrap-v4',
+        }).show();
+      }
 }
 
   const substractToCart = (product) => {
