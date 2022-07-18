@@ -138,7 +138,8 @@ function ProductDetail() {
                                 <p className='productDetail-price'>${product.price}</p>
                                 <div id="productDetail-buttonOrange-container">
                                     <ButtonOrange path="cart"
-                                                  text="AddToCart"/>
+                                                  text="AddToCart"
+                                                  action={() => {context.addToCart(product,true)}}/>
                                 </div>
 
                             </div>
@@ -212,8 +213,7 @@ function ProductDetail() {
                                 </div>
                                 <div className='col-12 col-lg-6'>
                                     <img src={artisan.media ? `${contentURL}/${artisan.media?.technique[2]}` : ""}
-                                         alt="Artisans photo
-             2"/>
+                                         alt="Artisans photo 2"/>
                                 </div>
                             </div>
                         </div>

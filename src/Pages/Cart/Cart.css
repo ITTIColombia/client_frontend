@@ -21,6 +21,10 @@
     font-family: "Montserrat";
 }
 
+.cart-container h2{
+    font-family: "Montserrat";
+}
+
 .cart-container th, .cart-container td{
     text-align: center;
     width: 16.66%;
