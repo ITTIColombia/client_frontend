@@ -60,6 +60,7 @@ function App() {
           timeout: 2000,
           progressBar: false,
           type: "warning",
+          layout: "topLeft",
           theme: 'bootstrap-v4',
         }).show();
       }
