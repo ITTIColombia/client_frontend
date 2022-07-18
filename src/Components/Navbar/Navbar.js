@@ -24,6 +24,14 @@ function Navbar() {
         context.setLang(event.target.value);
     }
 
+    function getTotalProducts() {
+        let total = 0;
+        context.cart.items.forEach(item => {
+            total += item.quantity;
+        });
+        return total;
+    }
+
     return (
         <React.Fragment>
             <div className="container-fluid">
@@ -104,12 +112,17 @@ function Navbar() {
                              alt="Logo ITTI"/>
                     </div>
                     <div className="navbarBootstrap-cart">
-                        <input className="navbarBootstrap-user-cart"
+                        {/*<input className="navbarBootstrap-user-cart"
                                type="image"
                                src="/Assets/Icons/Cart.svg"
                                alt={intl.formatMessage({id: "Cart"})}
-                               onClick={handleGoCart}/>
-                    </div>
+                                onClick={handleGoCart}/>*/}
+                        {/*context.cart.items.length > 0 && <a className="navbarBootstrap-cart-count-label">{getTotalProducts()}</a>*/}
+                        
+                        <img className="navbarBootstrap-user-cart" src="/Assets/Icons/Cart.svg" alt={intl.formatMessage({id: "Cart"})} onClick={handleGoCart}></img>
+
+                        {context.cart.items.length > 0 && <span className='navbarBootstrap-cart-count-label' onClick={handleGoCart}> {getTotalProducts()} </span>}
+                    </div>                
                 </NavbarReact>
             </div>
         </React.Fragment>
