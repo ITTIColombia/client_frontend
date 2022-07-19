@@ -17,7 +17,7 @@ function Navbar() {
 
     function handleGoCart(event) {
         event.preventDefault();
-        navigate("/cart");
+        navigate("/carrito");
     }
 
     function handleChangeLanguage(event) {

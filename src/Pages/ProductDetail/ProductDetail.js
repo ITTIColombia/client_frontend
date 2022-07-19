@@ -137,7 +137,7 @@ function ProductDetail() {
                                 </p>
                                 <p className='productDetail-price'>${product.price}</p>
                                 <div id="productDetail-buttonOrange-container">
-                                    <ButtonOrange path="cart"
+                                    <ButtonOrange path="carrito"
                                                   text="AddToCart"
                                                   action={() => {context.addToCart(product,true)}}/>
                                 </div>

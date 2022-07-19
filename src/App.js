@@ -24,6 +24,11 @@ const defaultCart = {
   totalPrice:0
 }
 
+/*const defaultLanguage = {
+  messages: navigator.language.startsWith("es") ? es : en,
+  locale: navigator.language,
+}*/
+
 function App() {
 
   // stablish default cart at navigator's storage (if not previously existent)
@@ -113,10 +118,14 @@ function App() {
     JSON.parse(localStorage.getItem("itti-user") || "{}")
   );
 
-  const [languageSettings, setLanguageSettings] = useState({
-    messages: navigator.language.startsWith("es") ? es : en,
-    locale: navigator.language,
-  });
+  // stablish default language at navigator's storage (if not previously existent)
+  let storedLanguage = localStorage.getItem('language');
+  if (!storedLanguage) {
+    localStorage.setItem('language', navigator.language);
+    storedLanguage = navigator.language;
+  }
+
+  const [languageSettings, setLanguageSettings] = useState({ messages: storedLanguage.startsWith("es") ? es : en, locale: storedLanguage });
 
   function login(user) {
     localStorage.setItem("itti-user", JSON.stringify(user));
@@ -129,12 +138,13 @@ function App() {
   }
 
   function setLang(lang) {
-    let finalLang = lang;
+    const updatedLang = { messages: undefined, locale: lang };
     if (lang.startsWith(navigator.language.slice(0, 2))) {
-      finalLang = navigator.language;
+      updatedLang.locale = navigator.language;
     }
-    let messages = finalLang.startsWith("es") ? es : en;
-    setLanguageSettings({ messages: messages, locale: finalLang });
+    updatedLang.messages = updatedLang.locale.startsWith("es") ? es : en;
+    localStorage.setItem("language", updatedLang.locale);
+    setLanguageSettings(updatedLang);
   }
 
   return (
@@ -156,7 +166,7 @@ function App() {
               <Route path="/nosotros" exact element={<AboutUs />} />
               <Route path="/login" exact element={<Login />} />
               <Route path="/signup" exact element={<SignUp />} />
-              <Route path="/cart" exact element={<Cart />} />
+              <Route path="/carrito" exact element={<Cart />} />
             </Routes>
           </BrowserRouter>
         </IntlProvider>
