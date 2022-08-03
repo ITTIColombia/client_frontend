@@ -16,8 +16,7 @@ import Login from "./Pages/Login/Login";
 import SignUp from "./Pages/SignUp/SignUp";
 import Cart from "./Pages/Cart/Cart";
 import Noty from 'noty';
-import "../node_modules/noty/lib/noty.css";  
-import "../node_modules/noty/lib/themes/bootstrap-v4.css"; // Noty CSS
+//import { useAlert } from 'react-alert';
 
 const defaultCart = {
   items: [],
@@ -59,6 +58,8 @@ function App() {
       setCart(updatedCart);
 
       if (showAlert) {
+        /* TODO Tony: change to react-alert */
+        console.log("showAlert");
         new Noty({
           text: product.name+(languageSettings.locale.startsWith(
             "en") ? en.AddedToCart : es.AddedToCart),

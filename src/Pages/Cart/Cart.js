@@ -1,7 +1,6 @@
 import './Cart.css';
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
-import ButtonOrange from "../../Components/Buttons/ButtonOrange";
 import React, {useLayoutEffect, useState, useContext} from "react";
 import {FormattedMessage, FormattedNumber} from "react-intl";
 import {Modal} from "react-bootstrap";
@@ -12,42 +11,6 @@ function Cart() {
     const context = useContext(AppContext);
 
     const [showModal, setShowModal] = useState(false);
-
-/*    const [shoppingCart, setShoppingCart] = useState(mapProductsList(products));
-
-    const totalValue = useMemo(() => Object.keys(shoppingCart).reduce((cumulativeSum, currentKey) => {
-        const productElement = shoppingCart[currentKey];
-        return cumulativeSum + (productElement["product"].price * productElement.quantity);
-    }, 0), [shoppingCart])
-
-    function mapProductsList(productsList) {
-        const productsObject = {};
-        productsList.forEach(product => {
-            if (product["_id"]) {
-                productsObject[product["_id"]] = {product, quantity: 1}
-            }
-        })
-        return productsObject;
-    }
-
-    function getAddSubtractQty(_id, qty) {
-        if (shoppingCart[_id]) {
-            setShoppingCart({
-                ...shoppingCart, [_id]: {
-                    quantity: shoppingCart[_id].quantity + qty,
-                    product: shoppingCart[_id].product
-                }
-            })
-
-        }
-    }
-
-    function remove(_id) {
-        const newShoppingCart = {...shoppingCart}
-        delete newShoppingCart[_id]
-        setShoppingCart(newShoppingCart)
-    }
-*/
 
     function checkout() {
         // TODO: Conexion con API de Whastapp para lograr concluir la venta
@@ -90,9 +53,11 @@ function Cart() {
                             <p><FormattedMessage id="ShoppingCartMessage"/></p>
                         </div>
                     </div>
+                    {context.cart.items.length > 0 
+                    ?
                     <div className='row cart-table-summary-row'>
                         <div className='col-12 col-lg-9 cart-table-row'>
-                            {context.cart.items.length > 0 ? <table>
+                            <table>
                                 <thead>
                                 <tr className="text-uppercase">
                                     <th><FormattedMessage id="Item"/></th>
@@ -109,8 +74,7 @@ function Cart() {
                                         <hr/>
                                     </td>
                                 </tr>
-                                {
-                                context.cart.items.map((item, index) => {
+                                {context.cart.items.map((item, index) => {
                                     const product = item.product;
                                     const itemPrice = item.product.price * item.quantity;
                                     return (
@@ -129,17 +93,9 @@ function Cart() {
                                             </td>
                                         </tr>
                                     )
-                                })
-                                }
+                                })}
                                 </tbody>
-                            </table> : 
-                                <div className="container-fluid cart-container">
-                                    <h2 className="d-flex justify-content-between bd-highlight mb-3">
-                                        <span className="bd-highlight"><FormattedMessage id="NoItems"/></span>
-                                    </h2>
-                                    <ButtonOrange path="productos" text="SeeProducts">Browse</ButtonOrange>
-                                </div>
-                            }
+                            </table>
                         </div>
                         <div className="col-12 col-lg-3 cart-summary-col">
                             <h2><FormattedMessage id="Summary"/></h2>
@@ -170,14 +126,24 @@ function Cart() {
                                 <span className="bd-highlight text-uppercase"><FormattedMessage id="Total"/></span><span className="bd-highlight">$<FormattedNumber value={context.cart.totalPrice *
                                 1.03}/></span>
                             </p>
-                            {context.cart.items.length > 0 && <button type="submit"
+                            <button type="submit"
                                     className="btn text-uppercase cart-button"
                                     onClick={() => {
                                         setShowModal(true)
                                     }}><FormattedMessage id="Checkout"/>
-                            </button>}
+                            </button>
+                        </div>
+                    </div> 
+                    :
+                    <div className="row">
+                        <div className="col-12 empty-cart-table-summary">
+                            <img className="empty-cart-image" src="/Assets/Photos/Cart/EmptyCart.svg" alt="Empty Cart"/>
+                            <h5 className="justify-content-between bd-highlight mb-3">
+                                <span className="bd-highlight"><FormattedMessage id="NoItems"/></span>
+                            </h5>
                         </div>
                     </div>
+                    }
                 </div>
             </div>
             <Footer/>

@@ -1,5 +1,6 @@
 .cart-container{
     padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
 }
 
 .cart-container h1, .cart-container h2, .cart-modal h3{
@@ -65,11 +66,56 @@
     margin-top: 1rem;
 }
 
-.cart-container img{
-    width: 80%;
-    padding: 3%;
+/*Updated*/
+
+.empty-cart-table-summary{
+    margin:0 auto; 
+    text-align:center;
 }
 
+.empty-cart-table-summary h5{
+    text-align: center;
+    margin: 1rem;
+    color: #BF522A;
+    font-family: "Playfair Display";
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px){
+    .empty-cart-image {
+        width: 60% !important;
+    }
+
+    .empty-cart-table-summary{
+        padding-bottom: 0.5rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .empty-cart-image {
+        width: 28% !important;
+    }
+
+    .empty-cart-table-summary{
+        padding-bottom: 2rem;
+    }
+}
+
+@media (max-width: 992px) and (min-width: 768px){
+    .empty-cart-image {
+        width: 40% !important;
+    }
+
+    .empty-cart-table-summary{
+        padding-bottom: 1rem;
+    }
+}
+
+.cart-container img{
+    width: 30%;
+    padding: 3%;
+}
 
 #cart-table-divisor{
     opacity: 15%;

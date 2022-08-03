@@ -14,8 +14,6 @@ function ProductCard(props) {
             <div className="productCard-over">
                 <p className="productCard-over-text">{props.name}</p>
                 <div className="productCard-icons">
-                    {/*<Link  to="/marcas"><img className="productCard-svg" src="/Assets/Icons/like.svg" alt="Like" /></Link>*/}
-                    {/*<Link to="/marcas"><img className="productCard-svg" src="/Assets/Icons/add.svg" alt="Agrgear" /></Link>*/}
                     <Link to="/carrito"><img className="productCard-svg" src="/Assets/Icons/add.svg" alt="Agrgear" onClick={() => {context.addToCart(props.product,true)}} /></Link>
                 </div>
             </div>
