@@ -15,8 +15,7 @@ import es from "./Dictionaries/es.json";
 import Login from "./Pages/Login/Login";
 import SignUp from "./Pages/SignUp/SignUp";
 import Cart from "./Pages/Cart/Cart";
-import Noty from 'noty';
-//import { useAlert } from 'react-alert';
+import { useAlert } from "react-alert";
 
 const defaultCart = {
   items: [],
@@ -29,6 +28,8 @@ const defaultCart = {
 }*/
 
 function App() {
+
+  const alert = useAlert()
 
   // stablish default cart at navigator's storage (if not previously existent)
   let storedCart = JSON.parse(localStorage.getItem('cart'));
@@ -58,17 +59,7 @@ function App() {
       setCart(updatedCart);
 
       if (showAlert) {
-        /* TODO Tony: change to react-alert */
-        console.log("showAlert");
-        new Noty({
-          text: product.name+(languageSettings.locale.startsWith(
-            "en") ? en.AddedToCart : es.AddedToCart),
-          timeout: 2000,
-          progressBar: false,
-          type: "warning",
-          layout: "topLeft",
-          theme: 'bootstrap-v4',
-        }).show();
+        alert.show(product.name + languageSettings.messages.AddedToCart);
       }
 }
 
