@@ -5,7 +5,7 @@ import {useEffect, useLayoutEffect, useState} from "react";
 import {FormattedMessage} from "react-intl";
 import {Carousel} from "react-bootstrap";
 import {Link} from "react-router-dom";
-import React from "react";
+import React, { useContext } from "react";
 
 
 function Login() {

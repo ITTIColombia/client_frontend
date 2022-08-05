@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
 import Home from "./Pages/Home/Home";
@@ -16,6 +16,10 @@ import Login from "./Pages/Login/Login";
 import SignUp from "./Pages/SignUp/SignUp";
 import Cart from "./Pages/Cart/Cart";
 import { useAlert } from "react-alert";
+import Amplify, { Auth } from 'aws-amplify';
+import awsconfig from './aws-exports';
+
+Amplify.configure(awsconfig);
 
 const defaultCart = {
   items: [],
@@ -28,7 +32,6 @@ const defaultCart = {
 }*/
 
 function App() {
-
   const alert = useAlert()
 
   // stablish default cart at navigator's storage (if not previously existent)
@@ -106,10 +109,6 @@ function App() {
     localStorage.setItem('cart', JSON.stringify(defaultCart));
   }
 
-  const [user, setUser] = useState(
-    JSON.parse(localStorage.getItem("itti-user") || "{}")
-  );
-
   // stablish default language at navigator's storage (if not previously existent)
   let storedLanguage = localStorage.getItem('language');
   if (!storedLanguage) {
@@ -118,16 +117,6 @@ function App() {
   }
 
   const [languageSettings, setLanguageSettings] = useState({ messages: storedLanguage.startsWith("es") ? es : en, locale: storedLanguage });
-
-  function login(user) {
-    localStorage.setItem("itti-user", JSON.stringify(user));
-    setUser(user);
-  }
-
-  function logout() {
-    localStorage.removeItem("itti-user");
-    setUser({});
-  }
 
   function setLang(lang) {
     const updatedLang = { messages: undefined, locale: lang };
@@ -138,11 +127,58 @@ function App() {
     localStorage.setItem("language", updatedLang.locale);
     setLanguageSettings(updatedLang);
   }
+  
+  /*
+  // stablish default user at navigator's storage (if not previously existent)
+  let storedUser = JSON.parse(localStorage.getItem('itti-user'));
+  if (!storedUser) {
+    localStorage.setItem('itti-user', JSON.stringify({}));
+    storedUser = {};
+  }
+  
+  const [user, setUser] = useState(storedUser);
+
+  function login(user) {
+    localStorage.setItem("itti-user", JSON.stringify(user));
+    setUser(user);
+  }
+
+  function logout() {
+    localStorage.removeItem("itti-user");
+    setUser({});
+  }
+  */
+
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  const checkIfLoggedIn = () => {
+    Auth.currentAuthenticatedUser()
+      .then(user => {
+        setLoggedIn(true);
+      })
+      .catch(err => {
+        setLoggedIn(false);
+      });
+  }
+
+  useEffect(() => {
+    checkIfLoggedIn();
+  }, [])
+
+  const signOut = () => {
+    Auth.signOut()
+      .then(data => {
+        setLoggedIn(false);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+ }
 
   return (
     <div className="App">
       <AppContext.Provider
-        value={{ user, login, logout, languageSettings, setLang, cart, addToCart, substractToCart, removeFromCart, clearCart }}
+        value={{ /*user, login, logout,*/loggedIn, signOut, languageSettings, setLang, cart, addToCart, substractToCart, removeFromCart, clearCart }}
       >
         <IntlProvider
           locale={languageSettings.locale}
@@ -159,6 +195,7 @@ function App() {
               <Route path="/login" exact element={<Login />} />
               <Route path="/signup" exact element={<SignUp />} />
               <Route path="/carrito" exact element={<Cart />} />
+              {/* TODO: Add Profile path */}
             </Routes>
           </BrowserRouter>
         </IntlProvider>

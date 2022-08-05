@@ -8,7 +8,6 @@ import AppContext from "../../AppContext";
 import {useContext} from "react";
 
 function Navbar() {
-
     const context = useContext(AppContext);
 
     const navigate = useNavigate();
@@ -38,8 +37,19 @@ function Navbar() {
                 <div className="row">
                     <div className='col-lg-12 col-xl-12 Topbar d-none d-lg-block d-xl-block'>
                         <div className='Topbar-text d-flex justify-content-end'>
-                            <Link id="Topbar-text-artisan" to="/signupArtesanos"><p className='Topbar-text-high'><FormattedMessage id="AreYouAnArtisan"/></p></Link>
-                            <Link to="/login"><p className='Topbar-text-center'><FormattedMessage id="SignIn"/></p></Link>
+                            {context.isLoggedIn
+                            ?
+                            <>   
+                                <p className="Topbar-text-high"><FormattedMessage id="Welcome"/>{/* TODO Tony: Nombre del usuario */}!</p>
+                                <Link to="/profile" onClick={context.signOut}><p className='Topbar-text-profile'><FormattedMessage id="Profile"/></p></Link>
+                                <Link to="/" onClick={context.signOut}><p className='Topbar-text-center'><FormattedMessage id="SignOut"/></p></Link>
+                            </>
+                            :
+                            <>
+                                <Link className="Topbar-text-artisan" to="/signupArtesanos"><p className='Topbar-text-high'><FormattedMessage id="AreYouAnArtisan"/></p></Link>
+                                <Link to="/login"><p className='Topbar-text-center'><FormattedMessage id="SignIn"/></p></Link>
+                            </>
+                            }
                             <button className={ context.languageSettings.locale.startsWith("es") ? 'Topbar-button-active' : 'Topbar-button'} id="ES" value="es" onClick={handleChangeLanguage}>ES</button>
                             <button className={ context.languageSettings.locale.startsWith("en") ? 'Topbar-button-active' : 'Topbar-button'} id="EN" value="en" onClick={handleChangeLanguage}>EN</button>
                         </div>
@@ -96,6 +106,20 @@ function Navbar() {
                                     <button className={ context.languageSettings.locale.startsWith("en") ? 'Topbar-button-active' : 'Topbar-button'} id="EN" value="en" onClick={handleChangeLanguage}>EN</button>
                                 </div>
                             </Nav>
+                            {context.isLoggedIn 
+                            ?
+                            <div className='Topbar Topbar-text Topbar-hide-lg'>   
+                                <div className="topbar-text-hide-are-you">
+                                    <p className="Topbar-text-high"><FormattedMessage id="Welcome"/>{/* TODO Tony: Nombre del usuario */}!</p>
+                                </div>
+                                <div>
+                                    <Link to="/profile" onClick={context.signOut}><p className='Topbar-text-profile'><FormattedMessage id="Profile"/></p></Link>
+                                </div>
+                                <div>
+                                    <Link to="/" onClick={context.signOut}><p className='Topbar-text-center'><FormattedMessage id="SignOut"/></p></Link>
+                                </div>
+                            </div>
+                            :
                             <div className='Topbar Topbar-text Topbar-hide-lg'>
                                 <div className="topbar-text-hide-are-you">
                                     <Link id="Topbar-text-artisan" to="/signupArtesanos"><p className='Topbar-text-high'><FormattedMessage id="AreYouAnArtisan"/></p></Link>
@@ -104,6 +128,7 @@ function Navbar() {
                                     <Link to="/login"><p className='Topbar-text-center'><FormattedMessage id="SignIn"/></p></Link>
                                 </div>
                             </div>
+                            }
                         </NavbarReact.Collapse>
                     </Container>
                     <div className="navbarBootstrap-logo-sm d-lg-none d-xl-none">
