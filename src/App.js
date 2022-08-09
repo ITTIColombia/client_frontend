@@ -184,8 +184,7 @@ function App() {
       localStorage.setItem("ittiuser", JSON.stringify(userSigned));
     }
     catch (err) {
-      localStorage.setItem("error", JSON.stringify(err));
-      console.log('Error signing in',err);
+      return err;
     }
   }
 

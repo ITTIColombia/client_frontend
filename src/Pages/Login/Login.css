@@ -47,7 +47,29 @@
     border-bottom: 1px solid var(--black) !important;
 }
 
+.wrong-login-input {
+    width: 100%;
+    border-radius: 0 !important;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-top: 0 !important;
+    border-bottom: 1px solid red !important;
+}
 
+.login-alert-text {
+    font-family: "Montserrat";
+    color: red;
+}
+
+.login-form-alert-text {
+    font-family: "Montserrat";
+    background: rgba(255, 0, 0, 0.2);
+    text-align: center;
+    color:red;
+}
 
 .login-form-section{
     margin-top: 2em;
@@ -55,6 +77,7 @@
 
 #login-button{
     margin-top: 2em ;
+    margin-bottom: 1em;
     text-align:center;
     width: 100%;
     background-color: var(--orange);
@@ -62,7 +85,7 @@
 }
 
 .login-noAccount{
-    margin-top: 2em;
+    margin-top: 1em;
 }
 
 .login-noAccount a{

@@ -21,6 +21,13 @@
   "AboutUsFooter": "Sobre Nosotros",
   "FavoritesSlogan": "Explora nuestra <span>selección</span> de la semana",
 
+  "EmailRequired":"El correo electrónico es requerido",
+  "EmailInvalid":"Digite un correo electrónico valido",
+  "EmailNotFound":"Email no registrado",
+  "PasswordRequired":"La contraseña es requerida",
+  "PasswordInvalid":"La contraseña debe tener al menos 6 caracteres",
+  "PasswordIncorrect": "Correo o contraseña incorrecta",
+
   "Job": "Oficio",
   "Type": "Tipo",
   "Category": "Categoria",
