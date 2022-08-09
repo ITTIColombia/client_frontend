@@ -39,6 +39,7 @@
 }
 
 .signup-input {
+    width: 100%;
     border-radius: 0 !important;
     background-color: transparent;
     resize: none;
@@ -47,7 +48,31 @@
     border-right: 0 !important;
     border-top: 0 !important;
     border-bottom: 1px solid var(--black) !important;
+    -webkit-appearance: none;
+}
+
+.wrong-signup-input {
     width: 100%;
+    border-radius: 0 !important;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-top: 0 !important;
+    border-bottom: 1px solid red !important;
+}
+
+.signup-alert-text {
+    font-family: "Montserrat";
+    color: red;
+}
+
+.signup-form-alert-text {
+    font-family: "Montserrat";
+    background: rgba(255, 0, 0, 0.2);
+    text-align: center;
+    color:red;
 }
 
 .signup-form > form{
@@ -60,6 +85,7 @@
 
 #signup-button{
     margin-top: 2em ;
+    margin-bottom: 1em;
     text-align:center;
     width: 100%;
     background-color: var(--orange);
@@ -67,7 +93,7 @@
 }
 
 .signup-noAccount{
-    margin-top: 2em;
+    margin-top: 1em;
 }
 
 

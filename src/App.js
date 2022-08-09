@@ -188,10 +188,39 @@ function App() {
     }
   }
 
+  const signUp = async (name, email, phone, password) => {
+    try {
+      await Auth.signUp({
+        username: email,
+        password: password,
+        attributes: {
+          name: name,
+          cellphoneNumber: phone,
+          email: email,
+        },
+      });
+    }
+    catch (err) {
+      return err;
+    }
+  }
+
+  const confirmSignUp = async (email, authenticationCode) => {
+    try {
+      const userSigned = await Auth.confirmSignUp(email, authenticationCode);
+      setLoggedIn(true);
+      setUser(userSigned);
+      localStorage.setItem("ittiuser", JSON.stringify(userSigned));
+    }
+    catch (err) {
+      return err;
+    }
+  }
+
   return (
     <div className="App">
       <AppContext.Provider
-        value={{ user, loggedIn, signIn, signOut, languageSettings, setLang, cart, addToCart, substractToCart, removeFromCart, clearCart }}
+        value={{ user, loggedIn, signIn, signOut, signUp, confirmSignUp, languageSettings, setLang, cart, addToCart, substractToCart, removeFromCart, clearCart }}
       >
         <IntlProvider
           locale={languageSettings.locale}

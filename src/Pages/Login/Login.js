@@ -11,7 +11,10 @@ function Login() {
 
     const context = useContext(AppContext);
 
-    const [form, setForm] = useState({email: "", password: ""});
+    const [form, setForm] = useState({
+        email: "", 
+        password: ""
+    });
     const [alertEmail, setAlertEmail] = useState("");
     const [alertPassword, setAlertPassword] = useState("");
     const [alertForm, setAlertForm] = useState("");
@@ -31,53 +34,38 @@ function Login() {
 
     const signIn = async (e) => {
         e.preventDefault();
-        if (!validateEmail() | !validatePassword()) return ;
+        if (!validateForm()) return ;
         const error = await context.signIn(form.email, form.password);
-        if (!error) {
-            //success case
-        }
-        else {
-            console.log(error.code);
+        if (error) {
             if (error.code === "UserNotFoundException") {
                 setAlertForm(context.languageSettings.messages.EmailNotFound)
             } else {
                 setAlertForm(context.languageSettings.messages.PasswordIncorrect)
             }
+            return ;
         }
+        //TODO Tony: Success case
+    }
+
+    const validateForm = () => {
+        validateEmail();
+        validatePassword();
+        return alertEmail === "" && alertPassword === "";
     }
 
     const validateEmail = () => {
-        if (form.email === "") {
-            setAlertEmail(context.languageSettings.messages.EmailRequired);
-            setAlertForm("");
-        }
-        else if (!form.email.includes("@")) {
-            setAlertEmail(context.languageSettings.messages.EmailInvalid);
-            setAlertForm("");
-        }
-        else if (!form.email.substring(form.email.indexOf("@")+1)) {
-            setAlertEmail(context.languageSettings.messages.EmailInvalid);
-            setAlertForm("");
-        }
-        else {
-            setAlertEmail(""); 
-            return true;
-        }
+        const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (form.email === "") setAlertEmail(context.languageSettings.messages.EmailRequired);
+        if (!form.email.match(regexEmail)) setAlertEmail(context.languageSettings.messages.EmailInvalid);
+        else setAlertEmail("");
+        setAlertForm("");
     }
 
     const validatePassword = () => {
-        if (form.password === "") {
-            setAlertPassword(context.languageSettings.messages.PasswordRequired);
-            setAlertForm("");
-        }
-        else if (form.password.length < 6) {
-            setAlertPassword(context.languageSettings.messages.PasswordInvalid);
-            setAlertForm("");
-        }
-        else {
-            setAlertPassword("");
-            return true;
-        }
+        if (form.password === "") setAlertPassword(context.languageSettings.messages.PasswordRequired);
+        else if (form.password.length < 6) setAlertPassword(context.languageSettings.messages.PasswordInvalid);
+        else setAlertPassword("");
+        setAlertForm("");
     }
 
     return (
@@ -144,6 +132,7 @@ function Login() {
                                     }
                                 </div>
                                 <button id="login-button"
+                                        type="submit"
                                         className="btn btn-primary"
                                         onClick={signIn}
                                         ><FormattedMessage id="Login"/>
