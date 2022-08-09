@@ -1,14 +1,15 @@
 import './Login.css';
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
-import {useEffect, useLayoutEffect, useState} from "react";
+import React, {useEffect, useLayoutEffect, useState, useContext} from "react";
 import {FormattedMessage} from "react-intl";
 import {Carousel} from "react-bootstrap";
 import {Link} from "react-router-dom";
-import React, { useContext } from "react";
-
+import AppContext from "../../AppContext";
 
 function Login() {
+
+    const context = useContext(AppContext);
 
     const [form, setForm] = useState({email: "", password: ""});
 
@@ -18,11 +19,29 @@ function Login() {
 
     useEffect(() => {
         console.log(form)
-    }, [form])
+    }, [form]);
 
     useLayoutEffect(()=>{
         window.scrollTo(0,0)
-    })
+    });
+
+    const signIn = (e) => {
+        e.preventDefault();
+        if (!validateForm()) return false;
+        context.signIn(form.email, form.password);
+    }
+
+    const validateForm = () => {
+        if (form.email === "") {
+            alert("Email is A");
+            return false;
+        }
+        if (form.password === "") {
+            alert("Password is required");
+            return false;
+        }
+        return true;
+    }
 
     return (
         <React.Fragment>
@@ -84,8 +103,9 @@ function Login() {
                                     }
                                 </div>
                                 <button id="login-button"
-                                        type="submit"
-                                        className="btn btn-primary"><FormattedMessage id="Login"/></button>
+                                        className="btn btn-primary"
+                                        onClick={signIn}
+                                        ><FormattedMessage id="Login"/></button>
                                 <p className="text-center login-noAccount"><FormattedMessage id="DontHaveAnAccount"/>
                                     <Link to="/signup"> <span className="orange"><FormattedMessage id="SignUp"/></span></Link>
                                 </p>

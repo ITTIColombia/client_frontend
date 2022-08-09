@@ -150,6 +150,7 @@ function App() {
   */
 
   const [loggedIn, setLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
 
   const checkIfLoggedIn = () => {
     Auth.currentAuthenticatedUser()
@@ -165,20 +166,33 @@ function App() {
     checkIfLoggedIn();
   }, [])
 
-  const signOut = () => {
-    Auth.signOut()
-      .then(data => {
-        setLoggedIn(false);
-      })
-      .catch(err => {
-        console.log(err);
-      });
- }
+  const signOut = async () => {
+    try {
+      await Auth.signOut();
+      setLoggedIn(false);
+    }
+    catch (err) {
+      console.log('Error signing out',err);
+    }
+  }
+
+  const signIn = async (email, password) => {
+    try {
+      const userSigned = await Auth.signIn(email, password);
+      setLoggedIn(true);
+      setUser(userSigned);
+      localStorage.setItem("ittiuser", JSON.stringify(userSigned));
+    }
+    catch (err) {
+      localStorage.setItem("error", JSON.stringify(err));
+      console.log('Error signing in',err);
+    }
+  }
 
   return (
     <div className="App">
       <AppContext.Provider
-        value={{ /*user, login, logout,*/loggedIn, signOut, languageSettings, setLang, cart, addToCart, substractToCart, removeFromCart, clearCart }}
+        value={{ user, loggedIn, signIn, signOut, languageSettings, setLang, cart, addToCart, substractToCart, removeFromCart, clearCart }}
       >
         <IntlProvider
           locale={languageSettings.locale}
