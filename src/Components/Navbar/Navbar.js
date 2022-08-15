@@ -7,6 +7,13 @@ import {Container, Nav, Navbar as NavbarReact} from "react-bootstrap";
 import AppContext from "../../AppContext";
 import {useContext} from "react";
 
+function isEmpty(object) {
+    for (const property in object) {
+      return false;
+    }
+    return true;
+  }
+
 function Navbar() {
     const context = useContext(AppContext);
 
@@ -31,16 +38,24 @@ function Navbar() {
         return total;
     }
 
+    const getUserName = () => {
+        if (isEmpty(context.user)) {
+            return "";
+        }
+        const username = context.user.attributes.name;
+        return username.split(" ")[0];
+    }
+
     return (
         <React.Fragment>
             <div className="container-fluid">
                 <div className="row">
                     <div className='col-lg-12 col-xl-12 Topbar d-none d-lg-block d-xl-block'>
                         <div className='Topbar-text d-flex justify-content-end'>
-                            {context.isLoggedIn
+                            {context.loggedIn
                             ?
                             <>   
-                                <p className="Topbar-text-high"><FormattedMessage id="Welcome"/>{/* TODO Tony: Nombre del usuario */}!</p>
+                                <p className="Topbar-text-high"><FormattedMessage id="Welcome"/>{getUserName()}!</p>
                                 <Link to="/profile" onClick={context.signOut}><p className='Topbar-text-profile'><FormattedMessage id="Profile"/></p></Link>
                                 <Link to="/" onClick={context.signOut}><p className='Topbar-text-center'><FormattedMessage id="SignOut"/></p></Link>
                             </>
@@ -124,7 +139,7 @@ function Navbar() {
                                 <div className="topbar-text-hide-are-you">
                                     <Link id="Topbar-text-artisan" to="/signupArtesanos"><p className='Topbar-text-high'><FormattedMessage id="AreYouAnArtisan"/></p></Link>
                                 </div>
-                                <div >
+                                <div>
                                     <Link to="/login"><p className='Topbar-text-center'><FormattedMessage id="SignIn"/></p></Link>
                                 </div>
                             </div>

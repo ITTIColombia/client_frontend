@@ -42,9 +42,9 @@ function Login() {
             } else {
                 setAlertForm(context.languageSettings.messages.PasswordIncorrect)
             }
-            return ;
+            throw error;
         }
-        //TODO Tony: Success case
+        window.location.href = "/";
     }
 
     const validateForm = () => {
@@ -135,6 +135,7 @@ function Login() {
                                         type="submit"
                                         className="btn btn-primary"
                                         onClick={signIn}
+                                        href="/"
                                         ><FormattedMessage id="Login"/>
                                 </button>
                                 <p className="login-form-alert-text">{alertForm}</p>

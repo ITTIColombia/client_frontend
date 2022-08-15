@@ -148,16 +148,38 @@ function App() {
     setUser({});
   }
   */
+  let storedLoggedIn = localStorage.getItem('loggedIn');
+  if (!storedLoggedIn) {
+    localStorage.setItem('loggedIn', "false");
+    storedLoggedIn = false;
+  } else {
+    storedLoggedIn = storedLoggedIn === "true";
+  }
 
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [user, setUser] = useState(null);
+  let storedUser = JSON.parse(localStorage.getItem('itti-user'));
+  if (!storedUser) {
+    localStorage.setItem('itti-user', JSON.stringify({}));
+    storedUser = {};
+  }
+  
+  const [loggedIn, setLoggedIn] = useState(storedLoggedIn);
+  const [user, setUser] = useState(storedUser);
+
+  console.log("loggedIn",loggedIn);
 
   const checkIfLoggedIn = () => {
     Auth.currentAuthenticatedUser()
       .then(user => {
         setLoggedIn(true);
+        localStorage.setItem("loggedIn", true);
+        setLoggedIn(true);
+        if (!localStorage.getItem("itti-user")) {
+          localStorage.setItem("itti-user", JSON.stringify(user));
+          setUser(user);
+        }
       })
       .catch(err => {
+        localStorage.setItem("loggedIn", false);
         setLoggedIn(false);
       });
   }
@@ -169,7 +191,10 @@ function App() {
   const signOut = async () => {
     try {
       await Auth.signOut();
+      localStorage.setItem("loggedIn", false);
       setLoggedIn(false);
+      localStorage.setItem("itti-user", "{}");
+      setUser({});
     }
     catch (err) {
       console.log('Error signing out',err);
@@ -179,9 +204,10 @@ function App() {
   const signIn = async (email, password) => {
     try {
       const userSigned = await Auth.signIn(email, password);
+      localStorage.setItem("loggedIn", true);
       setLoggedIn(true);
+      localStorage.setItem("itti-user", JSON.stringify(userSigned));
       setUser(userSigned);
-      localStorage.setItem("ittiuser", JSON.stringify(userSigned));
     }
     catch (err) {
       return err;
@@ -190,15 +216,17 @@ function App() {
 
   const signUp = async (name, email, phone, password) => {
     try {
-      await Auth.signUp({
+      const userSigned = await Auth.signUp({
         username: email,
         password: password,
         attributes: {
           name: name,
-          cellphoneNumber: phone,
+          phone_number: phone,
           email: email,
         },
       });
+      setUser(userSigned);
+      localStorage.setItem("itti-user", JSON.stringify(userSigned));      
     }
     catch (err) {
       return err;
@@ -207,10 +235,9 @@ function App() {
 
   const confirmSignUp = async (email, authenticationCode) => {
     try {
-      const userSigned = await Auth.confirmSignUp(email, authenticationCode);
+      await Auth.confirmSignUp(email, authenticationCode);
+      localStorage.setItem("loggedIn", true);
       setLoggedIn(true);
-      setUser(userSigned);
-      localStorage.setItem("ittiuser", JSON.stringify(userSigned));
     }
     catch (err) {
       return err;

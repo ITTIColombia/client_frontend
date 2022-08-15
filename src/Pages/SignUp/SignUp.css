@@ -21,6 +21,10 @@
     color: var(--black)
 }
 
+#SignUp h1 {
+    text-align:center;
+}
+
 .signup-normal-text{
     font-family: "Montserrat";
 }
@@ -34,9 +38,6 @@
     padding-top: 1.8em;
 }
 
-#SignUp h1 {
-    text-align:center;
-}
 
 .signup-input {
     width: 100%;
@@ -84,6 +85,15 @@
 }
 
 #signup-button{
+    margin-top: 2em ;
+    margin-bottom: 1em;
+    text-align:center;
+    width: 100%;
+    background-color: var(--orange);
+    border-color: var(--orange);
+}
+
+#authenticationCode-button{
     margin-top: 2em ;
     margin-bottom: 1em;
     text-align:center;
@@ -248,3 +258,7 @@
         margin: 2em 2em !important;
     }
 }
+
+/* Authentication Form */
+
+

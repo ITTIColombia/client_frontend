@@ -101,7 +101,9 @@
   "Name": "Nombre",
   "PhoneNumber": "Numero de Teléfono",
   "RepeatPassword": "Repetir Contraseña",
+  "AuthenticationCode":"Código de Autenticación",
 
+  "CodeSent":"Hemos enviado un código de confirmación a tu correo electrónico",
   "SignUpInvitation": "Descubre <span>productos colombianos</span> de forma rápida y fácil",
   "AlreadyHaveAnAccount": "Ya tienes una cuenta?",
 

@@ -99,7 +99,9 @@
   "Name": "Name",
   "PhoneNumber": "Phone Number",
   "RepeatPassword": "Repeat Password",
+  "AuthenticationCode":"Authentication Code",
 
+  "CodeSent":"An authentication code has been sent to your email",
   "SignUpInvitation": "Discover <span>Colombian handmade</span> products in a quick and easy way",
   "AlreadyHaveAnAccount": "Already have an account?",
 
