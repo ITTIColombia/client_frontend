@@ -26,7 +26,7 @@
   "EmailInvalid":"Insert a valid email",
   "EmailNotFound":"Email not found",
   "PasswordRequired":"Password is required",
-  "PasswordInvalid":"Password must be at least 6 characters",
+  "PasswordInvalid":"Password must be at least 8 characters",
   "PasswordIncorrect":"Email or password is incorrect",
   "NameRequired":"Name is required",
   "NameTooShort":"Name must be at least 4 characters",
@@ -34,6 +34,8 @@
   "PhoneNumberRequired":"Phone number is required",
   "PhoneNumberInvalid":"Phone number must follow the format",
   "PasswordsMustMatch":"Passwords must match",
+  "EmailExists":"Email already exists",
+  "CodeInvalid":"Verification code is invalid",
 
   "Job": "Job",
   "Type": "Type",
@@ -95,6 +97,9 @@
   "ForgotYourPassword": "Forgot your password?",
   "DontHaveAnAccount": "Don't have an account?",
   "SignUp": "Sign Up",
+  "SendVerificationCode":"Send Verification Code",
+  "ResendCode":"Resend Code",
+  "CodeResent":"Code has been resent",
 
   "Name": "Name",
   "PhoneNumber": "Phone Number",

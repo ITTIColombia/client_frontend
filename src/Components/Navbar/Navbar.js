@@ -56,7 +56,7 @@ function Navbar() {
                             ?
                             <>   
                                 <p className="Topbar-text-high"><FormattedMessage id="Welcome"/>{getUserName()}!</p>
-                                <Link to="/profile" onClick={context.signOut}><p className='Topbar-text-profile'><FormattedMessage id="Profile"/></p></Link>
+                                <Link to="/profile"><p className='Topbar-text-profile'><FormattedMessage id="Profile"/></p></Link>
                                 <Link to="/" onClick={context.signOut}><p className='Topbar-text-center'><FormattedMessage id="SignOut"/></p></Link>
                             </>
                             :

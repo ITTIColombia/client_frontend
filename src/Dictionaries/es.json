@@ -26,7 +26,7 @@
   "EmailInvalid":"Digite un correo electrónico valido",
   "EmailNotFound":"Email no registrado",
   "PasswordRequired":"La contraseña es requerida",
-  "PasswordInvalid":"La contraseña debe tener al menos 6 caracteres",
+  "PasswordInvalid":"La contraseña debe tener al menos 8 caracteres",
   "PasswordIncorrect": "Correo o contraseña incorrecta",
   "NameRequired":"El nombre es requerido",
   "NameTooShort":"El nombre debe tener mínimo 4 letras",
@@ -34,6 +34,8 @@
   "PhoneNumberRequired":"El número de teléfono es requerido",
   "PhoneNumberInvalid":"El número de teléfono debe seguir el formato",
   "PasswordsMustMatch":"Las contraseñas deben coincidir",
+  "EmailExists":"El correo electrónico ya existe",
+  "CodeInvalid":"El código de verificación es inválido",
 
   "Job": "Oficio",
   "Type": "Tipo",
@@ -97,6 +99,9 @@
   "ForgotYourPassword": "Olvidaste tu contraseña?",
   "DontHaveAnAccount": "No tienes cuenta?",
   "SignUp": "Registrate",
+  "SendVerificationCode": "Enviar código de verificación",
+  "ResendCode":"Reenviar código",
+  "CodeResent":"El código ha sido reenviado",
 
   "Name": "Nombre",
   "PhoneNumber": "Numero de Teléfono",

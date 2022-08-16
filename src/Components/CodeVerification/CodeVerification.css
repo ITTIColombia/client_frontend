@@ -1,0 +1,15 @@
+#resendCode-button {
+    margin-top: 2em ;
+    text-align:center;
+    width: 100%;
+    background-color: #A8FA98;
+    border-color: #A8FA98;
+    color: var(--black);
+}
+
+.authCode-form-code-resent-text {
+    font-family: "Montserrat";
+    background: #A8FA98;
+    text-align: center;
+    color: green;
+}

@@ -7,6 +7,7 @@ import Footer from "../../Components/Footer/Footer";
 import {Link} from "react-router-dom";
 import React from "react";
 import AppContext from "../../AppContext";
+import CodeVerification from "../../Components/CodeVerification/CodeVerification";
 
 const phoneNumberFormat = " +57##########";
 
@@ -19,10 +20,10 @@ function SignUp() {
         email: "", 
         phoneNumber: "",
         password: "", 
-        repeatPassword: "",
-        authenticationCode: "",
+        repeatPassword: ""
     });
-    const [formMode, setFormMode] = useState(0);
+
+    context.setSignupMode(0);
 
     const [alertName, setAlertName] = useState("");
     const [alertEmail, setAlertEmail] = useState("");
@@ -34,10 +35,6 @@ function SignUp() {
     function handleChange(e) {
         setForm({...form, [e.target.name]: e.target.value})
     }
-
-    useEffect(() => {
-        console.log(form);
-    }, [form]);
 
     useLayoutEffect(()=>{
         window.scrollTo(0,0)
@@ -54,27 +51,21 @@ function SignUp() {
             } else if (error.code === "InvalidParameterException") {
                 // user should never receive this error
                 setAlertForm(error.message);
+            } else if (error.code === "UsernameExistsException") {
+                setAlertForm(context.languageSettings.messages.EmailExists);
+            } else {
+                setAlertForm(error.message);
+                throw error;
             }
-            throw error;
             return ;
         }
-        setFormMode(1); // Change to authentication code form
+        context.setSignupMode(1); // Change to authentication code form
         //TODO Tony: Confirmation code sent to email
 
         //TODO Tony: success case
     }
 
-    const confirmSignUp = async (e) => {
-        e.preventDefault();
-        if (!validateForm()) return ;
-        const error = await context.confirmSignUp(form.email, form.authenticationCode);
-        if (error) {
-            throw error;
-        }
-        console.log("user created");
-        console.log(context.user);
-        //TODO Tony: Success case
-    }
+
 
     const validateForm = () => {
         validateName();
@@ -113,7 +104,7 @@ function SignUp() {
 
     const validatePassword = () => {
         if (form.password === "") setAlertPassword(context.languageSettings.messages.PasswordRequired);
-        else if (form.password.length < 6) setAlertPassword(context.languageSettings.messages.PasswordInvalid);
+        else if (form.password.length < 8) setAlertPassword(context.languageSettings.messages.PasswordInvalid);
         else setAlertPassword("");
         setAlertForm("");
     }
@@ -128,7 +119,7 @@ function SignUp() {
         <React.Fragment>
             <Navbar/>
             {
-                formMode === 0 ? /* SignUp Form */
+                context.signupMode === 0 ? /* SignUp Form */
                 (
                 <div id="SignUp">
                     <div className="container-fluid">
@@ -182,7 +173,10 @@ function SignUp() {
                                             id="password"
                                             value={form.password}
                                             onChange={handleChange}
-                                            onBlur={validatePassword}/>
+                                            onBlur={() => {
+                                                validatePassword();
+                                                validateRepeatPassword();
+                                            }}/>
                                         <p className="signup-alert-text">{alertPassword}</p>
                                     </div>
                                     <div className="form-group signup-form-section">
@@ -233,64 +227,7 @@ function SignUp() {
                 ) 
                 : /* Authentication Code Form */ 
                 (
-                <div id="Login">
-                    <div className="container">
-                        <div className="row login-content">
-                            <div className="col-lg-6 login-image-section d-flex justify-content-end">
-                                <Carousel className="login-carousel login-hide-sm"
-                                        controls={false}>
-                                    <Carousel.Item>
-                                        <img className="d-block w-100 login-carousel-item"
-                                            src="/Assets/Photos/Login/Login1.png"
-                                            alt="First slide"/>
-                                    </Carousel.Item>
-                                    <Carousel.Item>
-                                        <img className="d-block w-100 login-carousel-item"
-                                            src="/Assets/Photos/Login/Login2.png"
-                                            alt="Second slide"/>
-                                    </Carousel.Item>
-                                    <Carousel.Item>
-                                        <img className="d-block w-100 login-carousel-item"
-                                            src="/Assets/Photos/Login/Login3.png"
-                                            alt="Third slide"/>
-                                    </Carousel.Item>
-                                </Carousel>
-                            </div>
-                            <div className="col-12 col-lg-6 login-form">
-                                <h1 className="login-special-text black">
-                                    <FormattedMessage id="CodeSent"/>
-                                </h1>
-                                <form className="login-normal-text ">
-                                    <div className="form-group login-form-section">
-                                        <label htmlFor="email"><FormattedMessage id="Email"/></label>
-                                        <input name="email"
-                                            type="email"
-                                            className="login-input"
-                                            id="email"
-                                            value={form.email}
-                                            readOnly/>
-                                        <p className="login-alert-text">{alertEmail}</p>
-                                    </div>
-                                    <div className="form-group login-form-section">
-                                        <label htmlFor="authenticationCode"><FormattedMessage id="AuthenticationCode"/></label>
-                                        <input name="authenticationCode"
-                                            type="text"
-                                            className="login-input"
-                                            value={form.authenticationCode}
-                                            onChange={handleChange}/>
-                                    </div>
-                                    <button id="authenticationCode-button"
-                                            type="submit"
-                                            className="btn btn-primary"
-                                            onClick={confirmSignUp}
-                                            ><FormattedMessage id="Login"/>
-                                    </button>
-                                    <p className="login-form-alert-text">{alertForm}</p>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <CodeVerification email={form.email}/>
                 )
             }
             <Footer/>

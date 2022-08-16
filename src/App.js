@@ -15,6 +15,7 @@ import es from "./Dictionaries/es.json";
 import Login from "./Pages/Login/Login";
 import SignUp from "./Pages/SignUp/SignUp";
 import Cart from "./Pages/Cart/Cart";
+import Profile from "./Pages/Profile/Profile";
 import { useAlert } from "react-alert";
 import Amplify, { Auth } from 'aws-amplify';
 import awsconfig from './aws-exports';
@@ -244,10 +245,25 @@ function App() {
     }
   }
 
+  const resendCode = async (email) => {
+    try {
+      await Auth.resendSignUp(email);
+      localStorage.setItem("loggedIn", false);
+      setLoggedIn(false);
+      localStorage.setItem("itti-user", "{}");
+      setUser({});
+    }
+    catch (err) {
+      return err;
+    }
+  }
+
+  const [signupMode, setSignupMode] = useState(0); // 0 for signup, 1 for authentication
+
   return (
     <div className="App">
       <AppContext.Provider
-        value={{ user, loggedIn, signIn, signOut, signUp, confirmSignUp, languageSettings, setLang, cart, addToCart, substractToCart, removeFromCart, clearCart }}
+        value={{ user, loggedIn, signIn, signOut, signUp, confirmSignUp, resendCode, signupMode, setSignupMode, languageSettings, setLang, cart, addToCart, substractToCart, removeFromCart, clearCart }}
       >
         <IntlProvider
           locale={languageSettings.locale}
@@ -264,7 +280,7 @@ function App() {
               <Route path="/login" exact element={<Login />} />
               <Route path="/signup" exact element={<SignUp />} />
               <Route path="/carrito" exact element={<Cart />} />
-              {/* TODO: Add Profile path */}
+              <Route path="/profile" exact element={<Profile />} />
             </Routes>
           </BrowserRouter>
         </IntlProvider>
