@@ -121,14 +121,14 @@ function Navbar() {
                                     <button className={ context.languageSettings.locale.startsWith("en") ? 'Topbar-button-active' : 'Topbar-button'} id="EN" value="en" onClick={handleChangeLanguage}>EN</button>
                                 </div>
                             </Nav>
-                            {context.isLoggedIn 
+                            {context.loggedIn 
                             ?
                             <div className='Topbar Topbar-text Topbar-hide-lg'>   
                                 <div className="topbar-text-hide-are-you">
-                                    <p className="Topbar-text-high"><FormattedMessage id="Welcome"/>{/* TODO Tony: Nombre del usuario */}!</p>
+                                    <p className="Topbar-text-high"><FormattedMessage id="Welcome"/>{getUserName()}!</p>
                                 </div>
                                 <div>
-                                    <Link to="/profile" onClick={context.signOut}><p className='Topbar-text-profile'><FormattedMessage id="Profile"/></p></Link>
+                                    <Link to="/profile"><p className='Topbar-text-profile'><FormattedMessage id="Profile"/></p></Link>
                                 </div>
                                 <div>
                                     <Link to="/" onClick={context.signOut}><p className='Topbar-text-center'><FormattedMessage id="SignOut"/></p></Link>

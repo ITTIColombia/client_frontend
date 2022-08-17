@@ -64,6 +64,31 @@
     color: red;
 }
 
+.login-eye-show {
+    margin-left: -7%;
+    display: inline;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+@media (max-width: 454px) {
+    .login-eye-show {
+        margin-left: -10%;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .login-eye-show {
+        margin-left: -10%;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+    .login-eye-show {
+        margin-left: -10%;
+    }
+}
+
 .login-form-alert-text {
     font-family: "Montserrat";
     background: rgba(255, 0, 0, 0.2);
@@ -89,6 +114,16 @@
 }
 
 .login-noAccount a{
+    text-decoration: None;
+}
+
+.login-forgotPassword {
+    text-align: right !important;
+    margin-bottom: 0.5em;
+    font-size: 0.9rem;
+}
+
+.login-forgotPassword a{
     text-decoration: None;
 }
 

@@ -1,7 +1,7 @@
 import './Login.css';
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
-import React, {useLayoutEffect, useState, useContext} from "react";
+import React, {useLayoutEffect, useState, useEffect, useContext} from "react";
 import {FormattedMessage} from "react-intl";
 import {Carousel} from "react-bootstrap";
 import {Link} from "react-router-dom";
@@ -16,9 +16,16 @@ function Login() {
         email: "", 
         password: ""
     });
+
+    useEffect(() => {
+        context.setSignupMode(0);
+    } , []);
+
     const [alertEmail, setAlertEmail] = useState("");
     const [alertPassword, setAlertPassword] = useState("");
     const [alertForm, setAlertForm] = useState("");
+
+    const [showPass, setShowPass] = useState(false);
 
     function handleChange(e) {
         setForm({...form, [e.target.name]: e.target.value})
@@ -45,7 +52,8 @@ function Login() {
             } else if (error.code === "UserNotConfirmedException") {
                 // The user registered but never confirmed his email
                 context.setSignupMode(1);
-                return ;
+            } else if (error.code === "LimitExceededException") {
+                setAlertForm(context.languageSettings.messages.LimitExceeded);
             } else {
                 setAlertForm(error.message);
                 throw error;
@@ -126,14 +134,34 @@ function Login() {
                                     <div className="form-group login-form-section">
                                         <label htmlFor="password"><FormattedMessage id="Password"/></label>
                                         <input name="password"
-                                            type="password"
+                                            type={showPass ? "text" : "password"}
                                             className={(alertPassword?"wrong-":"")+"login-input"}
                                             id="password"
                                             aria-describedby="passwordHelp"
                                             value={form.password}
                                             onChange={handleChange}
                                             onBlur={validatePassword}/>
-                                        <p className="login-alert-text">{alertPassword}</p>
+                                            <img src={showPass ? "/Assets/Icons/eye-hide.svg" : "/Assets/Icons/eye-show.svg"}
+                                                onClick={()=>{setShowPass(!showPass)}} 
+                                                alt="Show" className="login-eye-show"
+                                                />
+
+                                        {
+                                            alertPassword === "" ?
+                                            <>
+                                                <p className="text-center login-forgotPassword">
+                                                    <Link to="/forgotPassword"><span className="orange"><FormattedMessage id="ForgotPassword"/></span></Link>
+                                                </p>
+                                                <p className="login-alert-text">{alertPassword}</p>
+                                            </>
+                                            :
+                                            <>
+                                                <p className="login-alert-text">{alertPassword}</p>
+                                                <p className="text-center login-forgotPassword">
+                                                    <Link to="/forgotPassword"><span className="orange"><FormattedMessage id="ForgotPassword"/></span></Link>
+                                                </p>
+                                            </>
+                                        }
                                         {
                                             // TODO: Finish the forgot password page and mailing service problems
                                             // <small id="passwordHelp"
@@ -146,11 +174,11 @@ function Login() {
                                             type="submit"
                                             className="btn btn-primary"
                                             onClick={signIn}
-                                            href="/"
                                             ><FormattedMessage id="Login"/>
                                     </button>
                                     <p className="login-form-alert-text">{alertForm}</p>
-                                    <p className="text-center login-noAccount"><FormattedMessage id="DontHaveAnAccount"/>
+                                    <p className="text-center login-noAccount">
+                                        <FormattedMessage id="DontHaveAnAccount"/>
                                         <Link to="/signup"> <span className="orange"><FormattedMessage id="SignUp"/></span></Link>
                                     </p>
                                 </form>

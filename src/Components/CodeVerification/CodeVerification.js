@@ -48,6 +48,7 @@ function CodeVerification(props) {
         } else {
             setAlertCode("");
         }
+        setAlertForm("");
     }
 
     const handleChange = (e) => {
@@ -62,11 +63,14 @@ function CodeVerification(props) {
         e.preventDefault();
         const error = await context.resendCode(props.email);
         if (error) {
-            setAlertForm(error.message);
-            throw error;
+            if (error.code === "LimitExceededException") {
+                setAlertForm(context.languageSettings.messages.LimitExceeded);
+            } else {
+                setAlertForm(error.message);
+                throw error;                
+            }
+            return ;
         }
-        console.log("code resent", codeResent);
-        setAlertForm("");
         setCodeResent(true);
     }
 
@@ -117,12 +121,6 @@ function CodeVerification(props) {
                                     onChange={handleChange}/>
                                 <p className="login-alert-text">{alertCode}</p>
                             </div>
-                            <button id="resendCode-button"
-                                    className="btn btn-primary"
-                                    onClick={resendCode}
-                                    >
-                                <FormattedMessage id="ResendCode"/>
-                            </button>
                             <button id="authenticationCode-button"
                                     type="submit"
                                     className="btn btn-primary"
@@ -130,6 +128,9 @@ function CodeVerification(props) {
                                     ><FormattedMessage id="SendVerificationCode"/>
                             </button>
                             <p className="signup-form-alert-text">{alertForm}</p>
+                            <p className="text-center login-noAccount">
+                                <a onClick={resendCode}><span className="orange"><FormattedMessage id="ResendCode"/></span></a>
+                            </p>
                             <p className="authCode-form-code-resent-text">{codeResent ? context.languageSettings.messages.CodeResent : ""}</p>
                         </form>
                     </div>

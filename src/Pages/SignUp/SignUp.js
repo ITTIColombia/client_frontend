@@ -23,7 +23,9 @@ function SignUp() {
         repeatPassword: ""
     });
 
-    context.setSignupMode(0);
+    useEffect(() => {
+        context.setSignupMode(0);
+    } , []);
 
     const [alertName, setAlertName] = useState("");
     const [alertEmail, setAlertEmail] = useState("");
@@ -31,6 +33,9 @@ function SignUp() {
     const [alertPassword, setAlertPassword] = useState("");
     const [alertRepeatPassword, setAlertRepeatPassword] = useState("");
     const [alertForm, setAlertForm] = useState("");
+
+    const [showPass, setShowPass] = useState(false);
+    const [showRepeatPass, setShowRepeatPass] = useState(false);
 
     function handleChange(e) {
         setForm({...form, [e.target.name]: e.target.value})
@@ -53,6 +58,8 @@ function SignUp() {
                 setAlertForm(error.message);
             } else if (error.code === "UsernameExistsException") {
                 setAlertForm(context.languageSettings.messages.EmailExists);
+            } else if (error.code === "LimitExceededException") {
+                setAlertForm(context.languageSettings.messages.LimitExceeded);
             } else {
                 setAlertForm(error.message);
                 throw error;
@@ -60,12 +67,7 @@ function SignUp() {
             return ;
         }
         context.setSignupMode(1); // Change to authentication code form
-        //TODO Tony: Confirmation code sent to email
-
-        //TODO Tony: success case
     }
-
-
 
     const validateForm = () => {
         validateName();
@@ -95,9 +97,9 @@ function SignUp() {
 
     const validatePhoneNumber = () => {
         if (form.phoneNumber === "") setAlertPhoneNumber(context.languageSettings.messages.PhoneNumberRequired);
-        else if (form.phoneNumber.length < 12 || form.phoneNumber.length > 13) setAlertPhoneNumber(context.languageSettings.messages.PhoneNumberInvalid + phoneNumberFormat + 1);
-        else if (form.phoneNumber.charAt(0) !== "+") setAlertPhoneNumber(context.languageSettings.messages.PhoneNumberInvalid + phoneNumberFormat + 2);
-        else if (isNaN(form.phoneNumber.substring(1))) setAlertPhoneNumber(context.languageSettings.messages.PhoneNumberInvalid + phoneNumberFormat + 3);
+        else if (form.phoneNumber.length < 12 || form.phoneNumber.length > 13) setAlertPhoneNumber(context.languageSettings.messages.PhoneNumberInvalid + phoneNumberFormat);
+        else if (form.phoneNumber.charAt(0) !== "+") setAlertPhoneNumber(context.languageSettings.messages.PhoneNumberInvalid + phoneNumberFormat);
+        else if (isNaN(form.phoneNumber.substring(1))) setAlertPhoneNumber(context.languageSettings.messages.PhoneNumberInvalid + phoneNumberFormat);
         else setAlertPhoneNumber("");
         setAlertForm("");
     }
@@ -168,7 +170,7 @@ function SignUp() {
                                     <div className="form-group signup-form-section">
                                         <label htmlFor="password"><FormattedMessage id="Password"/></label>
                                         <input name="password"
-                                            type="password"
+                                            type={showPass ? "text" : "password"}
                                             className={(alertPassword?"wrong-":"")+"signup-input"}
                                             id="password"
                                             value={form.password}
@@ -177,17 +179,25 @@ function SignUp() {
                                                 validatePassword();
                                                 validateRepeatPassword();
                                             }}/>
+                                            <img src={showPass ? "/Assets/Icons/eye-hide.svg" : "/Assets/Icons/eye-show.svg"}
+                                                onClick={()=>{setShowPass(!showPass)}} 
+                                                alt="Show" className="login-eye-show"
+                                                />
                                         <p className="signup-alert-text">{alertPassword}</p>
                                     </div>
                                     <div className="form-group signup-form-section">
                                         <label htmlFor="repeatPassword"><FormattedMessage id="RepeatPassword"/></label>
                                         <input name="repeatPassword"
-                                            type="password"
+                                            type={showRepeatPass ? "text" : "password"}
                                             className= {(alertRepeatPassword?"wrong-":"")+"signup-input"}
                                             id="repeatPassword"
                                             value={form.repeatPassword}
                                             onChange={handleChange}
                                             onBlur={validateRepeatPassword}/>
+                                            <img src={showRepeatPass ? "/Assets/Icons/eye-hide.svg" : "/Assets/Icons/eye-show.svg"}
+                                                onClick={()=>{setShowRepeatPass(!showRepeatPass)}} 
+                                                alt="Show" className="login-eye-show"
+                                                />
                                         <p className="signup-alert-text">{alertRepeatPassword}</p>
                                     </div>
                                     <button id="signup-button"

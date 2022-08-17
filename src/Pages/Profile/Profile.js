@@ -9,11 +9,20 @@ function Profile() {
     
     const context = useContext(AppContext);
 
+    const deleteUser = async () => {
+        const error = await context.deleteCurrentUser();
+        if (error) {
+            throw error;
+        }
+        window.location.href = "/";
+    }
+
     return (
         <React.Fragment>
             <Navbar/>
             <div>
-                <h1>{context.user.attributes.name}</h1>
+                <h1>{JSON.stringify(context.user.attributes)}</h1>
+                <button onClick={deleteUser}></button>
             </div>
             <Footer/>
         </React.Fragment>

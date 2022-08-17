@@ -16,6 +16,7 @@ import Login from "./Pages/Login/Login";
 import SignUp from "./Pages/SignUp/SignUp";
 import Cart from "./Pages/Cart/Cart";
 import Profile from "./Pages/Profile/Profile";
+import ForgotPassword from "./Pages/ForgotPassword/ForgotPassword";
 import { useAlert } from "react-alert";
 import Amplify, { Auth } from 'aws-amplify';
 import awsconfig from './aws-exports';
@@ -258,12 +259,50 @@ function App() {
     }
   }
 
+  const deleteCurrentUser = async () => {
+    try {
+      const result = await Auth.deleteUser();
+      console.log("user deleted",result);
+    } 
+    catch (err) {
+      return err;
+    }
+  }
+
+  const forgotPassword = async (email) => {
+    try {
+      await Auth.forgotPassword(email); // send confirmation code
+    }
+    catch (err) {
+      return err;
+    }
+  }
+
+  const confirmForgotPassword = async (email, code, password) => {
+    try {
+      await Auth.forgotPasswordSubmit(email, code, password);
+      localStorage.setItem("loggedIn", false);
+      setLoggedIn(false);
+      localStorage.setItem("itti-user", "{}");
+      setUser({});
+    }
+    catch (err) {
+      return err;
+    }
+  }
+
   const [signupMode, setSignupMode] = useState(0); // 0 for signup, 1 for authentication
 
   return (
     <div className="App">
       <AppContext.Provider
-        value={{ user, loggedIn, signIn, signOut, signUp, confirmSignUp, resendCode, signupMode, setSignupMode, languageSettings, setLang, cart, addToCart, substractToCart, removeFromCart, clearCart }}
+        value={{ 
+                user, loggedIn, /* current user state */
+                signIn, signOut, signUp, confirmSignUp, resendCode, deleteCurrentUser, forgotPassword, confirmForgotPassword, /* login operations */
+                signupMode, setSignupMode, /* other variables */
+                languageSettings, setLang, /* language */
+                cart, addToCart, substractToCart, removeFromCart, clearCart /* cart */
+              }}
       >
         <IntlProvider
           locale={languageSettings.locale}
@@ -281,6 +320,7 @@ function App() {
               <Route path="/signup" exact element={<SignUp />} />
               <Route path="/carrito" exact element={<Cart />} />
               <Route path="/profile" exact element={<Profile />} />
+              <Route path="/forgotPassword" exact element={<ForgotPassword />} />
             </Routes>
           </BrowserRouter>
         </IntlProvider>
