@@ -61,7 +61,7 @@ function ForgotPassword () {
 
     const validatePassword = () => {
         if (form.password === "") setAlertPassword(context.languageSettings.messages.PasswordRequired);
-        else if (form.password.length < 8) setAlertPassword(context.languageSettings.messages.PasswordInvalid);
+        else if (form.password.length < 6) setAlertPassword(context.languageSettings.messages.PasswordInvalid);
         else setAlertPassword("");
         setAlertForm("");
     }
@@ -237,8 +237,8 @@ function ForgotPassword () {
                                                     ><FormattedMessage id="ChangePassword"/>
                                             </button>
                                             <p className="login-form-alert-text">{alertForm}</p>
-                                            <p className="text-center login-noAccount">
-                                                <a onClick={forgotPassword}><span className="orange"><FormattedMessage id="ResendCode"/></span></a>
+                                            <p className="text-center login-resendCode" onClick={forgotPassword}>
+                                                <span className="orange"><FormattedMessage id="ResendCode"/></span>
                                             </p>
                                         </form>
                                     </div>

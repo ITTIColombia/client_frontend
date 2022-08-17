@@ -127,6 +127,11 @@
     text-decoration: None;
 }
 
+.login-resendCode {
+    margin-top: 1em;
+    cursor: pointer;
+}
+
 .login-carousel-item{
     max-width: 300em;
 }

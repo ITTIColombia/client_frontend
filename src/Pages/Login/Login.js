@@ -79,7 +79,7 @@ function Login() {
 
     const validatePassword = () => {
         if (form.password === "") setAlertPassword(context.languageSettings.messages.PasswordRequired);
-        else if (form.password.length < 8) setAlertPassword(context.languageSettings.messages.PasswordInvalid);
+        else if (form.password.length < 6) setAlertPassword(context.languageSettings.messages.PasswordInvalid);
         else setAlertPassword("");
         setAlertForm("");
     }

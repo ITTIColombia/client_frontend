@@ -26,7 +26,7 @@
   "EmailInvalid":"Digite un correo electrónico valido",
   "EmailNotFound":"Email no registrado",
   "PasswordRequired":"La contraseña es requerida",
-  "PasswordInvalid":"La contraseña debe tener al menos 8 caracteres",
+  "PasswordInvalid":"La contraseña debe tener al menos 6 caracteres",
   "PasswordIncorrect": "Correo o contraseña incorrecta",
   "NameRequired":"El nombre es requerido",
   "NameTooShort":"El nombre debe tener mínimo 4 letras",

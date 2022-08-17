@@ -26,7 +26,7 @@
   "EmailInvalid":"Insert a valid email",
   "EmailNotFound":"Email not found",
   "PasswordRequired":"Password is required",
-  "PasswordInvalid":"Password must be at least 8 characters",
+  "PasswordInvalid":"Password must be at least 6 characters",
   "PasswordIncorrect":"Email or password is incorrect",
   "NameRequired":"Name is required",
   "NameTooShort":"Name must be at least 4 characters",

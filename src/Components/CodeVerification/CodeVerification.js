@@ -128,8 +128,8 @@ function CodeVerification(props) {
                                     ><FormattedMessage id="SendVerificationCode"/>
                             </button>
                             <p className="signup-form-alert-text">{alertForm}</p>
-                            <p className="text-center login-noAccount">
-                                <a onClick={resendCode}><span className="orange"><FormattedMessage id="ResendCode"/></span></a>
+                            <p className="text-center login-resendCode" onClick={resendCode}>
+                                <span className="orange"><FormattedMessage id="ResendCode"/></span>
                             </p>
                             <p className="authCode-form-code-resent-text">{codeResent ? context.languageSettings.messages.CodeResent : ""}</p>
                         </form>
