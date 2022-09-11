@@ -21,8 +21,8 @@ function Profile() {
         <React.Fragment>
             <Navbar/>
             <div>
-                <h1>{JSON.stringify(context.user.attributes)}</h1>
-                <button onClick={deleteUser}></button>
+                {/*<h1>{JSON.stringify(context.user)}</h1>*/}
+                <button onClick={deleteUser}>Delete User</button>
             </div>
             <Footer/>
         </React.Fragment>

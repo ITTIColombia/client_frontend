@@ -19,10 +19,6 @@ function ForgotPassword () {
         confirmPassword: ""
     });
 
-    useEffect(() => {
-        context.setSignupMode(0);
-    } , []);
-
     const [alertEmail, setAlertEmail] = useState("");
     const [alertCode, setAlertCode] = useState("");
     const [alertPassword, setAlertPassword] = useState("");
@@ -83,12 +79,11 @@ function ForgotPassword () {
             } else if (error.code === "LimitExceededException") {
                 setAlertForm(context.languageSettings.messages.LimitExceeded)
             } else {
-                setAlertForm(error.message);
+                setAlertForm(error.message ? error.message : error);
                 throw error;
             }
             return ;
         }
-        context.setSignupMode(1);
     }
 
     const confirmForgotPassword = async (e) => {
@@ -102,7 +97,7 @@ function ForgotPassword () {
             } else if (error.code === "LimitExceededException") {
                 setAlertForm(context.languageSettings.messages.LimitExceeded);
             } else {
-                setAlertForm(error.message);
+                setAlertForm(error.message ? error.message : error);
                 throw error;
             }
             return ;
@@ -138,7 +133,7 @@ function ForgotPassword () {
                                 </Carousel>
                             </div>
                             {
-                                context.signupMode === 0 ? /* Login Form */
+                                context.loginStatus === 0 ? /* Login Form */
                                 (
                                 <div className="col-12 col-lg-6 login-form">
                                     <h1 className="login-special-text black">

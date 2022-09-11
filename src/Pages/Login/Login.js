@@ -6,7 +6,6 @@ import {FormattedMessage} from "react-intl";
 import {Carousel} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import AppContext from "../../AppContext";
-import CodeVerification from "../../Components/CodeVerification/CodeVerification";
 
 function Login() {
 
@@ -17,10 +16,6 @@ function Login() {
         password: ""
     });
 
-    useEffect(() => {
-        context.setSignupMode(0);
-    } , []);
-
     const [alertEmail, setAlertEmail] = useState("");
     const [alertPassword, setAlertPassword] = useState("");
     const [alertForm, setAlertForm] = useState("");
@@ -30,15 +25,12 @@ function Login() {
     function handleChange(e) {
         setForm({...form, [e.target.name]: e.target.value})
     }
-    /*
-    useEffect(() => {
-        console.log(form)
-    }, [form]);
-    */
 
+/*
     useLayoutEffect(()=>{
         window.scrollTo(0,0)
     });
+*/
 
     const signIn = async (e) => {
         e.preventDefault();
@@ -51,11 +43,11 @@ function Login() {
                 setAlertForm(context.languageSettings.messages.PasswordIncorrect)
             } else if (error.code === "UserNotConfirmedException") {
                 // The user registered but never confirmed his email
-                context.setSignupMode(1);
+                window.location.href = "/authentication";
             } else if (error.code === "LimitExceededException") {
                 setAlertForm(context.languageSettings.messages.LimitExceeded);
             } else {
-                setAlertForm(error.message);
+                setAlertForm(error.message ? error.message : error);
                 throw error;
             } 
             return ;
@@ -86,10 +78,7 @@ function Login() {
 
     return (
         <React.Fragment>
-            <Navbar/>
-            {
-                context.signupMode === 0 ? /* Login Form */
-                (            
+            <Navbar/>        
                 <div id="Login">
                     <div className="container">
                         <div className="row login-content">
@@ -162,13 +151,6 @@ function Login() {
                                                 </p>
                                             </>
                                         }
-                                        {
-                                            // TODO: Finish the forgot password page and mailing service problems
-                                            // <small id="passwordHelp"
-                                            //    className="d-flex justify-content-end orange">
-                                            // <FormattedMessage id="ForgotYourPassword"/>
-                                            // </small>
-                                        }
                                     </div>
                                     <button id="login-button"
                                             type="submit"
@@ -187,13 +169,6 @@ function Login() {
                         </div>
                     </div>
                 </div>
-                )
-                : /* Authentication Code Form */
-                (
-                <CodeVerification email={form.email}/>
-                )
-
-            }
             <Footer/>
         </React.Fragment>
 

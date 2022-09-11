@@ -1,35 +1,24 @@
 import "./SignUp.css";
 import Navbar from "../../Components/Navbar/Navbar";
-import {useEffect, useLayoutEffect, useState, useContext} from "react";
+import {useEffect, useState, useContext} from "react";
 import {Carousel} from "react-bootstrap";
 import {FormattedMessage} from "react-intl";
 import Footer from "../../Components/Footer/Footer";
 import {Link} from "react-router-dom";
 import React from "react";
 import AppContext from "../../AppContext";
-import CodeVerification from "../../Components/CodeVerification/CodeVerification";
-
-const phoneNumberFormat = " +57##########";
 
 function SignUp() {
 
     const context = useContext(AppContext);
 
     const [form, setForm] = useState({
-        name: "", 
         email: "", 
-        phoneNumber: "",
         password: "", 
         repeatPassword: ""
     });
 
-    useEffect(() => {
-        context.setSignupMode(0);
-    } , []);
-
-    const [alertName, setAlertName] = useState("");
     const [alertEmail, setAlertEmail] = useState("");
-    const [alertPhoneNumber, setAlertPhoneNumber] = useState("");
     const [alertPassword, setAlertPassword] = useState("");
     const [alertRepeatPassword, setAlertRepeatPassword] = useState("");
     const [alertForm, setAlertForm] = useState("");
@@ -41,50 +30,40 @@ function SignUp() {
         setForm({...form, [e.target.name]: e.target.value})
     }
 
+/*
     useLayoutEffect(()=>{
         window.scrollTo(0,0)
     });
-
-    const signUp = async (e) => {
+*/
+    const signUpCognito = async (e) => {
         e.preventDefault();
-        if (!validateForm()) return ;
-        const error = await context.signUp(form.name, form.email, form.phoneNumber, form.password);
+        if (!validateFormCognito()) return ;
+        const error = await context.signUpCognito(form.email, form.password);
         if (error) {
             if (error.code === "InvalidPasswordException") {
-                // user should never receive this error (cognito minimum password length is 8, but back minimum is 6)
+                // user should never receive this error (case that password minimum length is different than back minimum length)
                 setAlertForm(context.languageSettings.messages.PasswordInvalid);
             } else if (error.code === "InvalidParameterException") {
                 // user should never receive this error
-                setAlertForm(error.message);
+                setAlertForm(error.message ? error.message : error);
             } else if (error.code === "UsernameExistsException") {
                 setAlertForm(context.languageSettings.messages.EmailExists);
             } else if (error.code === "LimitExceededException") {
                 setAlertForm(context.languageSettings.messages.LimitExceeded);
             } else {
-                setAlertForm(error.message);
+                setAlertForm(error.message ? error.message : error);
                 throw error;
             }
             return ;
         }
-        context.setSignupMode(1); // Change to authentication code form
+        context.setLoginStatus(1); // Change to authentication code form
     }
 
-    const validateForm = () => {
-        validateName();
+    const validateFormCognito = () => {
         validateEmail();
-        validatePhoneNumber();
         validatePassword();
         validateRepeatPassword();
-        return alertName === "" && alertEmail === "" && alertPhoneNumber === "" && 
-               alertPassword === "" && alertRepeatPassword === "";
-    }
-
-    const validateName = () => {
-        if (form.name === "") setAlertName(context.languageSettings.messages.NameRequired);
-        else if (form.name.length < 4) setAlertName(context.languageSettings.messages.NameTooShort);
-        else if (form.name.length > 50) setAlertName(context.languageSettings.messages.NameTooLong);
-        else setAlertName("");
-        setAlertForm("");
+        return alertEmail === "" && alertPassword === "" && alertRepeatPassword === "";
     }
 
     const validateEmail = () => {
@@ -92,15 +71,6 @@ function SignUp() {
         if (form.email === "") setAlertEmail(context.languageSettings.messages.EmailRequired);
         else if (!form.email.match(regexEmail)) setAlertEmail(context.languageSettings.messages.EmailInvalid);
         else setAlertEmail("");
-        setAlertForm("");
-    }
-
-    const validatePhoneNumber = () => {
-        if (form.phoneNumber === "") setAlertPhoneNumber(context.languageSettings.messages.PhoneNumberRequired);
-        else if (form.phoneNumber.length < 12 || form.phoneNumber.length > 13) setAlertPhoneNumber(context.languageSettings.messages.PhoneNumberInvalid + phoneNumberFormat);
-        else if (form.phoneNumber.charAt(0) !== "+") setAlertPhoneNumber(context.languageSettings.messages.PhoneNumberInvalid + phoneNumberFormat);
-        else if (isNaN(form.phoneNumber.substring(1))) setAlertPhoneNumber(context.languageSettings.messages.PhoneNumberInvalid + phoneNumberFormat);
-        else setAlertPhoneNumber("");
         setAlertForm("");
     }
 
@@ -120,9 +90,6 @@ function SignUp() {
     return (
         <React.Fragment>
             <Navbar/>
-            {
-                context.signupMode === 0 ? /* SignUp Form */
-                (
                 <div id="SignUp">
                     <div className="container-fluid">
                         <div className="row signup-content">
@@ -134,17 +101,6 @@ function SignUp() {
                                 </h1>
                                 <form className="signup-normal-text justify-content-end">
                                     <div className="form-group signup-form-section">
-                                        <label htmlFor="name"><FormattedMessage id="Name"/></label>
-                                        <input name="name"
-                                            type="text"
-                                            className={(alertName?"wrong-":"")+"signup-input"}
-                                            id="name"
-                                            value={form.name}
-                                            onChange={handleChange}
-                                            onBlur={validateName}/>
-                                        <p className="signup-alert-text">{alertName}</p>
-                                    </div>
-                                    <div className="form-group signup-form-section">
                                         <label htmlFor="email"><FormattedMessage id="Email"/></label>
                                         <input name="email"
                                             type="email"
@@ -154,18 +110,6 @@ function SignUp() {
                                             onChange={handleChange}
                                             onBlur={validateEmail}/>
                                         <p className="signup-alert-text">{alertEmail}</p>
-                                    </div>
-                                    <div className="form-group signup-form-section">
-                                        <label htmlFor="phoneNumber"><FormattedMessage id="PhoneNumber"/></label>
-                                        <input name="phoneNumber"
-                                            type="text"
-                                            className={(alertPhoneNumber?"wrong-":"")+"signup-input"}
-                                            id="phoneNumber"
-                                            value={form.phoneNumber}
-                                            onChange={handleChange}
-                                            onBlur={validatePhoneNumber}
-                                            placeholder={context.languageSettings.messages.ForExample+phoneNumberFormat}/>
-                                        <p className="signup-alert-text">{alertPhoneNumber}</p>
                                     </div>
                                     <div className="form-group signup-form-section">
                                         <label htmlFor="password"><FormattedMessage id="Password"/></label>
@@ -203,7 +147,7 @@ function SignUp() {
                                     <button id="signup-button"
                                             type="submit"
                                             className="btn btn-primary text-uppercase"
-                                            onClick={signUp}
+                                            onClick={signUpCognito}
                                             ><FormattedMessage id="SignUp"/>
                                     </button>
                                     <p className="signup-form-alert-text">{alertForm}</p>
@@ -234,12 +178,6 @@ function SignUp() {
                         </div>
                     </div>
                 </div>
-                ) 
-                : /* Authentication Code Form */ 
-                (
-                <CodeVerification email={form.email}/>
-                )
-            }
             <Footer/>
         </React.Fragment>
 

@@ -7,12 +7,20 @@ import {Container, Nav, Navbar as NavbarReact} from "react-bootstrap";
 import AppContext from "../../AppContext";
 import {useContext} from "react";
 
-function isEmpty(object) {
+/*function isEmpty(object) {
     for (const property in object) {
       return false;
     }
     return true;
-  }
+}*/
+
+function isSigned(object) {
+    try{
+        return object.name !== undefined && object.name !== "";
+    } catch (e) {
+        return false;
+    }
+}
 
 function Navbar() {
     const context = useContext(AppContext);
@@ -39,10 +47,10 @@ function Navbar() {
     }
 
     const getUserName = () => {
-        if (isEmpty(context.user)) {
+        if (!isSigned(context.user)) {
             return "";
         }
-        const username = context.user.attributes.name;
+        const username = context.user.name;
         return username.split(" ")[0];
     }
 
@@ -52,7 +60,7 @@ function Navbar() {
                 <div className="row">
                     <div className='col-lg-12 col-xl-12 Topbar d-none d-lg-block d-xl-block'>
                         <div className='Topbar-text d-flex justify-content-end'>
-                            {context.loggedIn
+                            {isSigned(context.user)
                             ?
                             <>   
                                 <p className="Topbar-text-high"><FormattedMessage id="Welcome"/>{getUserName()}!</p>
@@ -121,7 +129,7 @@ function Navbar() {
                                     <button className={ context.languageSettings.locale.startsWith("en") ? 'Topbar-button-active' : 'Topbar-button'} id="EN" value="en" onClick={handleChangeLanguage}>EN</button>
                                 </div>
                             </Nav>
-                            {context.loggedIn 
+                            {isSigned(context.user)
                             ?
                             <div className='Topbar Topbar-text Topbar-hide-lg'>   
                                 <div className="topbar-text-hide-are-you">
@@ -134,16 +142,23 @@ function Navbar() {
                                     <Link to="/" onClick={context.signOut}><p className='Topbar-text-center'><FormattedMessage id="SignOut"/></p></Link>
                                 </div>
                             </div>
-                            :
-                            <div className='Topbar Topbar-text Topbar-hide-lg'>
-                                <div className="topbar-text-hide-are-you">
-                                    <Link id="Topbar-text-artisan" to="/signupArtesanos"><p className='Topbar-text-high'><FormattedMessage id="AreYouAnArtisan"/></p></Link>
+                            : (
+                                context.loginStatus === 2 ?
+                                <div className='Topbar Topbar-text Topbar-hide-lg'>   
+                                    <div>
+                                        <Link to="/" onClick={context.signOut}><p className='Topbar-text-center'><FormattedMessage id="SignOut"/></p></Link>
+                                    </div>
                                 </div>
-                                <div>
-                                    <Link to="/login"><p className='Topbar-text-center'><FormattedMessage id="SignIn"/></p></Link>
+                                :
+                                <div className='Topbar Topbar-text Topbar-hide-lg'>
+                                    <div className="topbar-text-hide-are-you">
+                                        <Link id="Topbar-text-artisan" to="/signupArtesanos"><p className='Topbar-text-high'><FormattedMessage id="AreYouAnArtisan"/></p></Link>
+                                    </div>
+                                    <div>
+                                        <Link to="/login"><p className='Topbar-text-center'><FormattedMessage id="SignIn"/></p></Link>
+                                    </div>
                                 </div>
-                            </div>
-                            }
+                            )}
                         </NavbarReact.Collapse>
                     </Container>
                     <div className="navbarBootstrap-logo-sm d-lg-none d-xl-none">
