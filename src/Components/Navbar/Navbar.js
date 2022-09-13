@@ -7,8 +7,22 @@ import {Container, Nav, Navbar as NavbarReact} from "react-bootstrap";
 import AppContext from "../../AppContext";
 import {useContext} from "react";
 
-function Navbar() {
+/*function isEmpty(object) {
+    for (const property in object) {
+      return false;
+    }
+    return true;
+}*/
 
+function isSigned(object) {
+    try{
+        return object.name !== undefined && object.name !== "";
+    } catch (e) {
+        return false;
+    }
+}
+
+function Navbar() {
     const context = useContext(AppContext);
 
     const navigate = useNavigate();
@@ -17,11 +31,27 @@ function Navbar() {
 
     function handleGoCart(event) {
         event.preventDefault();
-        navigate("/cart");
+        navigate("/carrito");
     }
 
     function handleChangeLanguage(event) {
         context.setLang(event.target.value);
+    }
+
+    function getTotalProducts() {
+        let total = 0;
+        context.cart.items.forEach(item => {
+            total += item.quantity;
+        });
+        return total;
+    }
+
+    const getUserName = () => {
+        if (!isSigned(context.user)) {
+            return "";
+        }
+        const username = context.user.name;
+        return username.split(" ")[0];
     }
 
     return (
@@ -30,8 +60,19 @@ function Navbar() {
                 <div className="row">
                     <div className='col-lg-12 col-xl-12 Topbar d-none d-lg-block d-xl-block'>
                         <div className='Topbar-text d-flex justify-content-end'>
-                            <Link id="Topbar-text-artisan" to="/signupArtesanos"><p className='Topbar-text-high'><FormattedMessage id="AreYouAnArtisan"/></p></Link>
-                            <Link to="/login"><p className='Topbar-text-center'><FormattedMessage id="SignIn"/></p></Link>
+                            {isSigned(context.user)
+                            ?
+                            <>   
+                                <p className="Topbar-text-high"><FormattedMessage id="Welcome"/>{getUserName()}!</p>
+                                <Link to="/profile"><p className='Topbar-text-profile'><FormattedMessage id="Profile"/></p></Link>
+                                <Link to="/" onClick={context.signOut}><p className='Topbar-text-center'><FormattedMessage id="SignOut"/></p></Link>
+                            </>
+                            :
+                            <>
+                                <Link className="Topbar-text-artisan" to="/signupArtesanos"><p className='Topbar-text-high'><FormattedMessage id="AreYouAnArtisan"/></p></Link>
+                                <Link to="/login"><p className='Topbar-text-center'><FormattedMessage id="SignIn"/></p></Link>
+                            </>
+                            }
                             <button className={ context.languageSettings.locale.startsWith("es") ? 'Topbar-button-active' : 'Topbar-button'} id="ES" value="es" onClick={handleChangeLanguage}>ES</button>
                             <button className={ context.languageSettings.locale.startsWith("en") ? 'Topbar-button-active' : 'Topbar-button'} id="EN" value="en" onClick={handleChangeLanguage}>EN</button>
                         </div>
@@ -88,14 +129,36 @@ function Navbar() {
                                     <button className={ context.languageSettings.locale.startsWith("en") ? 'Topbar-button-active' : 'Topbar-button'} id="EN" value="en" onClick={handleChangeLanguage}>EN</button>
                                 </div>
                             </Nav>
-                            <div className='Topbar Topbar-text Topbar-hide-lg'>
+                            {isSigned(context.user)
+                            ?
+                            <div className='Topbar Topbar-text Topbar-hide-lg'>   
                                 <div className="topbar-text-hide-are-you">
-                                    <Link id="Topbar-text-artisan" to="/signupArtesanos"><p className='Topbar-text-high'><FormattedMessage id="AreYouAnArtisan"/></p></Link>
+                                    <p className="Topbar-text-high"><FormattedMessage id="Welcome"/>{getUserName()}!</p>
                                 </div>
-                                <div >
-                                    <Link to="/login"><p className='Topbar-text-center'><FormattedMessage id="SignIn"/></p></Link>
+                                <div>
+                                    <Link to="/profile"><p className='Topbar-text-profile'><FormattedMessage id="Profile"/></p></Link>
+                                </div>
+                                <div>
+                                    <Link to="/" onClick={context.signOut}><p className='Topbar-text-center'><FormattedMessage id="SignOut"/></p></Link>
                                 </div>
                             </div>
+                            : (
+                                context.loginStatus === 2 ?
+                                <div className='Topbar Topbar-text Topbar-hide-lg'>   
+                                    <div>
+                                        <Link to="/" onClick={context.signOut}><p className='Topbar-text-center'><FormattedMessage id="SignOut"/></p></Link>
+                                    </div>
+                                </div>
+                                :
+                                <div className='Topbar Topbar-text Topbar-hide-lg'>
+                                    <div className="topbar-text-hide-are-you">
+                                        <Link id="Topbar-text-artisan" to="/signupArtesanos"><p className='Topbar-text-high'><FormattedMessage id="AreYouAnArtisan"/></p></Link>
+                                    </div>
+                                    <div>
+                                        <Link to="/login"><p className='Topbar-text-center'><FormattedMessage id="SignIn"/></p></Link>
+                                    </div>
+                                </div>
+                            )}
                         </NavbarReact.Collapse>
                     </Container>
                     <div className="navbarBootstrap-logo-sm d-lg-none d-xl-none">
@@ -104,12 +167,17 @@ function Navbar() {
                              alt="Logo ITTI"/>
                     </div>
                     <div className="navbarBootstrap-cart">
-                        <input className="navbarBootstrap-user-cart"
+                        {/*<input className="navbarBootstrap-user-cart"
                                type="image"
                                src="/Assets/Icons/Cart.svg"
                                alt={intl.formatMessage({id: "Cart"})}
-                               onClick={handleGoCart}/>
-                    </div>
+                                onClick={handleGoCart}/>*/}
+                        {/*context.cart.items.length > 0 && <a className="navbarBootstrap-cart-count-label">{getTotalProducts()}</a>*/}
+                        
+                        <img className="navbarBootstrap-user-cart" src="/Assets/Icons/Cart.svg" alt={intl.formatMessage({id: "Cart"})} onClick={handleGoCart}></img>
+
+                        {context.cart.items.length > 0 && <span className='navbarBootstrap-cart-count-label' onClick={handleGoCart}> {getTotalProducts()} </span>}
+                    </div>                
                 </NavbarReact>
             </div>
         </React.Fragment>

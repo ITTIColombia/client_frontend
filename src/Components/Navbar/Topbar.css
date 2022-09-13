@@ -23,6 +23,11 @@
     font-weight: 500;
 }
 
+.Topbar-text-profile{
+    padding-left: 2.5rem;
+    padding-right: 0.5rem;
+}
+
 .Topbar-text-center{
     padding-left: 2.5rem;
     padding-right: 2.5rem;
