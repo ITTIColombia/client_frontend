@@ -88,6 +88,8 @@
 
   "ShoppingBag": "Shopping Bag",
   "ShoppingCartMessage": "Thank you for supporting the Colombian handmade sector! Continue your purchase here.",
+  "NoItems":"You haven't added any products to the bag!",
+  "AddedToCart":" added to shopping bag",
   "Item": "Item",
   "UnitPrice": "Unit Price",
   "Quantity": "Quantity",

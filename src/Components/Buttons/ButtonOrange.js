@@ -6,7 +6,7 @@ import {FormattedMessage} from "react-intl";
 function ButtonOrange(props) {
     return (
         <div className='ButtonOrange'>
-            <Link to={"/"+props.path}>
+            <Link to={"/"+props.path} onClick={props.action ? props.action : () => {}}>
                 <span><FormattedMessage id={props.text}/></span>
             </Link>
         </div>
