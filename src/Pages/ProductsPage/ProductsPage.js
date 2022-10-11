@@ -33,7 +33,7 @@ function ProductsPage() {
                 }).catch(err=>{
                     console.log("Error extracting json:", err)
                 })
-            }else if(res.status === 204){
+            }else if(res.status === 204){   
                 setProducts([])
             }
         }).catch(err=>{

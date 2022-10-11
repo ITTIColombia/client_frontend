@@ -4,9 +4,10 @@ import Footer from "../../Components/Footer/Footer";
 import React from "react";
 import { useContext } from "react";
 import AppContext from "../../AppContext";
+import Orders from "../Orders/Orders";
 
 function Profile() {
-    
+
     const context = useContext(AppContext);
 
     const deleteUser = async () => {
@@ -19,12 +20,11 @@ function Profile() {
 
     return (
         <React.Fragment>
-            <Navbar/>
+            <Navbar />
             <div>
-                {/*<h1>{JSON.stringify(context.user)}</h1>*/}
-                <button onClick={deleteUser}>Delete User</button>
+                <Orders />
             </div>
-            <Footer/>
+            <Footer />
         </React.Fragment>
     );
 }

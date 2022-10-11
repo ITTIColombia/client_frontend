@@ -32,7 +32,7 @@ function Cart() {
                 city,
                 department,
                 country,
-                media: context.cart.items.flatMap(item => item.product.media.photos),
+                media: context.cart.items.flatMap(item => `${item.product.artisan}/${item.product.media.photos[0]}`),
                 client: _id,
             }
             const purchaseResponse = await fetch(`${process.env.REACT_APP_BACKEND_URL}/purchases/?token=${process.env.REACT_APP_TOKEN}`, {

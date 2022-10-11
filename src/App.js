@@ -22,6 +22,7 @@ import Profile from "./Pages/Profile/Profile";
 import { useAlert } from "react-alert";
 import Amplify, { Auth } from 'aws-amplify';
 import awsconfig from './aws-exports';
+import OrderDetail from "./Pages/OrderDetail/OrderDetail";
 
 Amplify.configure(awsconfig);
 
@@ -448,6 +449,7 @@ function App() {
               <Route path="/signup/2" exact element={<SignUp2 />} />
               <Route path="/carrito" exact element={<Cart />} />
               <Route path="/profile" exact element={<Profile />} />
+              <Route path="/compras/:_id" exact element={<OrderDetail/>} />
             </Routes>
           </BrowserRouter>
         </IntlProvider>
