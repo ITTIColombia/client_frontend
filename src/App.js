@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
 import Home from "./Pages/Home/Home";
 import Artisans from "./Pages/Artisans/Artisans";
+import Account from "./Pages/Account/Account";
 import ProductsPage from "./Pages/ProductsPage/ProductsPage";
 import ArtisanDetail from "./Pages/ArtisanDetail/ArtisanDetail";
 import AboutUs from "./Pages/AboutUs/AboutUs";
@@ -19,6 +20,7 @@ import CodeVerification from "./Pages/CodeVerification/CodeVerification";
 import SignUp2 from "./Pages/SignUp2/SignUp2";
 import Cart from "./Pages/Cart/Cart";
 import Profile from "./Pages/Profile/Profile";
+import ProfileSettings from "./Pages/ProfileSettings/ProfileSettings";
 import { useAlert } from "react-alert";
 import Amplify, { Auth } from 'aws-amplify';
 import awsconfig from './aws-exports';
@@ -449,6 +451,8 @@ function App() {
               <Route path="/signup/2" exact element={<SignUp2 />} />
               <Route path="/carrito" exact element={<Cart />} />
               <Route path="/profile" exact element={<Profile />} />
+              <Route path="/profile/account" exact element={<Account/>} />
+              <Route path="/profile/settings" exact element={<ProfileSettings/>} />
               <Route path="/compras/:_id" exact element={<OrderDetail/>} />
             </Routes>
           </BrowserRouter>

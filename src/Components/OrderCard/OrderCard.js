@@ -5,6 +5,16 @@ import {Link} from "react-router-dom";
 import Progress from '../../Components/Progress/Progress';
 import AppContext from './../../AppContext';
 
+const formatPrice = (number) => {
+    if(number== undefined)
+    return undefined
+    const numberFormat = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD'
+    })
+    return numberFormat.format(number)
+}
+
 export default function OrderCard(props) {
     const context = useContext(AppContext);
     
@@ -20,7 +30,7 @@ export default function OrderCard(props) {
                                 <div className="left">
                                     <div className="state"><span className="color"></span><p>{props.purchaseStatus}</p> </div>
                                     <div className="products"> <p>{props.media.length} <FormattedMessage id="Products" /> </p></div>
-                                    <div className="price"> <p>${props.price}</p></div>
+                                    <div className="price"> <p>{formatPrice(props.price)}</p></div>
                                 </div>
                                 <div className="right">
                                     <div className="order"><FormattedMessage id="Order" />  # <span>{props.id}</span></div>

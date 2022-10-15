@@ -18,6 +18,56 @@
 
     }
 
+    .productArtisan {
+        font-family: "Montserrat";
+        color: #BF522A;
+        font-style: bold;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .productName {
+        font-family: "Montserrat";
+        color: black;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+
+    }
+
+    
+    .productPrice {
+        font-family: "Montserrat";
+        color: black;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 18px;
+
+    }
+
+
+    .price {
+        font-family: "Montserrat";
+        color: grey;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+
+    }
+    .priceDark {
+        font-family: "Montserrat";
+        color: black;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+
+    }
+
     .content {
         font-family: "Montserrat";
         color: black;
@@ -27,106 +77,48 @@
         line-height: 17px;
     }
 
-    .invoice {
+    .detail {
         font-family: "Montserrat";
-        color: orange;
+        color: #BF522A;
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
         line-height: 20px;
     }
 
-    .row-content {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0px;
-        gap: 40px;
 
-        width: 254px;
-        height: 531px;
-        left: 163px;
-        top: 299px;
-    }
-
-    .order-content {
-        margin: 1.5em;
-
-        .details {
-            display: flex;
-            justify-content: space-between;
-
-            .left {
-                .state {
-                    font-size: 12px;
-                    display: flex;
-                    align-items: center;
-
-                    .color {
-                        display: block;
-                        width: 12px;
-                        height: 12px;
-                        border-radius: 6px;
-                        background-color: rgb(219, 179, 79);
-                        margin-right: 5px;
-                    }
-                }
-
-                .price {
-                    font-size: 14px;
-                }
-            }
-
-            .right {
-                text-align: end;
-                font-size: 12px;
-
-                .detail {
-                    color: var(--orange);
-                }
-            }
-        }
-
-        .products {
-            display: flex;
-            flex-wrap: wrap;
-            height: auto;
-
-            .product {
-                margin-right: 20px;
-                margin-top: 20px;
-
-                img {
-                    width: 150px;
-                    height: 150px;
-                }
-            }
-        }
-
-        button {
-            width: 160px;
-            background-color: var(--orange);
-            color: var(--gray);
-            text-transform: uppercase;
-            font-weight: lighter;
-            margin: 20px 0;
-            border: 2px transparent;
-            padding: 5px;
+    @media(max-width: 900px){
+        .order-container{
+            width: 100%;
+            padding: 0;
         }
     }
-
+    
+    @media(min-width: 900px) {
+        .order-container{
+            width: 100%;
+            padding: 2em 10em 8em 10em !important;
+        }
+    }
+    
+    .caja{
+        width: 300px;
+        height: 300px;
+        background-color: red;
+    }
 
     .invoice{
         display: flex;
         flex-wrap: wrap;
-        width: 152px;
-        height: 143px;
-        left: 720px;
-        top: 349px;
+        height: auto;
         .product{
             margin-right: 20px;
             margin-top: 20px;
-            img{
+
+            & img{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
                 width: 150px;
                 height: 150px;
             }

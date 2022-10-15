@@ -172,8 +172,8 @@
   "OrderDetails": "Detalles del Pedido",
   "OrdersCapital": "PEDIDOS",
   "Orders": "Pedidos",
-  "Account": "Cuenta",
-  "Settings": "Ajustes",
+  "Account": "CUENTA",
+  "Settings": "AJUSTES",
   "Cancel": "Cancelar",
   "SendTo": "Envío a ",
   "Details": "Detalles",
@@ -189,6 +189,9 @@
   "InvoiceData": "Datos de facturación",
   "DownloadInvoice": "Descargar Factura Electrónica",
   "National": "Estándar, Nacional",
+  "Taxes": "IMPUESTOS ",
+  "Service": "COSTO DE SERVICIO",
+  "EditAccount": "Editar Cuenta",
 
 
   "TitleAboutUs": "Construimos puentes entre mundos distantes",
