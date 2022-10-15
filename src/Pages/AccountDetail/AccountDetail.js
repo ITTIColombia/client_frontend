@@ -1,4 +1,4 @@
-import "./Account.css";
+import "./AccountDetail.scss";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import React from "react";
@@ -8,7 +8,7 @@ import { FormattedMessage } from "react-intl";
 import { BrowserRouter, Routes, Route, Link, useParams } from "react-router-dom";
 import ProfileNav from "../../Components/ProfileNav/ProfileNav";
 
-function Account() {
+function AccountDetail() {
 
     const context = useContext(AppContext);
     let params = useParams();
@@ -73,7 +73,7 @@ function Account() {
                             </div>
                         </div>
                     </div>
-                    <button>
+                    <button className="buttonCancel">
                         <FormattedMessage id="EditAccount" />
                     </button>
                 </div>
@@ -83,4 +83,4 @@ function Account() {
     );
 }
 
-export default Account;
+export default AccountDetail;

@@ -1,4 +1,4 @@
-import "./ProfileSettings.css";
+import "./AccountConfig.css";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import React from "react";
@@ -8,7 +8,7 @@ import { FormattedMessage } from "react-intl";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import ProfileNav from "../../Components/ProfileNav/ProfileNav";
 
-function ProfileSettings() {
+function AccountConfig() {
 
     const context = useContext(AppContext);
 
@@ -24,4 +24,4 @@ function ProfileSettings() {
     );
 }
 
-export default ProfileSettings;
+export default AccountConfig;
